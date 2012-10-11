@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModuleFactory.cs" />
+    <Compile Include="Dyn\DynamicMethodBuilderTestCase.cs" />
     <Compile Include="EngineFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VirtualMachine\ArithmeticTestCase.cs" />

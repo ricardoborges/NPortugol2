@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using NPortugol2.Lang.Instructions;
 
 namespace NPortugol2.VirtualMachine
@@ -14,6 +16,11 @@ namespace NPortugol2.VirtualMachine
         public Instruction[] Instructions { get; set; }
 
         public SymbolTable Locals { get; set; }
+
+        public Type[] ParametersType
+        {
+            get { return Params != null ? Params.Select(param => param.Type).ToArray() : null; }
+        }
     }
 
     public class FunctionParam

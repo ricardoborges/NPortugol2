@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dyn\DynamicMethodBuilder.cs" />
     <Compile Include="Lang\Instructions\Add.cs" />
+    <Compile Include="Lang\Instructions\Ret.cs" />
     <Compile Include="Lang\Instructions\Ldf.cs" />
     <Compile Include="Lang\Instructions\Ldint.cs" />
     <Compile Include="NPortugol2.cs" />

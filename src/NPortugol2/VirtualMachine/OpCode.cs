@@ -6,7 +6,11 @@
         init,
         ldint,
         ldf,
+        
         // Arithmetic
-        add
+        add,
+
+        // Flow
+        ret
     }
 }
