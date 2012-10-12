@@ -51,7 +51,6 @@
     <Compile Include="Lang\Instructions\Init.cs" />
     <Compile Include="Lang\Instructions\Instruction.cs" />
     <Compile Include="VirtualMachine\Module.cs" />
-    <Compile Include="VirtualMachine\OpCode.cs" />
     <Compile Include="VirtualMachine\Engine.cs" />
     <Compile Include="VirtualMachine\Engine.Proc.cs" />
     <Compile Include="VirtualMachine\Process.cs" />

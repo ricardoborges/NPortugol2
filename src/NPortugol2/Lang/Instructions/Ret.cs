@@ -1,4 +1,4 @@
-﻿using NPortugol2.VirtualMachine;
+﻿using System.Reflection.Emit;
 
 namespace NPortugol2.Lang.Instructions
 {
@@ -6,7 +6,7 @@ namespace NPortugol2.Lang.Instructions
     {
         public Ret()
         {
-            opCode = OpCode.ret;
+            opCode = OpCodes.Ret;
         }
     }
 }

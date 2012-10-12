@@ -29,20 +29,18 @@ namespace NPortugol2.Dyn
         {
             foreach (var inst in target.Instructions)
             {
-                switch (inst.OpCode)
+                switch (inst.Name)
                 {
-                    case VirtualMachine.OpCode.ldint:
-                        gen.Emit(OpCodes.Ldc_I4, ((Ldint)inst).Value);
+                    case "ldc.i4":
+                        gen.Emit(inst.OpCode, ((Ldint)inst).Value);
                         break;
 
-                    case VirtualMachine.OpCode.ldf:
-                        gen.Emit(OpCodes.Ldc_R4, ((Ldf)inst).Value);
+                    case "ldc.r4":
+                        gen.Emit(inst.OpCode, ((Ldf)inst).Value);
                         break;
-                    case VirtualMachine.OpCode.add:
-                        gen.Emit(OpCodes.Add);
-                        break;
-                    case VirtualMachine.OpCode.ret:
-                        gen.Emit(OpCodes.Ret);
+                    case "add":
+                    case "ret":
+                        gen.Emit(inst.OpCode);
                         break;
                 }
             }            

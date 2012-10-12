@@ -1,4 +1,4 @@
-﻿using NPortugol2.VirtualMachine;
+﻿using System.Reflection.Emit;
 
 namespace NPortugol2.Lang.Instructions
 {
@@ -9,6 +9,11 @@ namespace NPortugol2.Lang.Instructions
         public OpCode OpCode
         {
             get { return opCode; }
+        }
+
+        public string Name
+        {
+            get { return OpCode.Name; }
         }
     }
 }

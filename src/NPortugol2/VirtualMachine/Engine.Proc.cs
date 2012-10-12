@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Emit;
 using NPortugol2.Lang.Instructions;
 
 namespace NPortugol2.VirtualMachine
@@ -16,12 +17,12 @@ namespace NPortugol2.VirtualMachine
 
         private void ExecuteInstruction(Instruction instruction)
         {
-            switch (instruction.OpCode)
+            switch (instruction.OpCode.Name)
             {
-                case OpCode.init: ProcessInit((Init) instruction); break;
-                case OpCode.ldint: ProcessLdint((Ldint) instruction); break;
-                case OpCode.ldf: ProcessLdf((Ldf)instruction); break;
-                case OpCode.add: ProcessAdd((Add)instruction); break;
+                case "initblk": ProcessInit((Init) instruction); break;
+                case "ldc.i4": ProcessLdint((Ldint) instruction); break;
+                case "ldc.r4": ProcessLdf((Ldf)instruction); break;
+                case "add": ProcessAdd((Add)instruction); break;
             }
         }
 

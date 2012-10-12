@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using NPortugol2.VirtualMachine;
+using System.Reflection.Emit;
 
 namespace NPortugol2.Lang.Instructions
 {
@@ -8,7 +8,7 @@ namespace NPortugol2.Lang.Instructions
     {
         public Init()
         {
-            opCode = OpCode.init;
+            opCode = OpCodes.Initblk;
 
             Names = new List<string>();
         }

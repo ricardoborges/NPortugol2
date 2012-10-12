@@ -1,4 +1,4 @@
-﻿using NPortugol2.VirtualMachine;
+﻿using System.Reflection.Emit;
 
 namespace NPortugol2.Lang.Instructions
 {
@@ -6,7 +6,7 @@ namespace NPortugol2.Lang.Instructions
     {
         public Ldf()
         {
-            opCode = OpCode.ldf;
+            opCode = OpCodes.Ldc_R4;
         }
 
         public float Value { get; set; }
