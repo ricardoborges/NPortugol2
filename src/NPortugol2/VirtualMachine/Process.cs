@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using NPortugol2.Lang.Instructions;
 
 namespace NPortugol2.VirtualMachine
 {

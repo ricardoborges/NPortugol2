@@ -10,6 +10,18 @@ namespace NPortugol2.VirtualMachine
             Symbols = new Dictionary<string, Symbol>();
         }
 
+        public SymbolTable(Symbol[] symbols)
+        {
+            Symbols = new Dictionary<string, Symbol>();
+
+            if (symbols == null) return;
+
+            foreach (var symbol in symbols)
+            {
+                Symbols.Add(symbol.Name, symbol);
+            }
+        }
+
         public Dictionary<string, Symbol> Symbols { get; set; }
     }
 

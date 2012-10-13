@@ -1,5 +1,5 @@
 ﻿using NPortugol2.Dyn;
-using NPortugol2.Lang.Instructions;
+using NPortugol2.VirtualMachine;
 using NUnit.Framework;
 
 namespace NPortugol2.Tests.Dyn
@@ -10,12 +10,12 @@ namespace NPortugol2.Tests.Dyn
         [Test]
          public void Should_Create_DM_No_Parameters()
          {
-             var insts = new Instruction[]
+             var insts = new []
                             {
-                                new Ldint { Value = 2 },
-                                new Ldint { Value = 2 },
-                                new Add(),
-                                new Ret()
+                                InstFactory.Ldc_I4(2),
+                                InstFactory.Ldc_I4(2),
+                                InstFactory.Add(),
+                                InstFactory.Ret()
                             };
 
              var module = ModuleFactory.CreateFor<int>(insts, "add");

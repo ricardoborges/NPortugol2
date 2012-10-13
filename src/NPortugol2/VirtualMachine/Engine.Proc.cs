@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Reflection.Emit;
-using NPortugol2.Lang.Instructions;
 
 namespace NPortugol2.VirtualMachine
 {
@@ -19,14 +17,13 @@ namespace NPortugol2.VirtualMachine
         {
             switch (instruction.OpCode.Name)
             {
-                case "initblk": ProcessInit((Init) instruction); break;
-                case "ldc.i4": ProcessLdint((Ldint) instruction); break;
-                case "ldc.r4": ProcessLdf((Ldf)instruction); break;
-                case "add": ProcessAdd((Add)instruction); break;
+                case "ldc.i4": ProcessLdcI4(instruction); break;
+                case "ldc.r4": ProcessLdcR4(instruction); break;
+                case "add": ProcessAdd(); break;
             }
         }
 
-        private void ProcessAdd(Add add)
+        private void ProcessAdd()
         {
             bool isInt;
 
@@ -51,26 +48,28 @@ namespace NPortugol2.VirtualMachine
             }
         }
 
-        private void ProcessLdf(Ldf ldf)
+        private void ProcessLdcR4(Instruction inst)
         {
-            Process.EvalStack.Push(new Symbol { Name = Guid.NewGuid().ToString(), Type = typeof(float), Value = ldf.Value });            
+            Process.EvalStack.Push(new Symbol { Name = Guid.NewGuid().ToString(), Type = typeof(float), Value = inst.Value });            
         }
 
-        private void ProcessLdint(Ldint ldint)
+        private void ProcessLdcI4(Instruction inst)
         {
-            Process.EvalStack.Push(new Symbol{Name = Guid.NewGuid().ToString(), Type = typeof(int), Value = ldint.Value});
+            Process.EvalStack.Push(new Symbol{Name = Guid.NewGuid().ToString(), Type = typeof(int), Value = inst.Value});
         }
 
-        private void ProcessInit(Init init)
+        /*
+        private void ProcessInit(Instruction inst)
         {
-            var table = init.IsLocal ? Process.CallStack.Peek().Function.Locals : Process.Globals;
+            var table = inst.IsLocal ? Process.CallStack.Peek().Locals : Process.Globals;
 
-            foreach (var name in init.Names)
+            foreach (var name in inst.Operands)
             {
-                var symbol = new Symbol {Name = name, Type = init.DeclaringType};
+                var symbol = new Symbol {Name = name, Type = inst.DeclaringType};
 
                 table.Symbols.Add(name, symbol);
             }
         }
+        */
     }
 }

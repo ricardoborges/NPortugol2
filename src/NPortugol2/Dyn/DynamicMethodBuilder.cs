@@ -1,5 +1,4 @@
 ﻿using System.Reflection.Emit;
-using NPortugol2.Lang.Instructions;
 using NPortugol2.VirtualMachine;
 
 namespace NPortugol2.Dyn
@@ -29,14 +28,14 @@ namespace NPortugol2.Dyn
         {
             foreach (var inst in target.Instructions)
             {
-                switch (inst.Name)
+                switch (inst.OpCode.Name)
                 {
                     case "ldc.i4":
-                        gen.Emit(inst.OpCode, ((Ldint)inst).Value);
+                        gen.Emit(inst.OpCode, (inst).IntValue);
                         break;
 
                     case "ldc.r4":
-                        gen.Emit(inst.OpCode, ((Ldf)inst).Value);
+                        gen.Emit(inst.OpCode, (inst).FloatValue);
                         break;
                     case "add":
                     case "ret":

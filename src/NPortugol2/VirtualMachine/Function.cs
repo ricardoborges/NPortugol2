@@ -1,7 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using NPortugol2.Lang.Instructions;
 
 namespace NPortugol2.VirtualMachine
 {
@@ -15,7 +13,7 @@ namespace NPortugol2.VirtualMachine
 
         public Instruction[] Instructions { get; set; }
 
-        public SymbolTable Locals { get; set; }
+        public Symbol[] Symbols { get; set; }
 
         public Type[] ParametersType
         {
@@ -36,6 +34,8 @@ namespace NPortugol2.VirtualMachine
     {
         public Function Function { get; set; }
 
+        public SymbolTable Locals { get; set; } 
+
         public Guid ID { get; set; }
 
         public int IP { get; set; }
@@ -45,6 +45,8 @@ namespace NPortugol2.VirtualMachine
             Function = function;
             
             ID = Guid.NewGuid();
+
+            Locals = new SymbolTable(function.Symbols);
         }
 
         public bool HasNext()

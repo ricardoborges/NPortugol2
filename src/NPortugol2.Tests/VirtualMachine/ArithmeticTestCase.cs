@@ -1,5 +1,4 @@
-﻿using NPortugol2.Lang.Instructions;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace NPortugol2.Tests.VirtualMachine
 {
@@ -9,11 +8,11 @@ namespace NPortugol2.Tests.VirtualMachine
         [Test]
         public void Should_Add_Int_Values_On_Stack()
         {
-            var insts = new Instruction[]
+            var insts = new []
                             {
-                                new Ldint { Value = 2 },
-                                new Ldint { Value = 2 },
-                                new Add()
+                                InstFactory.Ldc_I4(2),
+                                InstFactory.Ldc_I4(2),
+                                InstFactory.Add()
                             };
 
             var engine = EngineFactory.CreateFor<int>(insts, "add");
@@ -28,11 +27,11 @@ namespace NPortugol2.Tests.VirtualMachine
         [Test]
         public void Should_Add_Float_Values_On_Stack()
         {
-            var insts = new Instruction[]
+            var insts = new []
                             {
-                                new Ldf { Value = 2F },
-                                new Ldf { Value = 2F },
-                                new Add()
+                                InstFactory.Ldc_R4(2F),
+                                InstFactory.Ldc_R4(2F),
+                                InstFactory.Add()
                             };
 
             var engine = EngineFactory.CreateFor<int>(insts, "add");
@@ -40,7 +39,7 @@ namespace NPortugol2.Tests.VirtualMachine
             engine.Execute("add");
 
             Assert.AreEqual(1, engine.Process.EvalStack.Count);
-            Assert.AreEqual(4.0m, engine.Process.Value);
+            Assert.AreEqual(4.0F, engine.Process.Value);
             Assert.AreEqual(typeof(float), engine.Process.EvalStack.Peek().Type);
         }
     }
