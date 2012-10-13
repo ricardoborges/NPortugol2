@@ -20,7 +20,7 @@ namespace NPortugol2.Dyn
             target = module.Functions[functionName];
 
             var dm = new DynamicMethod(functionName, target.ReturningType, target.ParametersType);
-
+            
             GenerateILCode(dm.GetILGenerator());
             
             return dm;            
@@ -29,7 +29,7 @@ namespace NPortugol2.Dyn
         private void GenerateILCode(ILGenerator gen)
         {
             if (target.Instructions == null) return;
-
+            
             foreach (var inst in target.Instructions)
             {
                 switch (inst.OpCode.Name)

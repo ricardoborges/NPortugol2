@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Emit;
 using Antlr.Runtime;
 using Antlr.Runtime.Tree;
 using NPortugol2.VirtualMachine;
@@ -11,6 +12,7 @@ namespace NPortugol2.Compiler
         private readonly Module module;
 
         private List<FunctionParam> currentParams;
+        private List<Instruction> currInstructions;
 
         private readonly Dictionary<string, Type> TypeMap = new Dictionary<string, Type>
                                                        {
@@ -27,6 +29,7 @@ namespace NPortugol2.Compiler
         public ModuleBuilder()
         {
             module = new Module();
+            currInstructions = new List<Instruction>();
         }
 
         public Module Module
@@ -50,12 +53,29 @@ namespace NPortugol2.Compiler
                                {
                                    Name = name.Text,
                                    ReturningType = TypeMap[type != null? type.Token.Text: ""],
-                                   Params = currentParams != null? currentParams.ToArray(): new FunctionParam[]{}
+                                   Params = currentParams != null? currentParams.ToArray(): new FunctionParam[]{},
+                                   Instructions = currInstructions.ToArray()
                                };
 
             module.Functions.Add(function.Name, function);
 
             currentParams = null;
+            currInstructions.Clear();
+        }
+
+        public void EmitRet(IToken token)
+        {
+            currInstructions.Add(new Instruction {OpCode = OpCodes.Ret});
+        }
+
+        public void EmitLdcI4(int value, IToken token)
+        {
+            currInstructions.Add(new Instruction {OpCode = OpCodes.Ldc_I4, Value = value});
+        }
+
+        public void EmitAdd()
+        {
+            currInstructions.Add(new Instruction {OpCode = OpCodes.Add});
         }
     }
 }

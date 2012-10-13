@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using System;
+using System.Reflection.Emit;
+using NUnit.Framework;
 
 namespace NPortugol2.Tests.Dyn.Integration
 {
@@ -28,6 +30,16 @@ namespace NPortugol2.Tests.Dyn.Integration
 
             Assert.AreEqual(typeof(int), parameters[0].ParameterType);
             Assert.AreEqual(typeof(int), parameters[0].ParameterType);
+        }
+
+        [Test]
+        public void Should_Create_Function_Returning_Value()
+        {
+            var dm = new NPortugol2().CompileMethod("funcao int soma(int a, int b) retorne 1 fim");
+
+            var result = dm.Invoke(null, new object[] {1, 1});
+
+            Assert.AreEqual(1, result);
         }
     }
 }

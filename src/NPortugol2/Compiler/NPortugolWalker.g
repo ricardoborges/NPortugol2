@@ -111,14 +111,16 @@ assign_var returns[string id]
     ;		
 
 return_stat
-	:  ^(RET plus_expression)/*{emitter.EmitRet($RET.Token);}*/
+	:  ^(RET plus_expression) {builder.EmitRet($RET.Token);}
 	;
 
 // ##########################################################################################################################
 // Expressions
 
 plus_expression
-: ^('+' plus_expression plus_expression) /*{emitter.EmitStackAdd();}*/
+@init { inExpression = true; }
+@after { inExpression = false; }
+: ^('+' plus_expression plus_expression) {builder.EmitAdd();}
 | ^('-' plus_expression plus_expression) /*{emitter.EmitStackSub();}*/
 | ^('*' plus_expression plus_expression) /*{emitter.EmitStackPlus();}*/
 | ^('/' plus_expression plus_expression) /*{emitter.EmitStackDiv();}*/
@@ -146,7 +148,7 @@ logic_expression
     
 atom returns[object value]: 
       a=ID /*{$value = $a.text; if (inExpression) emitter.EmitPush($value, $a.Token);}*/
-    | a=INT /*{$value = int.Parse($a.text); if (inExpression) emitter.EmitPush($value, $a.Token);}*/
+    | a=INT {$value = int.Parse($a.text); if (inExpression) builder.EmitLdcI4((int)$value, $a.Token);}
     | a=FLOAT /*{$value = float.Parse($a.text); if (inExpression) emitter.EmitPush($value, $a.Token);}*/
     | a=STRING /*{$value = $a.text; if (inExpression) emitter.EmitPush($value, $a.Token);}*/
     ;  
