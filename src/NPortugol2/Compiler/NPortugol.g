@@ -92,26 +92,16 @@ statement	@init { paraphrases.Push("na sentença"); } @after { paraphrases.Pop();
 	;
 	
 function_param_list     @init { paraphrases.Push("na lista de parâmetros"); }   @after { paraphrases.Pop(); }
-	:	ID (',' ID)* -> ^(PARAM ID*)
+	:	param (',' param)* -> ^(PARAM param*)
 	;	
-/*
-declare_local            @init { paraphrases.Push("na definição de variável"); }   @after { paraphrases.Pop(); }
-	:	'variavel' i+= ID (initialize_local)? (','i+= ID (initialize_local)?)* 
-		{DefineID($i);}
-		-> ^(VAR ID initialize_local?)+
-	;
-	*/
+	
+param	:	TYPE ID -> ^(TYPE ID);
 
 declare_local            @init { paraphrases.Push("na definição de variável"); }   @after { paraphrases.Pop(); }
 	:	'variavel' i+=ID (',' i+=ID)* 
 			{DefineID($i);}
 	-> ^(VAR ID*)
 	;
-
-/*
-initialize_local
-	:	'=' plus_expression -> ^(INIT plus_expression)
-	;	*/
 	
 if_stat @init { paraphrases.Push("se"); }   @after { paraphrases.Pop(); }
 

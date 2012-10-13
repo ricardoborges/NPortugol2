@@ -10,7 +10,9 @@ namespace NPortugol2.Compiler
     {
         private readonly Module module;
 
-        private Dictionary<string, Type> TypeMap = new Dictionary<string, Type>
+        private List<FunctionParam> currentParams;
+
+        private readonly Dictionary<string, Type> TypeMap = new Dictionary<string, Type>
                                                        {
                                                            {"int", typeof (int)},
                                                            {"dec", typeof (float)},
@@ -27,20 +29,33 @@ namespace NPortugol2.Compiler
             module = new Module();
         }
 
+        public Module Module
+        {
+            get { return module; }
+        }
+
+        public void CreateFunctionParams(IToken type, IToken name)
+        {
+            var parameter = new FunctionParam {Name = name.Text, Type = TypeMap[type.Text]};
+
+            if (currentParams == null)
+                currentParams = new List<FunctionParam>();
+
+            currentParams.Add(parameter);
+        }
+
         public void CreateFunction(CommonTree type, IToken name)
         {
             var function = new Function
                                {
                                    Name = name.Text,
-                                   ReturningType = TypeMap[type != null? type.Token.Text: ""]
+                                   ReturningType = TypeMap[type != null? type.Token.Text: ""],
+                                   Params = currentParams != null? currentParams.ToArray(): new FunctionParam[]{}
                                };
 
             module.Functions.Add(function.Name, function);
-        }
 
-        public Module Module
-        {
-            get { return module; }
+            currentParams = null;
         }
     }
 }

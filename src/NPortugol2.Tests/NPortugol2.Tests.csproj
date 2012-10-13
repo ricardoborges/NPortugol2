@@ -52,7 +52,7 @@
   <ItemGroup>
     <Compile Include="Compiler\BaseCompilerTestCase.cs" />
     <Compile Include="Compiler\FunctionTestCase.cs" />
-    <Compile Include="Dyn\Integration\NPortugol2TestCase.cs" />
+    <Compile Include="Dyn\Integration\FunctionTestCase.cs" />
     <Compile Include="Factories.cs" />
     <Compile Include="Dyn\DynamicMethodBuilderTestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

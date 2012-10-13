@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g 2012-10-13 15:23:12
+// $ANTLR 3.4 E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g 2012-10-13 18:01:30
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -588,23 +588,20 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_function_param_list();
 
 	// $ANTLR start "function_param_list"
-	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:46:1: function_param_list : ^( PARAM (p+= ID )* ) ;
+	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:46:1: function_param_list : ^( PARAM ( param )* ) ;
 	[GrammarRule("function_param_list")]
 	private void function_param_list()
 	{
 		EnterRule_function_param_list();
 		EnterRule("function_param_list", 4);
 		TraceIn("function_param_list", 4);
-		CommonTree p = default(CommonTree);
-		List<CommonTree> list_p = null;
-
 		try { DebugEnterRule(GrammarFileName, "function_param_list");
 		DebugLocation(46, 1);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:47:2: ( ^( PARAM (p+= ID )* ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:47:2: ( ^( PARAM ( param )* ) )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:47:5: ^( PARAM (p+= ID )* )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:47:5: ^( PARAM ( param )* )
 			{
 			DebugLocation(47, 5);
 			DebugLocation(47, 7);
@@ -613,8 +610,8 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(47, 14);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:47:14: (p+= ID )*
+				DebugLocation(47, 13);
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:47:13: ( param )*
 				try { DebugEnterSubRule(6);
 				while (true)
 				{
@@ -622,7 +619,7 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 					try { DebugEnterDecision(6, false);
 					int LA6_0 = input.LA(1);
 
-					if ((LA6_0==ID))
+					if ((LA6_0==TYPE))
 					{
 						alt6 = 1;
 					}
@@ -633,13 +630,13 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:47:14: p+= ID
+						// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:47:13: param
 						{
-						DebugLocation(47, 14);
-						p=(CommonTree)Match(input,ID,Follow._ID_in_function_param_list161); if (state.failed) return;
-						if (list_p==null) list_p=new List<CommonTree>();
-						list_p.Add(p);
-
+						DebugLocation(47, 13);
+						PushFollow(Follow._param_in_function_param_list159);
+						param();
+						PopFollow();
+						if (state.failed) return;
 
 						}
 						break;
@@ -680,37 +677,96 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 	}
 	// $ANTLR end "function_param_list"
 
+	partial void EnterRule_param();
+	partial void LeaveRule_param();
+
+	// $ANTLR start "param"
+	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:50:1: param : ^(t= TYPE i= ID ) ;
+	[GrammarRule("param")]
+	private void param()
+	{
+		EnterRule_param();
+		EnterRule("param", 5);
+		TraceIn("param", 5);
+		CommonTree t = default(CommonTree);
+		CommonTree i = default(CommonTree);
+
+		try { DebugEnterRule(GrammarFileName, "param");
+		DebugLocation(50, 75);
+		try
+		{
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:50:7: ( ^(t= TYPE i= ID ) )
+			DebugEnterAlt(1);
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:50:9: ^(t= TYPE i= ID )
+			{
+			DebugLocation(50, 9);
+			DebugLocation(50, 12);
+			t=(CommonTree)Match(input,TYPE,Follow._TYPE_in_param177); if (state.failed) return;
+
+			Match(input, TokenTypes.Down, null); if (state.failed) return;
+			DebugLocation(50, 19);
+			i=(CommonTree)Match(input,ID,Follow._ID_in_param181); if (state.failed) return;
+
+			Match(input, TokenTypes.Up, null); if (state.failed) return;
+
+			DebugLocation(50, 24);
+			if (state.backtracking == 0)
+			{
+				builder.CreateFunctionParams(t.Token, i.Token); 
+			}
+
+			}
+
+		}
+		catch (RecognitionException re)
+		{
+			ReportError(re);
+			Recover(input,re);
+		}
+		finally
+		{
+			TraceOut("param", 5);
+			LeaveRule("param", 5);
+			LeaveRule_param();
+		}
+		DebugLocation(50, 75);
+		} finally { DebugExitRule(GrammarFileName, "param"); }
+		return;
+
+	}
+	// $ANTLR end "param"
+
 	partial void EnterRule_declare_local();
 	partial void LeaveRule_declare_local();
 
 	// $ANTLR start "declare_local"
-	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:50:1: declare_local : ^( VAR (i+= ID )* ) ;
+	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:52:1: declare_local : ^( VAR (i+= ID )* ) ;
 	[GrammarRule("declare_local")]
 	private void declare_local()
 	{
 		EnterRule_declare_local();
-		EnterRule("declare_local", 5);
-		TraceIn("declare_local", 5);
+		EnterRule("declare_local", 6);
+		TraceIn("declare_local", 6);
 		CommonTree i = default(CommonTree);
 		List<CommonTree> list_i = null;
 
 		try { DebugEnterRule(GrammarFileName, "declare_local");
-		DebugLocation(50, 1);
+		DebugLocation(52, 1);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:51:2: ( ^( VAR (i+= ID )* ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:53:2: ( ^( VAR (i+= ID )* ) )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:51:5: ^( VAR (i+= ID )* )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:53:5: ^( VAR (i+= ID )* )
 			{
-			DebugLocation(51, 5);
-			DebugLocation(51, 7);
-			Match(input,VAR,Follow._VAR_in_declare_local180); if (state.failed) return;
+			DebugLocation(53, 5);
+			DebugLocation(53, 7);
+			Match(input,VAR,Follow._VAR_in_declare_local196); if (state.failed) return;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(51, 12);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:51:12: (i+= ID )*
+				DebugLocation(53, 12);
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:53:12: (i+= ID )*
 				try { DebugEnterSubRule(7);
 				while (true)
 				{
@@ -729,10 +785,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:51:12: i+= ID
+						// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:53:12: i+= ID
 						{
-						DebugLocation(51, 12);
-						i=(CommonTree)Match(input,ID,Follow._ID_in_declare_local184); if (state.failed) return;
+						DebugLocation(53, 12);
+						i=(CommonTree)Match(input,ID,Follow._ID_in_declare_local200); if (state.failed) return;
 						if (list_i==null) list_i=new List<CommonTree>();
 						list_i.Add(i);
 
@@ -765,11 +821,11 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("declare_local", 5);
-			LeaveRule("declare_local", 5);
+			TraceOut("declare_local", 6);
+			LeaveRule("declare_local", 6);
 			LeaveRule_declare_local();
 		}
-		DebugLocation(52, 1);
+		DebugLocation(54, 1);
 		} finally { DebugExitRule(GrammarFileName, "declare_local"); }
 		return;
 
@@ -780,18 +836,18 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_if_stat();
 
 	// $ANTLR start "if_stat"
-	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:54:1: if_stat : ( ^( SJMP ^( LEXP logic_expression ) ^( SLIST ( statement )* senao_stat ) ) | ^( JMP ^( LEXP logic_expression ) ^( SLIST ( statement )* ) ) );
+	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:56:1: if_stat : ( ^( SJMP ^( LEXP logic_expression ) ^( SLIST ( statement )* senao_stat ) ) | ^( JMP ^( LEXP logic_expression ) ^( SLIST ( statement )* ) ) );
 	[GrammarRule("if_stat")]
 	private void if_stat()
 	{
 		EnterRule_if_stat();
-		EnterRule("if_stat", 6);
-		TraceIn("if_stat", 6);
+		EnterRule("if_stat", 7);
+		TraceIn("if_stat", 7);
 		try { DebugEnterRule(GrammarFileName, "if_stat");
-		DebugLocation(54, 1);
+		DebugLocation(56, 1);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:55:2: ( ^( SJMP ^( LEXP logic_expression ) ^( SLIST ( statement )* senao_stat ) ) | ^( JMP ^( LEXP logic_expression ) ^( SLIST ( statement )* ) ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:57:2: ( ^( SJMP ^( LEXP logic_expression ) ^( SLIST ( statement )* senao_stat ) ) | ^( JMP ^( LEXP logic_expression ) ^( SLIST ( statement )* ) ) )
 			int alt10=2;
 			try { DebugEnterDecision(10, false);
 			int LA10_0 = input.LA(1);
@@ -816,33 +872,33 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:55:5: ^( SJMP ^( LEXP logic_expression ) ^( SLIST ( statement )* senao_stat ) )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:57:5: ^( SJMP ^( LEXP logic_expression ) ^( SLIST ( statement )* senao_stat ) )
 				{
-				DebugLocation(55, 5);
-				DebugLocation(55, 7);
-				Match(input,SJMP,Follow._SJMP_in_if_stat202); if (state.failed) return;
+				DebugLocation(57, 5);
+				DebugLocation(57, 7);
+				Match(input,SJMP,Follow._SJMP_in_if_stat218); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(55, 12);
-				DebugLocation(55, 14);
-				Match(input,LEXP,Follow._LEXP_in_if_stat205); if (state.failed) return;
+				DebugLocation(57, 12);
+				DebugLocation(57, 14);
+				Match(input,LEXP,Follow._LEXP_in_if_stat221); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(55, 19);
-				PushFollow(Follow._logic_expression_in_if_stat207);
+				DebugLocation(57, 19);
+				PushFollow(Follow._logic_expression_in_if_stat223);
 				logic_expression();
 				PopFollow();
 				if (state.failed) return;
 
 				Match(input, TokenTypes.Up, null); if (state.failed) return;
 
-				DebugLocation(55, 37);
-				DebugLocation(55, 39);
-				Match(input,SLIST,Follow._SLIST_in_if_stat211); if (state.failed) return;
+				DebugLocation(57, 37);
+				DebugLocation(57, 39);
+				Match(input,SLIST,Follow._SLIST_in_if_stat227); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(55, 45);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:55:45: ( statement )*
+				DebugLocation(57, 45);
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:57:45: ( statement )*
 				try { DebugEnterSubRule(8);
 				while (true)
 				{
@@ -861,10 +917,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:55:45: statement
+						// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:57:45: statement
 						{
-						DebugLocation(55, 45);
-						PushFollow(Follow._statement_in_if_stat213);
+						DebugLocation(57, 45);
+						PushFollow(Follow._statement_in_if_stat229);
 						statement();
 						PopFollow();
 						if (state.failed) return;
@@ -882,8 +938,8 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 
 				} finally { DebugExitSubRule(8); }
 
-				DebugLocation(55, 84);
-				PushFollow(Follow._senao_stat_in_if_stat218);
+				DebugLocation(57, 84);
+				PushFollow(Follow._senao_stat_in_if_stat234);
 				senao_stat();
 				PopFollow();
 				if (state.failed) return;
@@ -898,35 +954,35 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:56:5: ^( JMP ^( LEXP logic_expression ) ^( SLIST ( statement )* ) )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:58:5: ^( JMP ^( LEXP logic_expression ) ^( SLIST ( statement )* ) )
 				{
-				DebugLocation(56, 5);
-				DebugLocation(56, 7);
-				Match(input,JMP,Follow._JMP_in_if_stat227); if (state.failed) return;
+				DebugLocation(58, 5);
+				DebugLocation(58, 7);
+				Match(input,JMP,Follow._JMP_in_if_stat243); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(56, 11);
-				DebugLocation(56, 13);
-				Match(input,LEXP,Follow._LEXP_in_if_stat230); if (state.failed) return;
+				DebugLocation(58, 11);
+				DebugLocation(58, 13);
+				Match(input,LEXP,Follow._LEXP_in_if_stat246); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(56, 18);
-				PushFollow(Follow._logic_expression_in_if_stat232);
+				DebugLocation(58, 18);
+				PushFollow(Follow._logic_expression_in_if_stat248);
 				logic_expression();
 				PopFollow();
 				if (state.failed) return;
 
 				Match(input, TokenTypes.Up, null); if (state.failed) return;
 
-				DebugLocation(56, 36);
-				DebugLocation(56, 38);
-				Match(input,SLIST,Follow._SLIST_in_if_stat236); if (state.failed) return;
+				DebugLocation(58, 36);
+				DebugLocation(58, 38);
+				Match(input,SLIST,Follow._SLIST_in_if_stat252); if (state.failed) return;
 
 				if (input.LA(1) == TokenTypes.Down)
 				{
 					Match(input, TokenTypes.Down, null); if (state.failed) return;
-					DebugLocation(56, 44);
-					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:56:44: ( statement )*
+					DebugLocation(58, 44);
+					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:58:44: ( statement )*
 					try { DebugEnterSubRule(9);
 					while (true)
 					{
@@ -945,10 +1001,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 						{
 						case 1:
 							DebugEnterAlt(1);
-							// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:56:44: statement
+							// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:58:44: statement
 							{
-							DebugLocation(56, 44);
-							PushFollow(Follow._statement_in_if_stat238);
+							DebugLocation(58, 44);
+							PushFollow(Follow._statement_in_if_stat254);
 							statement();
 							PopFollow();
 							if (state.failed) return;
@@ -986,11 +1042,11 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("if_stat", 6);
-			LeaveRule("if_stat", 6);
+			TraceOut("if_stat", 7);
+			LeaveRule("if_stat", 7);
 			LeaveRule_if_stat();
 		}
-		DebugLocation(58, 1);
+		DebugLocation(60, 1);
 		} finally { DebugExitRule(GrammarFileName, "if_stat"); }
 		return;
 
@@ -1001,30 +1057,30 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_senao_stat();
 
 	// $ANTLR start "senao_stat"
-	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:60:1: senao_stat : ^( SLIST ( statement )* ) ;
+	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:62:1: senao_stat : ^( SLIST ( statement )* ) ;
 	[GrammarRule("senao_stat")]
 	private void senao_stat()
 	{
 		EnterRule_senao_stat();
-		EnterRule("senao_stat", 7);
-		TraceIn("senao_stat", 7);
+		EnterRule("senao_stat", 8);
+		TraceIn("senao_stat", 8);
 		try { DebugEnterRule(GrammarFileName, "senao_stat");
-		DebugLocation(60, 1);
+		DebugLocation(62, 1);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:61:2: ( ^( SLIST ( statement )* ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:63:2: ( ^( SLIST ( statement )* ) )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:61:4: ^( SLIST ( statement )* )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:63:4: ^( SLIST ( statement )* )
 			{
-			DebugLocation(61, 4);
-			DebugLocation(61, 6);
-			Match(input,SLIST,Follow._SLIST_in_senao_stat257); if (state.failed) return;
+			DebugLocation(63, 4);
+			DebugLocation(63, 6);
+			Match(input,SLIST,Follow._SLIST_in_senao_stat273); if (state.failed) return;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(61, 12);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:61:12: ( statement )*
+				DebugLocation(63, 12);
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:63:12: ( statement )*
 				try { DebugEnterSubRule(11);
 				while (true)
 				{
@@ -1043,10 +1099,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:61:12: statement
+						// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:63:12: statement
 						{
-						DebugLocation(61, 12);
-						PushFollow(Follow._statement_in_senao_stat259);
+						DebugLocation(63, 12);
+						PushFollow(Follow._statement_in_senao_stat275);
 						statement();
 						PopFollow();
 						if (state.failed) return;
@@ -1079,11 +1135,11 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("senao_stat", 7);
-			LeaveRule("senao_stat", 7);
+			TraceOut("senao_stat", 8);
+			LeaveRule("senao_stat", 8);
 			LeaveRule_senao_stat();
 		}
-		DebugLocation(63, 1);
+		DebugLocation(65, 1);
 		} finally { DebugExitRule(GrammarFileName, "senao_stat"); }
 		return;
 
@@ -1094,21 +1150,21 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_for_stat();
 
 	// $ANTLR start "for_stat"
-	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:66:1: for_stat : ( ^( LOOP a= assign_var i= INT ^( SLIST ( statement )* ) ) | ^( LOOP DEC a= assign_var i= INT ^( SLIST ( statement )* ) ) | ^( LOOP a= assign_var i= ID ^( SLIST ( statement )* ) ) | ^( LOOP DEC a= assign_var i= ID ^( SLIST ( statement )* ) ) );
+	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:68:1: for_stat : ( ^( LOOP a= assign_var i= INT ^( SLIST ( statement )* ) ) | ^( LOOP DEC a= assign_var i= INT ^( SLIST ( statement )* ) ) | ^( LOOP a= assign_var i= ID ^( SLIST ( statement )* ) ) | ^( LOOP DEC a= assign_var i= ID ^( SLIST ( statement )* ) ) );
 	[GrammarRule("for_stat")]
 	private void for_stat()
 	{
 		EnterRule_for_stat();
-		EnterRule("for_stat", 8);
-		TraceIn("for_stat", 8);
+		EnterRule("for_stat", 9);
+		TraceIn("for_stat", 9);
 		CommonTree i = default(CommonTree);
 		string a = default(string);
 
 		try { DebugEnterRule(GrammarFileName, "for_stat");
-		DebugLocation(66, 1);
+		DebugLocation(68, 1);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:66:9: ( ^( LOOP a= assign_var i= INT ^( SLIST ( statement )* ) ) | ^( LOOP DEC a= assign_var i= INT ^( SLIST ( statement )* ) ) | ^( LOOP a= assign_var i= ID ^( SLIST ( statement )* ) ) | ^( LOOP DEC a= assign_var i= ID ^( SLIST ( statement )* ) ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:68:9: ( ^( LOOP a= assign_var i= INT ^( SLIST ( statement )* ) ) | ^( LOOP DEC a= assign_var i= INT ^( SLIST ( statement )* ) ) | ^( LOOP a= assign_var i= ID ^( SLIST ( statement )* ) ) | ^( LOOP DEC a= assign_var i= ID ^( SLIST ( statement )* ) ) )
 			int alt16=4;
 			try { DebugEnterDecision(16, false);
 			int LA16_0 = input.LA(1);
@@ -1189,29 +1245,29 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:66:11: ^( LOOP a= assign_var i= INT ^( SLIST ( statement )* ) )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:68:11: ^( LOOP a= assign_var i= INT ^( SLIST ( statement )* ) )
 				{
-				DebugLocation(66, 11);
-				DebugLocation(66, 13);
-				Match(input,LOOP,Follow._LOOP_in_for_stat282); if (state.failed) return;
+				DebugLocation(68, 11);
+				DebugLocation(68, 13);
+				Match(input,LOOP,Follow._LOOP_in_for_stat298); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(66, 19);
-				PushFollow(Follow._assign_var_in_for_stat286);
+				DebugLocation(68, 19);
+				PushFollow(Follow._assign_var_in_for_stat302);
 				a=assign_var();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(66, 32);
-				i=(CommonTree)Match(input,INT,Follow._INT_in_for_stat290); if (state.failed) return;
-				DebugLocation(66, 37);
-				DebugLocation(66, 39);
-				Match(input,SLIST,Follow._SLIST_in_for_stat293); if (state.failed) return;
+				DebugLocation(68, 32);
+				i=(CommonTree)Match(input,INT,Follow._INT_in_for_stat306); if (state.failed) return;
+				DebugLocation(68, 37);
+				DebugLocation(68, 39);
+				Match(input,SLIST,Follow._SLIST_in_for_stat309); if (state.failed) return;
 
 				if (input.LA(1) == TokenTypes.Down)
 				{
 					Match(input, TokenTypes.Down, null); if (state.failed) return;
-					DebugLocation(66, 45);
-					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:66:45: ( statement )*
+					DebugLocation(68, 45);
+					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:68:45: ( statement )*
 					try { DebugEnterSubRule(12);
 					while (true)
 					{
@@ -1230,10 +1286,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 						{
 						case 1:
 							DebugEnterAlt(1);
-							// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:66:45: statement
+							// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:68:45: statement
 							{
-							DebugLocation(66, 45);
-							PushFollow(Follow._statement_in_for_stat295);
+							DebugLocation(68, 45);
+							PushFollow(Follow._statement_in_for_stat311);
 							statement();
 							PopFollow();
 							if (state.failed) return;
@@ -1263,31 +1319,31 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:67:4: ^( LOOP DEC a= assign_var i= INT ^( SLIST ( statement )* ) )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:69:4: ^( LOOP DEC a= assign_var i= INT ^( SLIST ( statement )* ) )
 				{
-				DebugLocation(67, 4);
-				DebugLocation(67, 6);
-				Match(input,LOOP,Follow._LOOP_in_for_stat306); if (state.failed) return;
+				DebugLocation(69, 4);
+				DebugLocation(69, 6);
+				Match(input,LOOP,Follow._LOOP_in_for_stat322); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(67, 11);
-				Match(input,DEC,Follow._DEC_in_for_stat308); if (state.failed) return;
-				DebugLocation(67, 16);
-				PushFollow(Follow._assign_var_in_for_stat312);
+				DebugLocation(69, 11);
+				Match(input,DEC,Follow._DEC_in_for_stat324); if (state.failed) return;
+				DebugLocation(69, 16);
+				PushFollow(Follow._assign_var_in_for_stat328);
 				a=assign_var();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(67, 29);
-				i=(CommonTree)Match(input,INT,Follow._INT_in_for_stat316); if (state.failed) return;
-				DebugLocation(67, 34);
-				DebugLocation(67, 36);
-				Match(input,SLIST,Follow._SLIST_in_for_stat319); if (state.failed) return;
+				DebugLocation(69, 29);
+				i=(CommonTree)Match(input,INT,Follow._INT_in_for_stat332); if (state.failed) return;
+				DebugLocation(69, 34);
+				DebugLocation(69, 36);
+				Match(input,SLIST,Follow._SLIST_in_for_stat335); if (state.failed) return;
 
 				if (input.LA(1) == TokenTypes.Down)
 				{
 					Match(input, TokenTypes.Down, null); if (state.failed) return;
-					DebugLocation(67, 42);
-					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:67:42: ( statement )*
+					DebugLocation(69, 42);
+					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:69:42: ( statement )*
 					try { DebugEnterSubRule(13);
 					while (true)
 					{
@@ -1306,10 +1362,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 						{
 						case 1:
 							DebugEnterAlt(1);
-							// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:67:42: statement
+							// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:69:42: statement
 							{
-							DebugLocation(67, 42);
-							PushFollow(Follow._statement_in_for_stat321);
+							DebugLocation(69, 42);
+							PushFollow(Follow._statement_in_for_stat337);
 							statement();
 							PopFollow();
 							if (state.failed) return;
@@ -1339,29 +1395,29 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:68:4: ^( LOOP a= assign_var i= ID ^( SLIST ( statement )* ) )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:70:4: ^( LOOP a= assign_var i= ID ^( SLIST ( statement )* ) )
 				{
-				DebugLocation(68, 4);
-				DebugLocation(68, 6);
-				Match(input,LOOP,Follow._LOOP_in_for_stat331); if (state.failed) return;
+				DebugLocation(70, 4);
+				DebugLocation(70, 6);
+				Match(input,LOOP,Follow._LOOP_in_for_stat347); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(68, 12);
-				PushFollow(Follow._assign_var_in_for_stat335);
+				DebugLocation(70, 12);
+				PushFollow(Follow._assign_var_in_for_stat351);
 				a=assign_var();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(68, 25);
-				i=(CommonTree)Match(input,ID,Follow._ID_in_for_stat339); if (state.failed) return;
-				DebugLocation(68, 29);
-				DebugLocation(68, 31);
-				Match(input,SLIST,Follow._SLIST_in_for_stat342); if (state.failed) return;
+				DebugLocation(70, 25);
+				i=(CommonTree)Match(input,ID,Follow._ID_in_for_stat355); if (state.failed) return;
+				DebugLocation(70, 29);
+				DebugLocation(70, 31);
+				Match(input,SLIST,Follow._SLIST_in_for_stat358); if (state.failed) return;
 
 				if (input.LA(1) == TokenTypes.Down)
 				{
 					Match(input, TokenTypes.Down, null); if (state.failed) return;
-					DebugLocation(68, 37);
-					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:68:37: ( statement )*
+					DebugLocation(70, 37);
+					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:70:37: ( statement )*
 					try { DebugEnterSubRule(14);
 					while (true)
 					{
@@ -1380,10 +1436,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 						{
 						case 1:
 							DebugEnterAlt(1);
-							// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:68:37: statement
+							// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:70:37: statement
 							{
-							DebugLocation(68, 37);
-							PushFollow(Follow._statement_in_for_stat344);
+							DebugLocation(70, 37);
+							PushFollow(Follow._statement_in_for_stat360);
 							statement();
 							PopFollow();
 							if (state.failed) return;
@@ -1413,31 +1469,31 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:69:4: ^( LOOP DEC a= assign_var i= ID ^( SLIST ( statement )* ) )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:71:4: ^( LOOP DEC a= assign_var i= ID ^( SLIST ( statement )* ) )
 				{
-				DebugLocation(69, 4);
-				DebugLocation(69, 6);
-				Match(input,LOOP,Follow._LOOP_in_for_stat355); if (state.failed) return;
+				DebugLocation(71, 4);
+				DebugLocation(71, 6);
+				Match(input,LOOP,Follow._LOOP_in_for_stat371); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(69, 11);
-				Match(input,DEC,Follow._DEC_in_for_stat357); if (state.failed) return;
-				DebugLocation(69, 16);
-				PushFollow(Follow._assign_var_in_for_stat361);
+				DebugLocation(71, 11);
+				Match(input,DEC,Follow._DEC_in_for_stat373); if (state.failed) return;
+				DebugLocation(71, 16);
+				PushFollow(Follow._assign_var_in_for_stat377);
 				a=assign_var();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(69, 29);
-				i=(CommonTree)Match(input,ID,Follow._ID_in_for_stat365); if (state.failed) return;
-				DebugLocation(69, 33);
-				DebugLocation(69, 35);
-				Match(input,SLIST,Follow._SLIST_in_for_stat368); if (state.failed) return;
+				DebugLocation(71, 29);
+				i=(CommonTree)Match(input,ID,Follow._ID_in_for_stat381); if (state.failed) return;
+				DebugLocation(71, 33);
+				DebugLocation(71, 35);
+				Match(input,SLIST,Follow._SLIST_in_for_stat384); if (state.failed) return;
 
 				if (input.LA(1) == TokenTypes.Down)
 				{
 					Match(input, TokenTypes.Down, null); if (state.failed) return;
-					DebugLocation(69, 41);
-					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:69:41: ( statement )*
+					DebugLocation(71, 41);
+					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:71:41: ( statement )*
 					try { DebugEnterSubRule(15);
 					while (true)
 					{
@@ -1456,10 +1512,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 						{
 						case 1:
 							DebugEnterAlt(1);
-							// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:69:41: statement
+							// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:71:41: statement
 							{
-							DebugLocation(69, 41);
-							PushFollow(Follow._statement_in_for_stat370);
+							DebugLocation(71, 41);
+							PushFollow(Follow._statement_in_for_stat386);
 							statement();
 							PopFollow();
 							if (state.failed) return;
@@ -1497,11 +1553,11 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("for_stat", 8);
-			LeaveRule("for_stat", 8);
+			TraceOut("for_stat", 9);
+			LeaveRule("for_stat", 9);
 			LeaveRule_for_stat();
 		}
-		DebugLocation(70, 1);
+		DebugLocation(72, 1);
 		} finally { DebugExitRule(GrammarFileName, "for_stat"); }
 		return;
 
@@ -1512,30 +1568,30 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_function_call();
 
 	// $ANTLR start "function_call"
-	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:72:1: function_call : ^( CALL ID ( function_arg_list )* ) ;
+	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:74:1: function_call : ^( CALL ID ( function_arg_list )* ) ;
 	[GrammarRule("function_call")]
 	private void function_call()
 	{
 		EnterRule_function_call();
-		EnterRule("function_call", 9);
-		TraceIn("function_call", 9);
+		EnterRule("function_call", 10);
+		TraceIn("function_call", 10);
 		try { DebugEnterRule(GrammarFileName, "function_call");
-		DebugLocation(72, 1);
+		DebugLocation(74, 1);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:73:2: ( ^( CALL ID ( function_arg_list )* ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:75:2: ( ^( CALL ID ( function_arg_list )* ) )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:73:5: ^( CALL ID ( function_arg_list )* )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:75:5: ^( CALL ID ( function_arg_list )* )
 			{
-			DebugLocation(73, 5);
-			DebugLocation(73, 7);
-			Match(input,CALL,Follow._CALL_in_function_call394); if (state.failed) return;
+			DebugLocation(75, 5);
+			DebugLocation(75, 7);
+			Match(input,CALL,Follow._CALL_in_function_call410); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(73, 12);
-			Match(input,ID,Follow._ID_in_function_call396); if (state.failed) return;
-			DebugLocation(73, 15);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:73:15: ( function_arg_list )*
+			DebugLocation(75, 12);
+			Match(input,ID,Follow._ID_in_function_call412); if (state.failed) return;
+			DebugLocation(75, 15);
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:75:15: ( function_arg_list )*
 			try { DebugEnterSubRule(17);
 			while (true)
 			{
@@ -1554,10 +1610,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:73:15: function_arg_list
+					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:75:15: function_arg_list
 					{
-					DebugLocation(73, 15);
-					PushFollow(Follow._function_arg_list_in_function_call398);
+					DebugLocation(75, 15);
+					PushFollow(Follow._function_arg_list_in_function_call414);
 					function_arg_list();
 					PopFollow();
 					if (state.failed) return;
@@ -1589,11 +1645,11 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("function_call", 9);
-			LeaveRule("function_call", 9);
+			TraceOut("function_call", 10);
+			LeaveRule("function_call", 10);
 			LeaveRule_function_call();
 		}
-		DebugLocation(75, 1);
+		DebugLocation(77, 1);
 		} finally { DebugExitRule(GrammarFileName, "function_call"); }
 		return;
 
@@ -1604,33 +1660,33 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_property_call();
 
 	// $ANTLR start "property_call"
-	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:77:1: property_call : ^( PCALL o= ID p= ID ) ;
+	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:79:1: property_call : ^( PCALL o= ID p= ID ) ;
 	[GrammarRule("property_call")]
 	private void property_call()
 	{
 		EnterRule_property_call();
-		EnterRule("property_call", 10);
-		TraceIn("property_call", 10);
+		EnterRule("property_call", 11);
+		TraceIn("property_call", 11);
 		CommonTree o = default(CommonTree);
 		CommonTree p = default(CommonTree);
 
 		try { DebugEnterRule(GrammarFileName, "property_call");
-		DebugLocation(77, 1);
+		DebugLocation(79, 1);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:78:2: ( ^( PCALL o= ID p= ID ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:80:2: ( ^( PCALL o= ID p= ID ) )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:78:5: ^( PCALL o= ID p= ID )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:80:5: ^( PCALL o= ID p= ID )
 			{
-			DebugLocation(78, 5);
-			DebugLocation(78, 7);
-			Match(input,PCALL,Follow._PCALL_in_property_call419); if (state.failed) return;
+			DebugLocation(80, 5);
+			DebugLocation(80, 7);
+			Match(input,PCALL,Follow._PCALL_in_property_call435); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(78, 14);
-			o=(CommonTree)Match(input,ID,Follow._ID_in_property_call423); if (state.failed) return;
-			DebugLocation(78, 19);
-			p=(CommonTree)Match(input,ID,Follow._ID_in_property_call427); if (state.failed) return;
+			DebugLocation(80, 14);
+			o=(CommonTree)Match(input,ID,Follow._ID_in_property_call439); if (state.failed) return;
+			DebugLocation(80, 19);
+			p=(CommonTree)Match(input,ID,Follow._ID_in_property_call443); if (state.failed) return;
 
 			Match(input, TokenTypes.Up, null); if (state.failed) return;
 
@@ -1645,11 +1701,11 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("property_call", 10);
-			LeaveRule("property_call", 10);
+			TraceOut("property_call", 11);
+			LeaveRule("property_call", 11);
 			LeaveRule_property_call();
 		}
-		DebugLocation(80, 1);
+		DebugLocation(82, 1);
 		} finally { DebugExitRule(GrammarFileName, "property_call"); }
 		return;
 
@@ -1660,35 +1716,35 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_method_call();
 
 	// $ANTLR start "method_call"
-	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:82:1: method_call : ^( MCALL o= ID p= ID ( function_arg_list )* ) ;
+	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:84:1: method_call : ^( MCALL o= ID p= ID ( function_arg_list )* ) ;
 	[GrammarRule("method_call")]
 	private void method_call()
 	{
 		EnterRule_method_call();
-		EnterRule("method_call", 11);
-		TraceIn("method_call", 11);
+		EnterRule("method_call", 12);
+		TraceIn("method_call", 12);
 		CommonTree o = default(CommonTree);
 		CommonTree p = default(CommonTree);
 
 		try { DebugEnterRule(GrammarFileName, "method_call");
-		DebugLocation(82, 1);
+		DebugLocation(84, 1);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:83:2: ( ^( MCALL o= ID p= ID ( function_arg_list )* ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:85:2: ( ^( MCALL o= ID p= ID ( function_arg_list )* ) )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:83:5: ^( MCALL o= ID p= ID ( function_arg_list )* )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:85:5: ^( MCALL o= ID p= ID ( function_arg_list )* )
 			{
-			DebugLocation(83, 5);
-			DebugLocation(83, 7);
-			Match(input,MCALL,Follow._MCALL_in_method_call452); if (state.failed) return;
+			DebugLocation(85, 5);
+			DebugLocation(85, 7);
+			Match(input,MCALL,Follow._MCALL_in_method_call468); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(83, 14);
-			o=(CommonTree)Match(input,ID,Follow._ID_in_method_call456); if (state.failed) return;
-			DebugLocation(83, 19);
-			p=(CommonTree)Match(input,ID,Follow._ID_in_method_call460); if (state.failed) return;
-			DebugLocation(83, 23);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:83:23: ( function_arg_list )*
+			DebugLocation(85, 14);
+			o=(CommonTree)Match(input,ID,Follow._ID_in_method_call472); if (state.failed) return;
+			DebugLocation(85, 19);
+			p=(CommonTree)Match(input,ID,Follow._ID_in_method_call476); if (state.failed) return;
+			DebugLocation(85, 23);
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:85:23: ( function_arg_list )*
 			try { DebugEnterSubRule(18);
 			while (true)
 			{
@@ -1707,10 +1763,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:83:23: function_arg_list
+					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:85:23: function_arg_list
 					{
-					DebugLocation(83, 23);
-					PushFollow(Follow._function_arg_list_in_method_call462);
+					DebugLocation(85, 23);
+					PushFollow(Follow._function_arg_list_in_method_call478);
 					function_arg_list();
 					PopFollow();
 					if (state.failed) return;
@@ -1742,11 +1798,11 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("method_call", 11);
-			LeaveRule("method_call", 11);
+			TraceOut("method_call", 12);
+			LeaveRule("method_call", 12);
 			LeaveRule_method_call();
 		}
-		DebugLocation(85, 1);
+		DebugLocation(87, 1);
 		} finally { DebugExitRule(GrammarFileName, "method_call"); }
 		return;
 
@@ -1757,30 +1813,30 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_function_arg_list();
 
 	// $ANTLR start "function_arg_list"
-	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:87:1: function_arg_list : ^( ARG ( plus_expression )* ) ;
+	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:89:1: function_arg_list : ^( ARG ( plus_expression )* ) ;
 	[GrammarRule("function_arg_list")]
 	private void function_arg_list()
 	{
 		EnterRule_function_arg_list();
-		EnterRule("function_arg_list", 12);
-		TraceIn("function_arg_list", 12);
+		EnterRule("function_arg_list", 13);
+		TraceIn("function_arg_list", 13);
 		try { DebugEnterRule(GrammarFileName, "function_arg_list");
-		DebugLocation(87, 1);
+		DebugLocation(89, 1);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:89:2: ( ^( ARG ( plus_expression )* ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:91:2: ( ^( ARG ( plus_expression )* ) )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:89:4: ^( ARG ( plus_expression )* )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:91:4: ^( ARG ( plus_expression )* )
 			{
-			DebugLocation(89, 4);
-			DebugLocation(89, 6);
-			Match(input,ARG,Follow._ARG_in_function_arg_list488); if (state.failed) return;
+			DebugLocation(91, 4);
+			DebugLocation(91, 6);
+			Match(input,ARG,Follow._ARG_in_function_arg_list504); if (state.failed) return;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(89, 10);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:89:10: ( plus_expression )*
+				DebugLocation(91, 10);
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:91:10: ( plus_expression )*
 				try { DebugEnterSubRule(19);
 				while (true)
 				{
@@ -1799,10 +1855,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:89:10: plus_expression
+						// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:91:10: plus_expression
 						{
-						DebugLocation(89, 10);
-						PushFollow(Follow._plus_expression_in_function_arg_list490);
+						DebugLocation(91, 10);
+						PushFollow(Follow._plus_expression_in_function_arg_list506);
 						plus_expression();
 						PopFollow();
 						if (state.failed) return;
@@ -1835,11 +1891,11 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("function_arg_list", 12);
-			LeaveRule("function_arg_list", 12);
+			TraceOut("function_arg_list", 13);
+			LeaveRule("function_arg_list", 13);
 			LeaveRule_function_arg_list();
 		}
-		DebugLocation(90, 1);
+		DebugLocation(92, 1);
 		} finally { DebugExitRule(GrammarFileName, "function_arg_list"); }
 		return;
 
@@ -1850,33 +1906,33 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_asm_code();
 
 	// $ANTLR start "asm_code"
-	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:93:1: asm_code : ^( ASM (s+= STRING )* ) ;
+	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:95:1: asm_code : ^( ASM (s+= STRING )* ) ;
 	[GrammarRule("asm_code")]
 	private void asm_code()
 	{
 		EnterRule_asm_code();
-		EnterRule("asm_code", 13);
-		TraceIn("asm_code", 13);
+		EnterRule("asm_code", 14);
+		TraceIn("asm_code", 14);
 		CommonTree s = default(CommonTree);
 		List<CommonTree> list_s = null;
 
 		try { DebugEnterRule(GrammarFileName, "asm_code");
-		DebugLocation(93, 8);
+		DebugLocation(95, 8);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:93:9: ( ^( ASM (s+= STRING )* ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:95:9: ( ^( ASM (s+= STRING )* ) )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:93:11: ^( ASM (s+= STRING )* )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:95:11: ^( ASM (s+= STRING )* )
 			{
-			DebugLocation(93, 11);
-			DebugLocation(93, 13);
-			Match(input,ASM,Follow._ASM_in_asm_code506); if (state.failed) return;
+			DebugLocation(95, 11);
+			DebugLocation(95, 13);
+			Match(input,ASM,Follow._ASM_in_asm_code522); if (state.failed) return;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(93, 18);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:93:18: (s+= STRING )*
+				DebugLocation(95, 18);
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:95:18: (s+= STRING )*
 				try { DebugEnterSubRule(20);
 				while (true)
 				{
@@ -1895,10 +1951,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:93:18: s+= STRING
+						// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:95:18: s+= STRING
 						{
-						DebugLocation(93, 18);
-						s=(CommonTree)Match(input,STRING,Follow._STRING_in_asm_code510); if (state.failed) return;
+						DebugLocation(95, 18);
+						s=(CommonTree)Match(input,STRING,Follow._STRING_in_asm_code526); if (state.failed) return;
 						if (list_s==null) list_s=new List<CommonTree>();
 						list_s.Add(s);
 
@@ -1931,11 +1987,11 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("asm_code", 13);
-			LeaveRule("asm_code", 13);
+			TraceOut("asm_code", 14);
+			LeaveRule("asm_code", 14);
 			LeaveRule_asm_code();
 		}
-		DebugLocation(95, 8);
+		DebugLocation(97, 8);
 		} finally { DebugExitRule(GrammarFileName, "asm_code"); }
 		return;
 
@@ -1946,13 +2002,13 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_assign_var();
 
 	// $ANTLR start "assign_var"
-	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:98:1: assign_var returns [string id] : ( ^( ASGN ID a= atom ) | ^( ASGN ^( AR INT ) ID plus_expression ) | ^( ASGN ^( AR i= ID ) p= ID plus_expression ) | ^( ASGN ID plus_expression ) | ^( ASGN ID 'nulo' ) | ^( ASGN ID 'falso' ) | ^( ASGN ID 'verdadeiro' ) | ^( ASGN ID l= INT r= INT ) | ^( ASGN ID ^( ILIST (i= INT )* ) ) );
+	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:100:1: assign_var returns [string id] : ( ^( ASGN ID a= atom ) | ^( ASGN ^( AR INT ) ID plus_expression ) | ^( ASGN ^( AR i= ID ) p= ID plus_expression ) | ^( ASGN ID plus_expression ) | ^( ASGN ID 'nulo' ) | ^( ASGN ID 'falso' ) | ^( ASGN ID 'verdadeiro' ) | ^( ASGN ID l= INT r= INT ) | ^( ASGN ID ^( ILIST (i= INT )* ) ) );
 	[GrammarRule("assign_var")]
 	private string assign_var()
 	{
 		EnterRule_assign_var();
-		EnterRule("assign_var", 14);
-		TraceIn("assign_var", 14);
+		EnterRule("assign_var", 15);
+		TraceIn("assign_var", 15);
 		string id = default(string);
 
 
@@ -1963,10 +2019,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		object a = default(object);
 
 		try { DebugEnterRule(GrammarFileName, "assign_var");
-		DebugLocation(98, 4);
+		DebugLocation(100, 4);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:99:5: ( ^( ASGN ID a= atom ) | ^( ASGN ^( AR INT ) ID plus_expression ) | ^( ASGN ^( AR i= ID ) p= ID plus_expression ) | ^( ASGN ID plus_expression ) | ^( ASGN ID 'nulo' ) | ^( ASGN ID 'falso' ) | ^( ASGN ID 'verdadeiro' ) | ^( ASGN ID l= INT r= INT ) | ^( ASGN ID ^( ILIST (i= INT )* ) ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:101:5: ( ^( ASGN ID a= atom ) | ^( ASGN ^( AR INT ) ID plus_expression ) | ^( ASGN ^( AR i= ID ) p= ID plus_expression ) | ^( ASGN ID plus_expression ) | ^( ASGN ID 'nulo' ) | ^( ASGN ID 'falso' ) | ^( ASGN ID 'verdadeiro' ) | ^( ASGN ID l= INT r= INT ) | ^( ASGN ID ^( ILIST (i= INT )* ) ) )
 			int alt22=9;
 			try { DebugEnterDecision(22, false);
 			int LA22_0 = input.LA(1);
@@ -2067,17 +2123,17 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:100:7: ^( ASGN ID a= atom )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:102:7: ^( ASGN ID a= atom )
 				{
-				DebugLocation(100, 7);
-				DebugLocation(100, 9);
-				Match(input,ASGN,Follow._ASGN_in_assign_var551); if (state.failed) return id;
+				DebugLocation(102, 7);
+				DebugLocation(102, 9);
+				Match(input,ASGN,Follow._ASGN_in_assign_var567); if (state.failed) return id;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return id;
-				DebugLocation(100, 14);
-				Match(input,ID,Follow._ID_in_assign_var553); if (state.failed) return id;
-				DebugLocation(100, 18);
-				PushFollow(Follow._atom_in_assign_var557);
+				DebugLocation(102, 14);
+				Match(input,ID,Follow._ID_in_assign_var569); if (state.failed) return id;
+				DebugLocation(102, 18);
+				PushFollow(Follow._atom_in_assign_var573);
 				a=atom();
 				PopFollow();
 				if (state.failed) return id;
@@ -2089,27 +2145,27 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:101:7: ^( ASGN ^( AR INT ) ID plus_expression )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:103:7: ^( ASGN ^( AR INT ) ID plus_expression )
 				{
-				DebugLocation(101, 7);
-				DebugLocation(101, 9);
-				Match(input,ASGN,Follow._ASGN_in_assign_var569); if (state.failed) return id;
+				DebugLocation(103, 7);
+				DebugLocation(103, 9);
+				Match(input,ASGN,Follow._ASGN_in_assign_var585); if (state.failed) return id;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return id;
-				DebugLocation(101, 14);
-				DebugLocation(101, 16);
-				Match(input,AR,Follow._AR_in_assign_var572); if (state.failed) return id;
+				DebugLocation(103, 14);
+				DebugLocation(103, 16);
+				Match(input,AR,Follow._AR_in_assign_var588); if (state.failed) return id;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return id;
-				DebugLocation(101, 19);
-				Match(input,INT,Follow._INT_in_assign_var574); if (state.failed) return id;
+				DebugLocation(103, 19);
+				Match(input,INT,Follow._INT_in_assign_var590); if (state.failed) return id;
 
 				Match(input, TokenTypes.Up, null); if (state.failed) return id;
 
-				DebugLocation(101, 24);
-				Match(input,ID,Follow._ID_in_assign_var577); if (state.failed) return id;
-				DebugLocation(101, 27);
-				PushFollow(Follow._plus_expression_in_assign_var579);
+				DebugLocation(103, 24);
+				Match(input,ID,Follow._ID_in_assign_var593); if (state.failed) return id;
+				DebugLocation(103, 27);
+				PushFollow(Follow._plus_expression_in_assign_var595);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return id;
@@ -2121,27 +2177,27 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:102:7: ^( ASGN ^( AR i= ID ) p= ID plus_expression )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:104:7: ^( ASGN ^( AR i= ID ) p= ID plus_expression )
 				{
-				DebugLocation(102, 7);
-				DebugLocation(102, 9);
-				Match(input,ASGN,Follow._ASGN_in_assign_var595); if (state.failed) return id;
+				DebugLocation(104, 7);
+				DebugLocation(104, 9);
+				Match(input,ASGN,Follow._ASGN_in_assign_var611); if (state.failed) return id;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return id;
-				DebugLocation(102, 14);
-				DebugLocation(102, 16);
-				Match(input,AR,Follow._AR_in_assign_var598); if (state.failed) return id;
+				DebugLocation(104, 14);
+				DebugLocation(104, 16);
+				Match(input,AR,Follow._AR_in_assign_var614); if (state.failed) return id;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return id;
-				DebugLocation(102, 20);
-				i=(CommonTree)Match(input,ID,Follow._ID_in_assign_var602); if (state.failed) return id;
+				DebugLocation(104, 20);
+				i=(CommonTree)Match(input,ID,Follow._ID_in_assign_var618); if (state.failed) return id;
 
 				Match(input, TokenTypes.Up, null); if (state.failed) return id;
 
-				DebugLocation(102, 26);
-				p=(CommonTree)Match(input,ID,Follow._ID_in_assign_var607); if (state.failed) return id;
-				DebugLocation(102, 30);
-				PushFollow(Follow._plus_expression_in_assign_var609);
+				DebugLocation(104, 26);
+				p=(CommonTree)Match(input,ID,Follow._ID_in_assign_var623); if (state.failed) return id;
+				DebugLocation(104, 30);
+				PushFollow(Follow._plus_expression_in_assign_var625);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return id;
@@ -2153,17 +2209,17 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:103:7: ^( ASGN ID plus_expression )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:105:7: ^( ASGN ID plus_expression )
 				{
-				DebugLocation(103, 7);
-				DebugLocation(103, 9);
-				Match(input,ASGN,Follow._ASGN_in_assign_var628); if (state.failed) return id;
+				DebugLocation(105, 7);
+				DebugLocation(105, 9);
+				Match(input,ASGN,Follow._ASGN_in_assign_var644); if (state.failed) return id;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return id;
-				DebugLocation(103, 14);
-				Match(input,ID,Follow._ID_in_assign_var630); if (state.failed) return id;
-				DebugLocation(103, 17);
-				PushFollow(Follow._plus_expression_in_assign_var632);
+				DebugLocation(105, 14);
+				Match(input,ID,Follow._ID_in_assign_var646); if (state.failed) return id;
+				DebugLocation(105, 17);
+				PushFollow(Follow._plus_expression_in_assign_var648);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return id;
@@ -2175,17 +2231,17 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 5:
 				DebugEnterAlt(5);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:104:7: ^( ASGN ID 'nulo' )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:106:7: ^( ASGN ID 'nulo' )
 				{
-				DebugLocation(104, 7);
-				DebugLocation(104, 9);
-				Match(input,ASGN,Follow._ASGN_in_assign_var645); if (state.failed) return id;
+				DebugLocation(106, 7);
+				DebugLocation(106, 9);
+				Match(input,ASGN,Follow._ASGN_in_assign_var661); if (state.failed) return id;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return id;
-				DebugLocation(104, 14);
-				Match(input,ID,Follow._ID_in_assign_var647); if (state.failed) return id;
-				DebugLocation(104, 17);
-				Match(input,75,Follow._75_in_assign_var649); if (state.failed) return id;
+				DebugLocation(106, 14);
+				Match(input,ID,Follow._ID_in_assign_var663); if (state.failed) return id;
+				DebugLocation(106, 17);
+				Match(input,75,Follow._75_in_assign_var665); if (state.failed) return id;
 
 				Match(input, TokenTypes.Up, null); if (state.failed) return id;
 
@@ -2194,17 +2250,17 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 6:
 				DebugEnterAlt(6);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:105:7: ^( ASGN ID 'falso' )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:107:7: ^( ASGN ID 'falso' )
 				{
-				DebugLocation(105, 7);
-				DebugLocation(105, 9);
-				Match(input,ASGN,Follow._ASGN_in_assign_var662); if (state.failed) return id;
+				DebugLocation(107, 7);
+				DebugLocation(107, 9);
+				Match(input,ASGN,Follow._ASGN_in_assign_var678); if (state.failed) return id;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return id;
-				DebugLocation(105, 14);
-				Match(input,ID,Follow._ID_in_assign_var664); if (state.failed) return id;
-				DebugLocation(105, 17);
-				Match(input,74,Follow._74_in_assign_var666); if (state.failed) return id;
+				DebugLocation(107, 14);
+				Match(input,ID,Follow._ID_in_assign_var680); if (state.failed) return id;
+				DebugLocation(107, 17);
+				Match(input,74,Follow._74_in_assign_var682); if (state.failed) return id;
 
 				Match(input, TokenTypes.Up, null); if (state.failed) return id;
 
@@ -2213,17 +2269,17 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 7:
 				DebugEnterAlt(7);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:106:7: ^( ASGN ID 'verdadeiro' )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:108:7: ^( ASGN ID 'verdadeiro' )
 				{
-				DebugLocation(106, 7);
-				DebugLocation(106, 9);
-				Match(input,ASGN,Follow._ASGN_in_assign_var678); if (state.failed) return id;
+				DebugLocation(108, 7);
+				DebugLocation(108, 9);
+				Match(input,ASGN,Follow._ASGN_in_assign_var694); if (state.failed) return id;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return id;
-				DebugLocation(106, 14);
-				Match(input,ID,Follow._ID_in_assign_var680); if (state.failed) return id;
-				DebugLocation(106, 17);
-				Match(input,76,Follow._76_in_assign_var682); if (state.failed) return id;
+				DebugLocation(108, 14);
+				Match(input,ID,Follow._ID_in_assign_var696); if (state.failed) return id;
+				DebugLocation(108, 17);
+				Match(input,76,Follow._76_in_assign_var698); if (state.failed) return id;
 
 				Match(input, TokenTypes.Up, null); if (state.failed) return id;
 
@@ -2232,19 +2288,19 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 8:
 				DebugEnterAlt(8);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:107:7: ^( ASGN ID l= INT r= INT )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:109:7: ^( ASGN ID l= INT r= INT )
 				{
-				DebugLocation(107, 7);
-				DebugLocation(107, 9);
-				Match(input,ASGN,Follow._ASGN_in_assign_var700); if (state.failed) return id;
+				DebugLocation(109, 7);
+				DebugLocation(109, 9);
+				Match(input,ASGN,Follow._ASGN_in_assign_var716); if (state.failed) return id;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return id;
-				DebugLocation(107, 14);
-				Match(input,ID,Follow._ID_in_assign_var702); if (state.failed) return id;
-				DebugLocation(107, 18);
-				l=(CommonTree)Match(input,INT,Follow._INT_in_assign_var706); if (state.failed) return id;
-				DebugLocation(107, 24);
-				r=(CommonTree)Match(input,INT,Follow._INT_in_assign_var710); if (state.failed) return id;
+				DebugLocation(109, 14);
+				Match(input,ID,Follow._ID_in_assign_var718); if (state.failed) return id;
+				DebugLocation(109, 18);
+				l=(CommonTree)Match(input,INT,Follow._INT_in_assign_var722); if (state.failed) return id;
+				DebugLocation(109, 24);
+				r=(CommonTree)Match(input,INT,Follow._INT_in_assign_var726); if (state.failed) return id;
 
 				Match(input, TokenTypes.Up, null); if (state.failed) return id;
 
@@ -2253,24 +2309,24 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 9:
 				DebugEnterAlt(9);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:108:7: ^( ASGN ID ^( ILIST (i= INT )* ) )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:110:7: ^( ASGN ID ^( ILIST (i= INT )* ) )
 				{
-				DebugLocation(108, 7);
-				DebugLocation(108, 9);
-				Match(input,ASGN,Follow._ASGN_in_assign_var722); if (state.failed) return id;
+				DebugLocation(110, 7);
+				DebugLocation(110, 9);
+				Match(input,ASGN,Follow._ASGN_in_assign_var738); if (state.failed) return id;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return id;
-				DebugLocation(108, 14);
-				Match(input,ID,Follow._ID_in_assign_var724); if (state.failed) return id;
-				DebugLocation(108, 17);
-				DebugLocation(108, 19);
-				Match(input,ILIST,Follow._ILIST_in_assign_var727); if (state.failed) return id;
+				DebugLocation(110, 14);
+				Match(input,ID,Follow._ID_in_assign_var740); if (state.failed) return id;
+				DebugLocation(110, 17);
+				DebugLocation(110, 19);
+				Match(input,ILIST,Follow._ILIST_in_assign_var743); if (state.failed) return id;
 
 				if (input.LA(1) == TokenTypes.Down)
 				{
 					Match(input, TokenTypes.Down, null); if (state.failed) return id;
-					DebugLocation(108, 26);
-					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:108:26: (i= INT )*
+					DebugLocation(110, 26);
+					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:110:26: (i= INT )*
 					try { DebugEnterSubRule(21);
 					while (true)
 					{
@@ -2289,10 +2345,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 						{
 						case 1:
 							DebugEnterAlt(1);
-							// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:108:26: i= INT
+							// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:110:26: i= INT
 							{
-							DebugLocation(108, 26);
-							i=(CommonTree)Match(input,INT,Follow._INT_in_assign_var731); if (state.failed) return id;
+							DebugLocation(110, 26);
+							i=(CommonTree)Match(input,INT,Follow._INT_in_assign_var747); if (state.failed) return id;
 
 							}
 							break;
@@ -2327,11 +2383,11 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("assign_var", 14);
-			LeaveRule("assign_var", 14);
+			TraceOut("assign_var", 15);
+			LeaveRule("assign_var", 15);
 			LeaveRule_assign_var();
 		}
-		DebugLocation(109, 4);
+		DebugLocation(111, 4);
 		} finally { DebugExitRule(GrammarFileName, "assign_var"); }
 		return id;
 
@@ -2342,28 +2398,28 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_return_stat();
 
 	// $ANTLR start "return_stat"
-	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:111:1: return_stat : ^( RET plus_expression ) ;
+	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:113:1: return_stat : ^( RET plus_expression ) ;
 	[GrammarRule("return_stat")]
 	private void return_stat()
 	{
 		EnterRule_return_stat();
-		EnterRule("return_stat", 15);
-		TraceIn("return_stat", 15);
+		EnterRule("return_stat", 16);
+		TraceIn("return_stat", 16);
 		try { DebugEnterRule(GrammarFileName, "return_stat");
-		DebugLocation(111, 1);
+		DebugLocation(113, 1);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:112:2: ( ^( RET plus_expression ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:114:2: ( ^( RET plus_expression ) )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:112:5: ^( RET plus_expression )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:114:5: ^( RET plus_expression )
 			{
-			DebugLocation(112, 5);
-			DebugLocation(112, 7);
-			Match(input,RET,Follow._RET_in_return_stat754); if (state.failed) return;
+			DebugLocation(114, 5);
+			DebugLocation(114, 7);
+			Match(input,RET,Follow._RET_in_return_stat770); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(112, 11);
-			PushFollow(Follow._plus_expression_in_return_stat756);
+			DebugLocation(114, 11);
+			PushFollow(Follow._plus_expression_in_return_stat772);
 			plus_expression();
 			PopFollow();
 			if (state.failed) return;
@@ -2381,11 +2437,11 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("return_stat", 15);
-			LeaveRule("return_stat", 15);
+			TraceOut("return_stat", 16);
+			LeaveRule("return_stat", 16);
 			LeaveRule_return_stat();
 		}
-		DebugLocation(113, 1);
+		DebugLocation(115, 1);
 		} finally { DebugExitRule(GrammarFileName, "return_stat"); }
 		return;
 
@@ -2396,21 +2452,21 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_plus_expression();
 
 	// $ANTLR start "plus_expression"
-	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:118:1: plus_expression : ( ^( '+' plus_expression plus_expression ) | ^( '-' plus_expression plus_expression ) | ^( '*' plus_expression plus_expression ) | ^( '/' plus_expression plus_expression ) | ^( INDEX INT ) ID | ^( INDEX i2= ID ) i1= ID | function_call | method_call | property_call | atom );
+	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:120:1: plus_expression : ( ^( '+' plus_expression plus_expression ) | ^( '-' plus_expression plus_expression ) | ^( '*' plus_expression plus_expression ) | ^( '/' plus_expression plus_expression ) | ^( INDEX INT ) ID | ^( INDEX i2= ID ) i1= ID | function_call | method_call | property_call | atom );
 	[GrammarRule("plus_expression")]
 	private void plus_expression()
 	{
 		EnterRule_plus_expression();
-		EnterRule("plus_expression", 16);
-		TraceIn("plus_expression", 16);
+		EnterRule("plus_expression", 17);
+		TraceIn("plus_expression", 17);
 		CommonTree i2 = default(CommonTree);
 		CommonTree i1 = default(CommonTree);
 
 		try { DebugEnterRule(GrammarFileName, "plus_expression");
-		DebugLocation(118, 0);
+		DebugLocation(120, 0);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:119:3: ( ^( '+' plus_expression plus_expression ) | ^( '-' plus_expression plus_expression ) | ^( '*' plus_expression plus_expression ) | ^( '/' plus_expression plus_expression ) | ^( INDEX INT ) ID | ^( INDEX i2= ID ) i1= ID | function_call | method_call | property_call | atom )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:121:3: ( ^( '+' plus_expression plus_expression ) | ^( '-' plus_expression plus_expression ) | ^( '*' plus_expression plus_expression ) | ^( '/' plus_expression plus_expression ) | ^( INDEX INT ) ID | ^( INDEX i2= ID ) i1= ID | function_call | method_call | property_call | atom )
 			int alt23=10;
 			try { DebugEnterDecision(23, false);
 			switch (input.LA(1))
@@ -2505,20 +2561,20 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:119:3: ^( '+' plus_expression plus_expression )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:121:3: ^( '+' plus_expression plus_expression )
 				{
-				DebugLocation(119, 3);
-				DebugLocation(119, 5);
-				Match(input,44,Follow._44_in_plus_expression772); if (state.failed) return;
+				DebugLocation(121, 3);
+				DebugLocation(121, 5);
+				Match(input,44,Follow._44_in_plus_expression788); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(119, 9);
-				PushFollow(Follow._plus_expression_in_plus_expression774);
+				DebugLocation(121, 9);
+				PushFollow(Follow._plus_expression_in_plus_expression790);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(119, 25);
-				PushFollow(Follow._plus_expression_in_plus_expression776);
+				DebugLocation(121, 25);
+				PushFollow(Follow._plus_expression_in_plus_expression792);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
@@ -2530,20 +2586,20 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:120:3: ^( '-' plus_expression plus_expression )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:122:3: ^( '-' plus_expression plus_expression )
 				{
-				DebugLocation(120, 3);
-				DebugLocation(120, 5);
-				Match(input,46,Follow._46_in_plus_expression784); if (state.failed) return;
+				DebugLocation(122, 3);
+				DebugLocation(122, 5);
+				Match(input,46,Follow._46_in_plus_expression800); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(120, 9);
-				PushFollow(Follow._plus_expression_in_plus_expression786);
+				DebugLocation(122, 9);
+				PushFollow(Follow._plus_expression_in_plus_expression802);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(120, 25);
-				PushFollow(Follow._plus_expression_in_plus_expression788);
+				DebugLocation(122, 25);
+				PushFollow(Follow._plus_expression_in_plus_expression804);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
@@ -2555,20 +2611,20 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:121:3: ^( '*' plus_expression plus_expression )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:123:3: ^( '*' plus_expression plus_expression )
 				{
-				DebugLocation(121, 3);
-				DebugLocation(121, 5);
-				Match(input,43,Follow._43_in_plus_expression796); if (state.failed) return;
+				DebugLocation(123, 3);
+				DebugLocation(123, 5);
+				Match(input,43,Follow._43_in_plus_expression812); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(121, 9);
-				PushFollow(Follow._plus_expression_in_plus_expression798);
+				DebugLocation(123, 9);
+				PushFollow(Follow._plus_expression_in_plus_expression814);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(121, 25);
-				PushFollow(Follow._plus_expression_in_plus_expression800);
+				DebugLocation(123, 25);
+				PushFollow(Follow._plus_expression_in_plus_expression816);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
@@ -2580,20 +2636,20 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:122:3: ^( '/' plus_expression plus_expression )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:124:3: ^( '/' plus_expression plus_expression )
 				{
-				DebugLocation(122, 3);
-				DebugLocation(122, 5);
-				Match(input,49,Follow._49_in_plus_expression808); if (state.failed) return;
+				DebugLocation(124, 3);
+				DebugLocation(124, 5);
+				Match(input,49,Follow._49_in_plus_expression824); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(122, 9);
-				PushFollow(Follow._plus_expression_in_plus_expression810);
+				DebugLocation(124, 9);
+				PushFollow(Follow._plus_expression_in_plus_expression826);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(122, 25);
-				PushFollow(Follow._plus_expression_in_plus_expression812);
+				DebugLocation(124, 25);
+				PushFollow(Follow._plus_expression_in_plus_expression828);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
@@ -2605,48 +2661,48 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 5:
 				DebugEnterAlt(5);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:123:3: ^( INDEX INT ) ID
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:125:3: ^( INDEX INT ) ID
 				{
-				DebugLocation(123, 3);
-				DebugLocation(123, 5);
-				Match(input,INDEX,Follow._INDEX_in_plus_expression820); if (state.failed) return;
+				DebugLocation(125, 3);
+				DebugLocation(125, 5);
+				Match(input,INDEX,Follow._INDEX_in_plus_expression836); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(123, 11);
-				Match(input,INT,Follow._INT_in_plus_expression822); if (state.failed) return;
+				DebugLocation(125, 11);
+				Match(input,INT,Follow._INT_in_plus_expression838); if (state.failed) return;
 
 				Match(input, TokenTypes.Up, null); if (state.failed) return;
 
-				DebugLocation(123, 16);
-				Match(input,ID,Follow._ID_in_plus_expression825); if (state.failed) return;
+				DebugLocation(125, 16);
+				Match(input,ID,Follow._ID_in_plus_expression841); if (state.failed) return;
 
 				}
 				break;
 			case 6:
 				DebugEnterAlt(6);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:124:3: ^( INDEX i2= ID ) i1= ID
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:126:3: ^( INDEX i2= ID ) i1= ID
 				{
-				DebugLocation(124, 3);
-				DebugLocation(124, 5);
-				Match(input,INDEX,Follow._INDEX_in_plus_expression832); if (state.failed) return;
+				DebugLocation(126, 3);
+				DebugLocation(126, 5);
+				Match(input,INDEX,Follow._INDEX_in_plus_expression848); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(124, 13);
-				i2=(CommonTree)Match(input,ID,Follow._ID_in_plus_expression836); if (state.failed) return;
+				DebugLocation(126, 13);
+				i2=(CommonTree)Match(input,ID,Follow._ID_in_plus_expression852); if (state.failed) return;
 
 				Match(input, TokenTypes.Up, null); if (state.failed) return;
 
-				DebugLocation(124, 20);
-				i1=(CommonTree)Match(input,ID,Follow._ID_in_plus_expression841); if (state.failed) return;
+				DebugLocation(126, 20);
+				i1=(CommonTree)Match(input,ID,Follow._ID_in_plus_expression857); if (state.failed) return;
 
 				}
 				break;
 			case 7:
 				DebugEnterAlt(7);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:125:3: function_call
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:127:3: function_call
 				{
-				DebugLocation(125, 3);
-				PushFollow(Follow._function_call_in_plus_expression847);
+				DebugLocation(127, 3);
+				PushFollow(Follow._function_call_in_plus_expression863);
 				function_call();
 				PopFollow();
 				if (state.failed) return;
@@ -2655,10 +2711,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 8:
 				DebugEnterAlt(8);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:126:3: method_call
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:128:3: method_call
 				{
-				DebugLocation(126, 3);
-				PushFollow(Follow._method_call_in_plus_expression851);
+				DebugLocation(128, 3);
+				PushFollow(Follow._method_call_in_plus_expression867);
 				method_call();
 				PopFollow();
 				if (state.failed) return;
@@ -2667,10 +2723,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 9:
 				DebugEnterAlt(9);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:127:3: property_call
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:129:3: property_call
 				{
-				DebugLocation(127, 3);
-				PushFollow(Follow._property_call_in_plus_expression855);
+				DebugLocation(129, 3);
+				PushFollow(Follow._property_call_in_plus_expression871);
 				property_call();
 				PopFollow();
 				if (state.failed) return;
@@ -2679,10 +2735,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 10:
 				DebugEnterAlt(10);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:128:3: atom
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:130:3: atom
 				{
-				DebugLocation(128, 3);
-				PushFollow(Follow._atom_in_plus_expression859);
+				DebugLocation(130, 3);
+				PushFollow(Follow._atom_in_plus_expression875);
 				atom();
 				PopFollow();
 				if (state.failed) return;
@@ -2699,11 +2755,11 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("plus_expression", 16);
-			LeaveRule("plus_expression", 16);
+			TraceOut("plus_expression", 17);
+			LeaveRule("plus_expression", 17);
 			LeaveRule_plus_expression();
 		}
-		DebugLocation(129, 0);
+		DebugLocation(131, 0);
 		} finally { DebugExitRule(GrammarFileName, "plus_expression"); }
 		return;
 
@@ -2714,18 +2770,18 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_logic_expression();
 
 	// $ANTLR start "logic_expression"
-	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:131:1: logic_expression : ( ^( '<' plus_expression plus_expression ) | ^( '>' plus_expression plus_expression ) | ^( '<=' plus_expression plus_expression ) | ^( '>=' plus_expression plus_expression ) | ^( '==' plus_expression plus_expression ) | ^( '!=' plus_expression plus_expression ) | ^( 'e' plus_expression plus_expression ) | ^( 'ou' plus_expression plus_expression ) | plus_expression );
+	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:133:1: logic_expression : ( ^( '<' plus_expression plus_expression ) | ^( '>' plus_expression plus_expression ) | ^( '<=' plus_expression plus_expression ) | ^( '>=' plus_expression plus_expression ) | ^( '==' plus_expression plus_expression ) | ^( '!=' plus_expression plus_expression ) | ^( 'e' plus_expression plus_expression ) | ^( 'ou' plus_expression plus_expression ) | plus_expression );
 	[GrammarRule("logic_expression")]
 	private void logic_expression()
 	{
 		EnterRule_logic_expression();
-		EnterRule("logic_expression", 17);
-		TraceIn("logic_expression", 17);
+		EnterRule("logic_expression", 18);
+		TraceIn("logic_expression", 18);
 		try { DebugEnterRule(GrammarFileName, "logic_expression");
-		DebugLocation(131, 1);
+		DebugLocation(133, 1);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:132:2: ( ^( '<' plus_expression plus_expression ) | ^( '>' plus_expression plus_expression ) | ^( '<=' plus_expression plus_expression ) | ^( '>=' plus_expression plus_expression ) | ^( '==' plus_expression plus_expression ) | ^( '!=' plus_expression plus_expression ) | ^( 'e' plus_expression plus_expression ) | ^( 'ou' plus_expression plus_expression ) | plus_expression )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:134:2: ( ^( '<' plus_expression plus_expression ) | ^( '>' plus_expression plus_expression ) | ^( '<=' plus_expression plus_expression ) | ^( '>=' plus_expression plus_expression ) | ^( '==' plus_expression plus_expression ) | ^( '!=' plus_expression plus_expression ) | ^( 'e' plus_expression plus_expression ) | ^( 'ou' plus_expression plus_expression ) | plus_expression )
 			int alt24=9;
 			try { DebugEnterDecision(24, false);
 			switch (input.LA(1))
@@ -2800,20 +2856,20 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:132:6: ^( '<' plus_expression plus_expression )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:134:6: ^( '<' plus_expression plus_expression )
 				{
-				DebugLocation(132, 6);
-				DebugLocation(132, 8);
-				Match(input,50,Follow._50_in_logic_expression872); if (state.failed) return;
+				DebugLocation(134, 6);
+				DebugLocation(134, 8);
+				Match(input,50,Follow._50_in_logic_expression888); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(132, 12);
-				PushFollow(Follow._plus_expression_in_logic_expression874);
+				DebugLocation(134, 12);
+				PushFollow(Follow._plus_expression_in_logic_expression890);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(132, 28);
-				PushFollow(Follow._plus_expression_in_logic_expression876);
+				DebugLocation(134, 28);
+				PushFollow(Follow._plus_expression_in_logic_expression892);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
@@ -2825,20 +2881,20 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:133:6: ^( '>' plus_expression plus_expression )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:135:6: ^( '>' plus_expression plus_expression )
 				{
-				DebugLocation(133, 6);
-				DebugLocation(133, 8);
-				Match(input,54,Follow._54_in_logic_expression887); if (state.failed) return;
+				DebugLocation(135, 6);
+				DebugLocation(135, 8);
+				Match(input,54,Follow._54_in_logic_expression903); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(133, 12);
-				PushFollow(Follow._plus_expression_in_logic_expression889);
+				DebugLocation(135, 12);
+				PushFollow(Follow._plus_expression_in_logic_expression905);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(133, 28);
-				PushFollow(Follow._plus_expression_in_logic_expression891);
+				DebugLocation(135, 28);
+				PushFollow(Follow._plus_expression_in_logic_expression907);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
@@ -2850,20 +2906,20 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:134:6: ^( '<=' plus_expression plus_expression )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:136:6: ^( '<=' plus_expression plus_expression )
 				{
-				DebugLocation(134, 6);
-				DebugLocation(134, 8);
-				Match(input,51,Follow._51_in_logic_expression902); if (state.failed) return;
+				DebugLocation(136, 6);
+				DebugLocation(136, 8);
+				Match(input,51,Follow._51_in_logic_expression918); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(134, 13);
-				PushFollow(Follow._plus_expression_in_logic_expression904);
+				DebugLocation(136, 13);
+				PushFollow(Follow._plus_expression_in_logic_expression920);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(134, 29);
-				PushFollow(Follow._plus_expression_in_logic_expression906);
+				DebugLocation(136, 29);
+				PushFollow(Follow._plus_expression_in_logic_expression922);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
@@ -2875,20 +2931,20 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:135:6: ^( '>=' plus_expression plus_expression )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:137:6: ^( '>=' plus_expression plus_expression )
 				{
-				DebugLocation(135, 6);
-				DebugLocation(135, 8);
-				Match(input,55,Follow._55_in_logic_expression917); if (state.failed) return;
+				DebugLocation(137, 6);
+				DebugLocation(137, 8);
+				Match(input,55,Follow._55_in_logic_expression933); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(135, 13);
-				PushFollow(Follow._plus_expression_in_logic_expression919);
+				DebugLocation(137, 13);
+				PushFollow(Follow._plus_expression_in_logic_expression935);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(135, 29);
-				PushFollow(Follow._plus_expression_in_logic_expression921);
+				DebugLocation(137, 29);
+				PushFollow(Follow._plus_expression_in_logic_expression937);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
@@ -2900,20 +2956,20 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 5:
 				DebugEnterAlt(5);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:136:6: ^( '==' plus_expression plus_expression )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:138:6: ^( '==' plus_expression plus_expression )
 				{
-				DebugLocation(136, 6);
-				DebugLocation(136, 8);
-				Match(input,53,Follow._53_in_logic_expression932); if (state.failed) return;
+				DebugLocation(138, 6);
+				DebugLocation(138, 8);
+				Match(input,53,Follow._53_in_logic_expression948); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(136, 13);
-				PushFollow(Follow._plus_expression_in_logic_expression934);
+				DebugLocation(138, 13);
+				PushFollow(Follow._plus_expression_in_logic_expression950);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(136, 29);
-				PushFollow(Follow._plus_expression_in_logic_expression936);
+				DebugLocation(138, 29);
+				PushFollow(Follow._plus_expression_in_logic_expression952);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
@@ -2925,20 +2981,20 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 6:
 				DebugEnterAlt(6);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:137:6: ^( '!=' plus_expression plus_expression )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:139:6: ^( '!=' plus_expression plus_expression )
 				{
-				DebugLocation(137, 6);
-				DebugLocation(137, 8);
-				Match(input,38,Follow._38_in_logic_expression947); if (state.failed) return;
+				DebugLocation(139, 6);
+				DebugLocation(139, 8);
+				Match(input,38,Follow._38_in_logic_expression963); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(137, 13);
-				PushFollow(Follow._plus_expression_in_logic_expression949);
+				DebugLocation(139, 13);
+				PushFollow(Follow._plus_expression_in_logic_expression965);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(137, 29);
-				PushFollow(Follow._plus_expression_in_logic_expression951);
+				DebugLocation(139, 29);
+				PushFollow(Follow._plus_expression_in_logic_expression967);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
@@ -2950,20 +3006,20 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 7:
 				DebugEnterAlt(7);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:138:6: ^( 'e' plus_expression plus_expression )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:140:6: ^( 'e' plus_expression plus_expression )
 				{
-				DebugLocation(138, 6);
-				DebugLocation(138, 8);
-				Match(input,60,Follow._60_in_logic_expression961); if (state.failed) return;
+				DebugLocation(140, 6);
+				DebugLocation(140, 8);
+				Match(input,60,Follow._60_in_logic_expression977); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(138, 12);
-				PushFollow(Follow._plus_expression_in_logic_expression963);
+				DebugLocation(140, 12);
+				PushFollow(Follow._plus_expression_in_logic_expression979);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(138, 28);
-				PushFollow(Follow._plus_expression_in_logic_expression965);
+				DebugLocation(140, 28);
+				PushFollow(Follow._plus_expression_in_logic_expression981);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
@@ -2975,20 +3031,20 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 8:
 				DebugEnterAlt(8);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:139:6: ^( 'ou' plus_expression plus_expression )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:141:6: ^( 'ou' plus_expression plus_expression )
 				{
-				DebugLocation(139, 6);
-				DebugLocation(139, 8);
-				Match(input,65,Follow._65_in_logic_expression974); if (state.failed) return;
+				DebugLocation(141, 6);
+				DebugLocation(141, 8);
+				Match(input,65,Follow._65_in_logic_expression990); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(139, 13);
-				PushFollow(Follow._plus_expression_in_logic_expression976);
+				DebugLocation(141, 13);
+				PushFollow(Follow._plus_expression_in_logic_expression992);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(139, 29);
-				PushFollow(Follow._plus_expression_in_logic_expression978);
+				DebugLocation(141, 29);
+				PushFollow(Follow._plus_expression_in_logic_expression994);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
@@ -3000,10 +3056,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 9:
 				DebugEnterAlt(9);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:140:4: plus_expression
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:142:4: plus_expression
 				{
-				DebugLocation(140, 4);
-				PushFollow(Follow._plus_expression_in_logic_expression990);
+				DebugLocation(142, 4);
+				PushFollow(Follow._plus_expression_in_logic_expression1006);
 				plus_expression();
 				PopFollow();
 				if (state.failed) return;
@@ -3020,11 +3076,11 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("logic_expression", 17);
-			LeaveRule("logic_expression", 17);
+			TraceOut("logic_expression", 18);
+			LeaveRule("logic_expression", 18);
 			LeaveRule_logic_expression();
 		}
-		DebugLocation(141, 1);
+		DebugLocation(143, 1);
 		} finally { DebugExitRule(GrammarFileName, "logic_expression"); }
 		return;
 
@@ -3035,23 +3091,23 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_atom();
 
 	// $ANTLR start "atom"
-	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:145:1: atom returns [object value] : (a= ID |a= INT |a= FLOAT |a= STRING );
+	// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:147:1: atom returns [object value] : (a= ID |a= INT |a= FLOAT |a= STRING );
 	[GrammarRule("atom")]
 	private object atom()
 	{
 		EnterRule_atom();
-		EnterRule("atom", 18);
-		TraceIn("atom", 18);
+		EnterRule("atom", 19);
+		TraceIn("atom", 19);
 		object value = default(object);
 
 
 		CommonTree a = default(CommonTree);
 
 		try { DebugEnterRule(GrammarFileName, "atom");
-		DebugLocation(145, 4);
+		DebugLocation(147, 4);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:145:27: (a= ID |a= INT |a= FLOAT |a= STRING )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:147:27: (a= ID |a= INT |a= FLOAT |a= STRING )
 			int alt25=4;
 			try { DebugEnterDecision(25, false);
 			switch (input.LA(1))
@@ -3090,37 +3146,37 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:146:7: a= ID
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:148:7: a= ID
 				{
-				DebugLocation(146, 8);
-				a=(CommonTree)Match(input,ID,Follow._ID_in_atom1018); if (state.failed) return value;
+				DebugLocation(148, 8);
+				a=(CommonTree)Match(input,ID,Follow._ID_in_atom1034); if (state.failed) return value;
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:147:7: a= INT
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:149:7: a= INT
 				{
-				DebugLocation(147, 8);
-				a=(CommonTree)Match(input,INT,Follow._INT_in_atom1030); if (state.failed) return value;
+				DebugLocation(149, 8);
+				a=(CommonTree)Match(input,INT,Follow._INT_in_atom1046); if (state.failed) return value;
 
 				}
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:148:7: a= FLOAT
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:150:7: a= FLOAT
 				{
-				DebugLocation(148, 8);
-				a=(CommonTree)Match(input,FLOAT,Follow._FLOAT_in_atom1042); if (state.failed) return value;
+				DebugLocation(150, 8);
+				a=(CommonTree)Match(input,FLOAT,Follow._FLOAT_in_atom1058); if (state.failed) return value;
 
 				}
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:149:7: a= STRING
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:151:7: a= STRING
 				{
-				DebugLocation(149, 8);
-				a=(CommonTree)Match(input,STRING,Follow._STRING_in_atom1054); if (state.failed) return value;
+				DebugLocation(151, 8);
+				a=(CommonTree)Match(input,STRING,Follow._STRING_in_atom1070); if (state.failed) return value;
 
 				}
 				break;
@@ -3134,11 +3190,11 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("atom", 18);
-			LeaveRule("atom", 18);
+			TraceOut("atom", 19);
+			LeaveRule("atom", 19);
 			LeaveRule_atom();
 		}
-		DebugLocation(150, 4);
+		DebugLocation(152, 4);
 		} finally { DebugExitRule(GrammarFileName, "atom"); }
 		return value;
 
@@ -3155,35 +3211,35 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		string a = default(string);
 
 		EnterRule_synpred18_NPortugolWalker_fragment();
-		EnterRule("synpred18_NPortugolWalker_fragment", 36);
-		TraceIn("synpred18_NPortugolWalker_fragment", 36);
+		EnterRule("synpred18_NPortugolWalker_fragment", 37);
+		TraceIn("synpred18_NPortugolWalker_fragment", 37);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:66:11: ( ^( LOOP a= assign_var i= INT ^( SLIST ( statement )* ) ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:68:11: ( ^( LOOP a= assign_var i= INT ^( SLIST ( statement )* ) ) )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:66:11: ^( LOOP a= assign_var i= INT ^( SLIST ( statement )* ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:68:11: ^( LOOP a= assign_var i= INT ^( SLIST ( statement )* ) )
 			{
-			DebugLocation(66, 11);
-			DebugLocation(66, 13);
-			Match(input,LOOP,Follow._LOOP_in_synpred18_NPortugolWalker282); if (state.failed) return;
+			DebugLocation(68, 11);
+			DebugLocation(68, 13);
+			Match(input,LOOP,Follow._LOOP_in_synpred18_NPortugolWalker298); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(66, 19);
-			PushFollow(Follow._assign_var_in_synpred18_NPortugolWalker286);
+			DebugLocation(68, 19);
+			PushFollow(Follow._assign_var_in_synpred18_NPortugolWalker302);
 			a=assign_var();
 			PopFollow();
 			if (state.failed) return;
-			DebugLocation(66, 32);
-			i=(CommonTree)Match(input,INT,Follow._INT_in_synpred18_NPortugolWalker290); if (state.failed) return;
-			DebugLocation(66, 37);
-			DebugLocation(66, 39);
-			Match(input,SLIST,Follow._SLIST_in_synpred18_NPortugolWalker293); if (state.failed) return;
+			DebugLocation(68, 32);
+			i=(CommonTree)Match(input,INT,Follow._INT_in_synpred18_NPortugolWalker306); if (state.failed) return;
+			DebugLocation(68, 37);
+			DebugLocation(68, 39);
+			Match(input,SLIST,Follow._SLIST_in_synpred18_NPortugolWalker309); if (state.failed) return;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(66, 45);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:66:45: ( statement )*
+				DebugLocation(68, 45);
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:68:45: ( statement )*
 				try { DebugEnterSubRule(27);
 				while (true)
 				{
@@ -3202,10 +3258,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:66:45: statement
+						// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:68:45: statement
 						{
-						DebugLocation(66, 45);
-						PushFollow(Follow._statement_in_synpred18_NPortugolWalker295);
+						DebugLocation(68, 45);
+						PushFollow(Follow._statement_in_synpred18_NPortugolWalker311);
 						statement();
 						PopFollow();
 						if (state.failed) return;
@@ -3236,8 +3292,8 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("synpred18_NPortugolWalker_fragment", 36);
-			LeaveRule("synpred18_NPortugolWalker_fragment", 36);
+			TraceOut("synpred18_NPortugolWalker_fragment", 37);
+			LeaveRule("synpred18_NPortugolWalker_fragment", 37);
 			LeaveRule_synpred18_NPortugolWalker_fragment();
 		}
 	}
@@ -3253,37 +3309,37 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		string a = default(string);
 
 		EnterRule_synpred20_NPortugolWalker_fragment();
-		EnterRule("synpred20_NPortugolWalker_fragment", 38);
-		TraceIn("synpred20_NPortugolWalker_fragment", 38);
+		EnterRule("synpred20_NPortugolWalker_fragment", 39);
+		TraceIn("synpred20_NPortugolWalker_fragment", 39);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:67:4: ( ^( LOOP DEC a= assign_var i= INT ^( SLIST ( statement )* ) ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:69:4: ( ^( LOOP DEC a= assign_var i= INT ^( SLIST ( statement )* ) ) )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:67:4: ^( LOOP DEC a= assign_var i= INT ^( SLIST ( statement )* ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:69:4: ^( LOOP DEC a= assign_var i= INT ^( SLIST ( statement )* ) )
 			{
-			DebugLocation(67, 4);
-			DebugLocation(67, 6);
-			Match(input,LOOP,Follow._LOOP_in_synpred20_NPortugolWalker306); if (state.failed) return;
+			DebugLocation(69, 4);
+			DebugLocation(69, 6);
+			Match(input,LOOP,Follow._LOOP_in_synpred20_NPortugolWalker322); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(67, 11);
-			Match(input,DEC,Follow._DEC_in_synpred20_NPortugolWalker308); if (state.failed) return;
-			DebugLocation(67, 16);
-			PushFollow(Follow._assign_var_in_synpred20_NPortugolWalker312);
+			DebugLocation(69, 11);
+			Match(input,DEC,Follow._DEC_in_synpred20_NPortugolWalker324); if (state.failed) return;
+			DebugLocation(69, 16);
+			PushFollow(Follow._assign_var_in_synpred20_NPortugolWalker328);
 			a=assign_var();
 			PopFollow();
 			if (state.failed) return;
-			DebugLocation(67, 29);
-			i=(CommonTree)Match(input,INT,Follow._INT_in_synpred20_NPortugolWalker316); if (state.failed) return;
-			DebugLocation(67, 34);
-			DebugLocation(67, 36);
-			Match(input,SLIST,Follow._SLIST_in_synpred20_NPortugolWalker319); if (state.failed) return;
+			DebugLocation(69, 29);
+			i=(CommonTree)Match(input,INT,Follow._INT_in_synpred20_NPortugolWalker332); if (state.failed) return;
+			DebugLocation(69, 34);
+			DebugLocation(69, 36);
+			Match(input,SLIST,Follow._SLIST_in_synpred20_NPortugolWalker335); if (state.failed) return;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(67, 42);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:67:42: ( statement )*
+				DebugLocation(69, 42);
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:69:42: ( statement )*
 				try { DebugEnterSubRule(28);
 				while (true)
 				{
@@ -3302,10 +3358,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:67:42: statement
+						// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:69:42: statement
 						{
-						DebugLocation(67, 42);
-						PushFollow(Follow._statement_in_synpred20_NPortugolWalker321);
+						DebugLocation(69, 42);
+						PushFollow(Follow._statement_in_synpred20_NPortugolWalker337);
 						statement();
 						PopFollow();
 						if (state.failed) return;
@@ -3336,8 +3392,8 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("synpred20_NPortugolWalker_fragment", 38);
-			LeaveRule("synpred20_NPortugolWalker_fragment", 38);
+			TraceOut("synpred20_NPortugolWalker_fragment", 39);
+			LeaveRule("synpred20_NPortugolWalker_fragment", 39);
 			LeaveRule_synpred20_NPortugolWalker_fragment();
 		}
 	}
@@ -3353,35 +3409,35 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		string a = default(string);
 
 		EnterRule_synpred22_NPortugolWalker_fragment();
-		EnterRule("synpred22_NPortugolWalker_fragment", 40);
-		TraceIn("synpred22_NPortugolWalker_fragment", 40);
+		EnterRule("synpred22_NPortugolWalker_fragment", 41);
+		TraceIn("synpred22_NPortugolWalker_fragment", 41);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:68:4: ( ^( LOOP a= assign_var i= ID ^( SLIST ( statement )* ) ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:70:4: ( ^( LOOP a= assign_var i= ID ^( SLIST ( statement )* ) ) )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:68:4: ^( LOOP a= assign_var i= ID ^( SLIST ( statement )* ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:70:4: ^( LOOP a= assign_var i= ID ^( SLIST ( statement )* ) )
 			{
-			DebugLocation(68, 4);
-			DebugLocation(68, 6);
-			Match(input,LOOP,Follow._LOOP_in_synpred22_NPortugolWalker331); if (state.failed) return;
+			DebugLocation(70, 4);
+			DebugLocation(70, 6);
+			Match(input,LOOP,Follow._LOOP_in_synpred22_NPortugolWalker347); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(68, 12);
-			PushFollow(Follow._assign_var_in_synpred22_NPortugolWalker335);
+			DebugLocation(70, 12);
+			PushFollow(Follow._assign_var_in_synpred22_NPortugolWalker351);
 			a=assign_var();
 			PopFollow();
 			if (state.failed) return;
-			DebugLocation(68, 25);
-			i=(CommonTree)Match(input,ID,Follow._ID_in_synpred22_NPortugolWalker339); if (state.failed) return;
-			DebugLocation(68, 29);
-			DebugLocation(68, 31);
-			Match(input,SLIST,Follow._SLIST_in_synpred22_NPortugolWalker342); if (state.failed) return;
+			DebugLocation(70, 25);
+			i=(CommonTree)Match(input,ID,Follow._ID_in_synpred22_NPortugolWalker355); if (state.failed) return;
+			DebugLocation(70, 29);
+			DebugLocation(70, 31);
+			Match(input,SLIST,Follow._SLIST_in_synpred22_NPortugolWalker358); if (state.failed) return;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(68, 37);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:68:37: ( statement )*
+				DebugLocation(70, 37);
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:70:37: ( statement )*
 				try { DebugEnterSubRule(29);
 				while (true)
 				{
@@ -3400,10 +3456,10 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:68:37: statement
+						// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:70:37: statement
 						{
-						DebugLocation(68, 37);
-						PushFollow(Follow._statement_in_synpred22_NPortugolWalker344);
+						DebugLocation(70, 37);
+						PushFollow(Follow._statement_in_synpred22_NPortugolWalker360);
 						statement();
 						PopFollow();
 						if (state.failed) return;
@@ -3434,8 +3490,8 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("synpred22_NPortugolWalker_fragment", 40);
-			LeaveRule("synpred22_NPortugolWalker_fragment", 40);
+			TraceOut("synpred22_NPortugolWalker_fragment", 41);
+			LeaveRule("synpred22_NPortugolWalker_fragment", 41);
 			LeaveRule_synpred22_NPortugolWalker_fragment();
 		}
 	}
@@ -3450,23 +3506,23 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		object a = default(object);
 
 		EnterRule_synpred28_NPortugolWalker_fragment();
-		EnterRule("synpred28_NPortugolWalker_fragment", 46);
-		TraceIn("synpred28_NPortugolWalker_fragment", 46);
+		EnterRule("synpred28_NPortugolWalker_fragment", 47);
+		TraceIn("synpred28_NPortugolWalker_fragment", 47);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:100:7: ( ^( ASGN ID a= atom ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:102:7: ( ^( ASGN ID a= atom ) )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:100:7: ^( ASGN ID a= atom )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:102:7: ^( ASGN ID a= atom )
 			{
-			DebugLocation(100, 7);
-			DebugLocation(100, 9);
-			Match(input,ASGN,Follow._ASGN_in_synpred28_NPortugolWalker551); if (state.failed) return;
+			DebugLocation(102, 7);
+			DebugLocation(102, 9);
+			Match(input,ASGN,Follow._ASGN_in_synpred28_NPortugolWalker567); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(100, 14);
-			Match(input,ID,Follow._ID_in_synpred28_NPortugolWalker553); if (state.failed) return;
-			DebugLocation(100, 18);
-			PushFollow(Follow._atom_in_synpred28_NPortugolWalker557);
+			DebugLocation(102, 14);
+			Match(input,ID,Follow._ID_in_synpred28_NPortugolWalker569); if (state.failed) return;
+			DebugLocation(102, 18);
+			PushFollow(Follow._atom_in_synpred28_NPortugolWalker573);
 			a=atom();
 			PopFollow();
 			if (state.failed) return;
@@ -3479,8 +3535,8 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("synpred28_NPortugolWalker_fragment", 46);
-			LeaveRule("synpred28_NPortugolWalker_fragment", 46);
+			TraceOut("synpred28_NPortugolWalker_fragment", 47);
+			LeaveRule("synpred28_NPortugolWalker_fragment", 47);
 			LeaveRule_synpred28_NPortugolWalker_fragment();
 		}
 	}
@@ -3493,33 +3549,33 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 	public void synpred29_NPortugolWalker_fragment()
 	{
 		EnterRule_synpred29_NPortugolWalker_fragment();
-		EnterRule("synpred29_NPortugolWalker_fragment", 47);
-		TraceIn("synpred29_NPortugolWalker_fragment", 47);
+		EnterRule("synpred29_NPortugolWalker_fragment", 48);
+		TraceIn("synpred29_NPortugolWalker_fragment", 48);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:101:7: ( ^( ASGN ^( AR INT ) ID plus_expression ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:103:7: ( ^( ASGN ^( AR INT ) ID plus_expression ) )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:101:7: ^( ASGN ^( AR INT ) ID plus_expression )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:103:7: ^( ASGN ^( AR INT ) ID plus_expression )
 			{
-			DebugLocation(101, 7);
-			DebugLocation(101, 9);
-			Match(input,ASGN,Follow._ASGN_in_synpred29_NPortugolWalker569); if (state.failed) return;
+			DebugLocation(103, 7);
+			DebugLocation(103, 9);
+			Match(input,ASGN,Follow._ASGN_in_synpred29_NPortugolWalker585); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(101, 14);
-			DebugLocation(101, 16);
-			Match(input,AR,Follow._AR_in_synpred29_NPortugolWalker572); if (state.failed) return;
+			DebugLocation(103, 14);
+			DebugLocation(103, 16);
+			Match(input,AR,Follow._AR_in_synpred29_NPortugolWalker588); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(101, 19);
-			Match(input,INT,Follow._INT_in_synpred29_NPortugolWalker574); if (state.failed) return;
+			DebugLocation(103, 19);
+			Match(input,INT,Follow._INT_in_synpred29_NPortugolWalker590); if (state.failed) return;
 
 			Match(input, TokenTypes.Up, null); if (state.failed) return;
 
-			DebugLocation(101, 24);
-			Match(input,ID,Follow._ID_in_synpred29_NPortugolWalker577); if (state.failed) return;
-			DebugLocation(101, 27);
-			PushFollow(Follow._plus_expression_in_synpred29_NPortugolWalker579);
+			DebugLocation(103, 24);
+			Match(input,ID,Follow._ID_in_synpred29_NPortugolWalker593); if (state.failed) return;
+			DebugLocation(103, 27);
+			PushFollow(Follow._plus_expression_in_synpred29_NPortugolWalker595);
 			plus_expression();
 			PopFollow();
 			if (state.failed) return;
@@ -3532,8 +3588,8 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("synpred29_NPortugolWalker_fragment", 47);
-			LeaveRule("synpred29_NPortugolWalker_fragment", 47);
+			TraceOut("synpred29_NPortugolWalker_fragment", 48);
+			LeaveRule("synpred29_NPortugolWalker_fragment", 48);
 			LeaveRule_synpred29_NPortugolWalker_fragment();
 		}
 	}
@@ -3549,33 +3605,33 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		CommonTree p = default(CommonTree);
 
 		EnterRule_synpred30_NPortugolWalker_fragment();
-		EnterRule("synpred30_NPortugolWalker_fragment", 48);
-		TraceIn("synpred30_NPortugolWalker_fragment", 48);
+		EnterRule("synpred30_NPortugolWalker_fragment", 49);
+		TraceIn("synpred30_NPortugolWalker_fragment", 49);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:102:7: ( ^( ASGN ^( AR i= ID ) p= ID plus_expression ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:104:7: ( ^( ASGN ^( AR i= ID ) p= ID plus_expression ) )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:102:7: ^( ASGN ^( AR i= ID ) p= ID plus_expression )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:104:7: ^( ASGN ^( AR i= ID ) p= ID plus_expression )
 			{
-			DebugLocation(102, 7);
-			DebugLocation(102, 9);
-			Match(input,ASGN,Follow._ASGN_in_synpred30_NPortugolWalker595); if (state.failed) return;
+			DebugLocation(104, 7);
+			DebugLocation(104, 9);
+			Match(input,ASGN,Follow._ASGN_in_synpred30_NPortugolWalker611); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(102, 14);
-			DebugLocation(102, 16);
-			Match(input,AR,Follow._AR_in_synpred30_NPortugolWalker598); if (state.failed) return;
+			DebugLocation(104, 14);
+			DebugLocation(104, 16);
+			Match(input,AR,Follow._AR_in_synpred30_NPortugolWalker614); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(102, 20);
-			i=(CommonTree)Match(input,ID,Follow._ID_in_synpred30_NPortugolWalker602); if (state.failed) return;
+			DebugLocation(104, 20);
+			i=(CommonTree)Match(input,ID,Follow._ID_in_synpred30_NPortugolWalker618); if (state.failed) return;
 
 			Match(input, TokenTypes.Up, null); if (state.failed) return;
 
-			DebugLocation(102, 26);
-			p=(CommonTree)Match(input,ID,Follow._ID_in_synpred30_NPortugolWalker607); if (state.failed) return;
-			DebugLocation(102, 30);
-			PushFollow(Follow._plus_expression_in_synpred30_NPortugolWalker609);
+			DebugLocation(104, 26);
+			p=(CommonTree)Match(input,ID,Follow._ID_in_synpred30_NPortugolWalker623); if (state.failed) return;
+			DebugLocation(104, 30);
+			PushFollow(Follow._plus_expression_in_synpred30_NPortugolWalker625);
 			plus_expression();
 			PopFollow();
 			if (state.failed) return;
@@ -3588,8 +3644,8 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("synpred30_NPortugolWalker_fragment", 48);
-			LeaveRule("synpred30_NPortugolWalker_fragment", 48);
+			TraceOut("synpred30_NPortugolWalker_fragment", 49);
+			LeaveRule("synpred30_NPortugolWalker_fragment", 49);
 			LeaveRule_synpred30_NPortugolWalker_fragment();
 		}
 	}
@@ -3602,23 +3658,23 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 	public void synpred31_NPortugolWalker_fragment()
 	{
 		EnterRule_synpred31_NPortugolWalker_fragment();
-		EnterRule("synpred31_NPortugolWalker_fragment", 49);
-		TraceIn("synpred31_NPortugolWalker_fragment", 49);
+		EnterRule("synpred31_NPortugolWalker_fragment", 50);
+		TraceIn("synpred31_NPortugolWalker_fragment", 50);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:103:7: ( ^( ASGN ID plus_expression ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:105:7: ( ^( ASGN ID plus_expression ) )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:103:7: ^( ASGN ID plus_expression )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:105:7: ^( ASGN ID plus_expression )
 			{
-			DebugLocation(103, 7);
-			DebugLocation(103, 9);
-			Match(input,ASGN,Follow._ASGN_in_synpred31_NPortugolWalker628); if (state.failed) return;
+			DebugLocation(105, 7);
+			DebugLocation(105, 9);
+			Match(input,ASGN,Follow._ASGN_in_synpred31_NPortugolWalker644); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(103, 14);
-			Match(input,ID,Follow._ID_in_synpred31_NPortugolWalker630); if (state.failed) return;
-			DebugLocation(103, 17);
-			PushFollow(Follow._plus_expression_in_synpred31_NPortugolWalker632);
+			DebugLocation(105, 14);
+			Match(input,ID,Follow._ID_in_synpred31_NPortugolWalker646); if (state.failed) return;
+			DebugLocation(105, 17);
+			PushFollow(Follow._plus_expression_in_synpred31_NPortugolWalker648);
 			plus_expression();
 			PopFollow();
 			if (state.failed) return;
@@ -3631,8 +3687,8 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("synpred31_NPortugolWalker_fragment", 49);
-			LeaveRule("synpred31_NPortugolWalker_fragment", 49);
+			TraceOut("synpred31_NPortugolWalker_fragment", 50);
+			LeaveRule("synpred31_NPortugolWalker_fragment", 50);
 			LeaveRule_synpred31_NPortugolWalker_fragment();
 		}
 	}
@@ -3645,23 +3701,23 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 	public void synpred32_NPortugolWalker_fragment()
 	{
 		EnterRule_synpred32_NPortugolWalker_fragment();
-		EnterRule("synpred32_NPortugolWalker_fragment", 50);
-		TraceIn("synpred32_NPortugolWalker_fragment", 50);
+		EnterRule("synpred32_NPortugolWalker_fragment", 51);
+		TraceIn("synpred32_NPortugolWalker_fragment", 51);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:104:7: ( ^( ASGN ID 'nulo' ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:106:7: ( ^( ASGN ID 'nulo' ) )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:104:7: ^( ASGN ID 'nulo' )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:106:7: ^( ASGN ID 'nulo' )
 			{
-			DebugLocation(104, 7);
-			DebugLocation(104, 9);
-			Match(input,ASGN,Follow._ASGN_in_synpred32_NPortugolWalker645); if (state.failed) return;
+			DebugLocation(106, 7);
+			DebugLocation(106, 9);
+			Match(input,ASGN,Follow._ASGN_in_synpred32_NPortugolWalker661); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(104, 14);
-			Match(input,ID,Follow._ID_in_synpred32_NPortugolWalker647); if (state.failed) return;
-			DebugLocation(104, 17);
-			Match(input,75,Follow._75_in_synpred32_NPortugolWalker649); if (state.failed) return;
+			DebugLocation(106, 14);
+			Match(input,ID,Follow._ID_in_synpred32_NPortugolWalker663); if (state.failed) return;
+			DebugLocation(106, 17);
+			Match(input,75,Follow._75_in_synpred32_NPortugolWalker665); if (state.failed) return;
 
 			Match(input, TokenTypes.Up, null); if (state.failed) return;
 
@@ -3671,8 +3727,8 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("synpred32_NPortugolWalker_fragment", 50);
-			LeaveRule("synpred32_NPortugolWalker_fragment", 50);
+			TraceOut("synpred32_NPortugolWalker_fragment", 51);
+			LeaveRule("synpred32_NPortugolWalker_fragment", 51);
 			LeaveRule_synpred32_NPortugolWalker_fragment();
 		}
 	}
@@ -3685,23 +3741,23 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 	public void synpred33_NPortugolWalker_fragment()
 	{
 		EnterRule_synpred33_NPortugolWalker_fragment();
-		EnterRule("synpred33_NPortugolWalker_fragment", 51);
-		TraceIn("synpred33_NPortugolWalker_fragment", 51);
+		EnterRule("synpred33_NPortugolWalker_fragment", 52);
+		TraceIn("synpred33_NPortugolWalker_fragment", 52);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:105:7: ( ^( ASGN ID 'falso' ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:107:7: ( ^( ASGN ID 'falso' ) )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:105:7: ^( ASGN ID 'falso' )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:107:7: ^( ASGN ID 'falso' )
 			{
-			DebugLocation(105, 7);
-			DebugLocation(105, 9);
-			Match(input,ASGN,Follow._ASGN_in_synpred33_NPortugolWalker662); if (state.failed) return;
+			DebugLocation(107, 7);
+			DebugLocation(107, 9);
+			Match(input,ASGN,Follow._ASGN_in_synpred33_NPortugolWalker678); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(105, 14);
-			Match(input,ID,Follow._ID_in_synpred33_NPortugolWalker664); if (state.failed) return;
-			DebugLocation(105, 17);
-			Match(input,74,Follow._74_in_synpred33_NPortugolWalker666); if (state.failed) return;
+			DebugLocation(107, 14);
+			Match(input,ID,Follow._ID_in_synpred33_NPortugolWalker680); if (state.failed) return;
+			DebugLocation(107, 17);
+			Match(input,74,Follow._74_in_synpred33_NPortugolWalker682); if (state.failed) return;
 
 			Match(input, TokenTypes.Up, null); if (state.failed) return;
 
@@ -3711,8 +3767,8 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("synpred33_NPortugolWalker_fragment", 51);
-			LeaveRule("synpred33_NPortugolWalker_fragment", 51);
+			TraceOut("synpred33_NPortugolWalker_fragment", 52);
+			LeaveRule("synpred33_NPortugolWalker_fragment", 52);
 			LeaveRule_synpred33_NPortugolWalker_fragment();
 		}
 	}
@@ -3725,23 +3781,23 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 	public void synpred34_NPortugolWalker_fragment()
 	{
 		EnterRule_synpred34_NPortugolWalker_fragment();
-		EnterRule("synpred34_NPortugolWalker_fragment", 52);
-		TraceIn("synpred34_NPortugolWalker_fragment", 52);
+		EnterRule("synpred34_NPortugolWalker_fragment", 53);
+		TraceIn("synpred34_NPortugolWalker_fragment", 53);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:106:7: ( ^( ASGN ID 'verdadeiro' ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:108:7: ( ^( ASGN ID 'verdadeiro' ) )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:106:7: ^( ASGN ID 'verdadeiro' )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:108:7: ^( ASGN ID 'verdadeiro' )
 			{
-			DebugLocation(106, 7);
-			DebugLocation(106, 9);
-			Match(input,ASGN,Follow._ASGN_in_synpred34_NPortugolWalker678); if (state.failed) return;
+			DebugLocation(108, 7);
+			DebugLocation(108, 9);
+			Match(input,ASGN,Follow._ASGN_in_synpred34_NPortugolWalker694); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(106, 14);
-			Match(input,ID,Follow._ID_in_synpred34_NPortugolWalker680); if (state.failed) return;
-			DebugLocation(106, 17);
-			Match(input,76,Follow._76_in_synpred34_NPortugolWalker682); if (state.failed) return;
+			DebugLocation(108, 14);
+			Match(input,ID,Follow._ID_in_synpred34_NPortugolWalker696); if (state.failed) return;
+			DebugLocation(108, 17);
+			Match(input,76,Follow._76_in_synpred34_NPortugolWalker698); if (state.failed) return;
 
 			Match(input, TokenTypes.Up, null); if (state.failed) return;
 
@@ -3751,8 +3807,8 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("synpred34_NPortugolWalker_fragment", 52);
-			LeaveRule("synpred34_NPortugolWalker_fragment", 52);
+			TraceOut("synpred34_NPortugolWalker_fragment", 53);
+			LeaveRule("synpred34_NPortugolWalker_fragment", 53);
 			LeaveRule_synpred34_NPortugolWalker_fragment();
 		}
 	}
@@ -3768,25 +3824,25 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		CommonTree r = default(CommonTree);
 
 		EnterRule_synpred35_NPortugolWalker_fragment();
-		EnterRule("synpred35_NPortugolWalker_fragment", 53);
-		TraceIn("synpred35_NPortugolWalker_fragment", 53);
+		EnterRule("synpred35_NPortugolWalker_fragment", 54);
+		TraceIn("synpred35_NPortugolWalker_fragment", 54);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:107:7: ( ^( ASGN ID l= INT r= INT ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:109:7: ( ^( ASGN ID l= INT r= INT ) )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:107:7: ^( ASGN ID l= INT r= INT )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugolWalker.g:109:7: ^( ASGN ID l= INT r= INT )
 			{
-			DebugLocation(107, 7);
-			DebugLocation(107, 9);
-			Match(input,ASGN,Follow._ASGN_in_synpred35_NPortugolWalker700); if (state.failed) return;
+			DebugLocation(109, 7);
+			DebugLocation(109, 9);
+			Match(input,ASGN,Follow._ASGN_in_synpred35_NPortugolWalker716); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(107, 14);
-			Match(input,ID,Follow._ID_in_synpred35_NPortugolWalker702); if (state.failed) return;
-			DebugLocation(107, 18);
-			l=(CommonTree)Match(input,INT,Follow._INT_in_synpred35_NPortugolWalker706); if (state.failed) return;
-			DebugLocation(107, 24);
-			r=(CommonTree)Match(input,INT,Follow._INT_in_synpred35_NPortugolWalker710); if (state.failed) return;
+			DebugLocation(109, 14);
+			Match(input,ID,Follow._ID_in_synpred35_NPortugolWalker718); if (state.failed) return;
+			DebugLocation(109, 18);
+			l=(CommonTree)Match(input,INT,Follow._INT_in_synpred35_NPortugolWalker722); if (state.failed) return;
+			DebugLocation(109, 24);
+			r=(CommonTree)Match(input,INT,Follow._INT_in_synpred35_NPortugolWalker726); if (state.failed) return;
 
 			Match(input, TokenTypes.Up, null); if (state.failed) return;
 
@@ -3796,8 +3852,8 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("synpred35_NPortugolWalker_fragment", 53);
-			LeaveRule("synpred35_NPortugolWalker_fragment", 53);
+			TraceOut("synpred35_NPortugolWalker_fragment", 54);
+			LeaveRule("synpred35_NPortugolWalker_fragment", 54);
 			LeaveRule_synpred35_NPortugolWalker_fragment();
 		}
 	}
@@ -3847,189 +3903,191 @@ public partial class NPortugolWalker : Antlr.Runtime.Tree.TreeParser
 		public static readonly BitSet _return_stat_in_statement132 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _asm_code_in_statement137 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _PARAM_in_function_param_list157 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_function_param_list161 = new BitSet(new ulong[]{0x20008UL});
-		public static readonly BitSet _VAR_in_declare_local180 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_declare_local184 = new BitSet(new ulong[]{0x20008UL});
-		public static readonly BitSet _SJMP_in_if_stat202 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _LEXP_in_if_stat205 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _logic_expression_in_if_stat207 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _SLIST_in_if_stat211 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _statement_in_if_stat213 = new BitSet(new ulong[]{0x11C14001C0UL});
-		public static readonly BitSet _senao_stat_in_if_stat218 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _JMP_in_if_stat227 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _LEXP_in_if_stat230 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _logic_expression_in_if_stat232 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _SLIST_in_if_stat236 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _statement_in_if_stat238 = new BitSet(new ulong[]{0x10C14001C8UL});
-		public static readonly BitSet _SLIST_in_senao_stat257 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _statement_in_senao_stat259 = new BitSet(new ulong[]{0x10C14001C8UL});
-		public static readonly BitSet _LOOP_in_for_stat282 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _assign_var_in_for_stat286 = new BitSet(new ulong[]{0x200000UL});
-		public static readonly BitSet _INT_in_for_stat290 = new BitSet(new ulong[]{0x100000000UL});
-		public static readonly BitSet _SLIST_in_for_stat293 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _statement_in_for_stat295 = new BitSet(new ulong[]{0x10C14001C8UL});
-		public static readonly BitSet _LOOP_in_for_stat306 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _DEC_in_for_stat308 = new BitSet(new ulong[]{0x40UL});
-		public static readonly BitSet _assign_var_in_for_stat312 = new BitSet(new ulong[]{0x200000UL});
-		public static readonly BitSet _INT_in_for_stat316 = new BitSet(new ulong[]{0x100000000UL});
-		public static readonly BitSet _SLIST_in_for_stat319 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _statement_in_for_stat321 = new BitSet(new ulong[]{0x10C14001C8UL});
-		public static readonly BitSet _LOOP_in_for_stat331 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _assign_var_in_for_stat335 = new BitSet(new ulong[]{0x20000UL});
-		public static readonly BitSet _ID_in_for_stat339 = new BitSet(new ulong[]{0x100000000UL});
-		public static readonly BitSet _SLIST_in_for_stat342 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _statement_in_for_stat344 = new BitSet(new ulong[]{0x10C14001C8UL});
-		public static readonly BitSet _LOOP_in_for_stat355 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _DEC_in_for_stat357 = new BitSet(new ulong[]{0x40UL});
-		public static readonly BitSet _assign_var_in_for_stat361 = new BitSet(new ulong[]{0x20000UL});
-		public static readonly BitSet _ID_in_for_stat365 = new BitSet(new ulong[]{0x100000000UL});
-		public static readonly BitSet _SLIST_in_for_stat368 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _statement_in_for_stat370 = new BitSet(new ulong[]{0x10C14001C8UL});
-		public static readonly BitSet _CALL_in_function_call394 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_function_call396 = new BitSet(new ulong[]{0x28UL});
-		public static readonly BitSet _function_arg_list_in_function_call398 = new BitSet(new ulong[]{0x28UL});
-		public static readonly BitSet _PCALL_in_property_call419 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_property_call423 = new BitSet(new ulong[]{0x20000UL});
-		public static readonly BitSet _ID_in_property_call427 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _MCALL_in_method_call452 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_method_call456 = new BitSet(new ulong[]{0x20000UL});
-		public static readonly BitSet _ID_in_method_call460 = new BitSet(new ulong[]{0x28UL});
-		public static readonly BitSet _function_arg_list_in_method_call462 = new BitSet(new ulong[]{0x28UL});
-		public static readonly BitSet _ARG_in_function_arg_list488 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _plus_expression_in_function_arg_list490 = new BitSet(new ulong[]{0x25802222A4108UL});
-		public static readonly BitSet _ASM_in_asm_code506 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _STRING_in_asm_code510 = new BitSet(new ulong[]{0x200000008UL});
-		public static readonly BitSet _ASGN_in_assign_var551 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_assign_var553 = new BitSet(new ulong[]{0x200224000UL});
-		public static readonly BitSet _atom_in_assign_var557 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ASGN_in_assign_var569 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _AR_in_assign_var572 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _INT_in_assign_var574 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ID_in_assign_var577 = new BitSet(new ulong[]{0x25802222A4100UL});
-		public static readonly BitSet _plus_expression_in_assign_var579 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ASGN_in_assign_var595 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _AR_in_assign_var598 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_assign_var602 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ID_in_assign_var607 = new BitSet(new ulong[]{0x25802222A4100UL});
-		public static readonly BitSet _plus_expression_in_assign_var609 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ASGN_in_assign_var628 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_assign_var630 = new BitSet(new ulong[]{0x25802222A4100UL});
-		public static readonly BitSet _plus_expression_in_assign_var632 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ASGN_in_assign_var645 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_assign_var647 = new BitSet(new ulong[]{0x0UL,0x800UL});
-		public static readonly BitSet _75_in_assign_var649 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ASGN_in_assign_var662 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_assign_var664 = new BitSet(new ulong[]{0x0UL,0x400UL});
-		public static readonly BitSet _74_in_assign_var666 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _param_in_function_param_list159 = new BitSet(new ulong[]{0x400000008UL});
+		public static readonly BitSet _TYPE_in_param177 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_param181 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _VAR_in_declare_local196 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_declare_local200 = new BitSet(new ulong[]{0x20008UL});
+		public static readonly BitSet _SJMP_in_if_stat218 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _LEXP_in_if_stat221 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _logic_expression_in_if_stat223 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _SLIST_in_if_stat227 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _statement_in_if_stat229 = new BitSet(new ulong[]{0x11C14001C0UL});
+		public static readonly BitSet _senao_stat_in_if_stat234 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _JMP_in_if_stat243 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _LEXP_in_if_stat246 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _logic_expression_in_if_stat248 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _SLIST_in_if_stat252 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _statement_in_if_stat254 = new BitSet(new ulong[]{0x10C14001C8UL});
+		public static readonly BitSet _SLIST_in_senao_stat273 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _statement_in_senao_stat275 = new BitSet(new ulong[]{0x10C14001C8UL});
+		public static readonly BitSet _LOOP_in_for_stat298 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _assign_var_in_for_stat302 = new BitSet(new ulong[]{0x200000UL});
+		public static readonly BitSet _INT_in_for_stat306 = new BitSet(new ulong[]{0x100000000UL});
+		public static readonly BitSet _SLIST_in_for_stat309 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _statement_in_for_stat311 = new BitSet(new ulong[]{0x10C14001C8UL});
+		public static readonly BitSet _LOOP_in_for_stat322 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _DEC_in_for_stat324 = new BitSet(new ulong[]{0x40UL});
+		public static readonly BitSet _assign_var_in_for_stat328 = new BitSet(new ulong[]{0x200000UL});
+		public static readonly BitSet _INT_in_for_stat332 = new BitSet(new ulong[]{0x100000000UL});
+		public static readonly BitSet _SLIST_in_for_stat335 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _statement_in_for_stat337 = new BitSet(new ulong[]{0x10C14001C8UL});
+		public static readonly BitSet _LOOP_in_for_stat347 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _assign_var_in_for_stat351 = new BitSet(new ulong[]{0x20000UL});
+		public static readonly BitSet _ID_in_for_stat355 = new BitSet(new ulong[]{0x100000000UL});
+		public static readonly BitSet _SLIST_in_for_stat358 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _statement_in_for_stat360 = new BitSet(new ulong[]{0x10C14001C8UL});
+		public static readonly BitSet _LOOP_in_for_stat371 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _DEC_in_for_stat373 = new BitSet(new ulong[]{0x40UL});
+		public static readonly BitSet _assign_var_in_for_stat377 = new BitSet(new ulong[]{0x20000UL});
+		public static readonly BitSet _ID_in_for_stat381 = new BitSet(new ulong[]{0x100000000UL});
+		public static readonly BitSet _SLIST_in_for_stat384 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _statement_in_for_stat386 = new BitSet(new ulong[]{0x10C14001C8UL});
+		public static readonly BitSet _CALL_in_function_call410 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_function_call412 = new BitSet(new ulong[]{0x28UL});
+		public static readonly BitSet _function_arg_list_in_function_call414 = new BitSet(new ulong[]{0x28UL});
+		public static readonly BitSet _PCALL_in_property_call435 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_property_call439 = new BitSet(new ulong[]{0x20000UL});
+		public static readonly BitSet _ID_in_property_call443 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _MCALL_in_method_call468 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_method_call472 = new BitSet(new ulong[]{0x20000UL});
+		public static readonly BitSet _ID_in_method_call476 = new BitSet(new ulong[]{0x28UL});
+		public static readonly BitSet _function_arg_list_in_method_call478 = new BitSet(new ulong[]{0x28UL});
+		public static readonly BitSet _ARG_in_function_arg_list504 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _plus_expression_in_function_arg_list506 = new BitSet(new ulong[]{0x25802222A4108UL});
+		public static readonly BitSet _ASM_in_asm_code522 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _STRING_in_asm_code526 = new BitSet(new ulong[]{0x200000008UL});
+		public static readonly BitSet _ASGN_in_assign_var567 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_assign_var569 = new BitSet(new ulong[]{0x200224000UL});
+		public static readonly BitSet _atom_in_assign_var573 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ASGN_in_assign_var585 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _AR_in_assign_var588 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _INT_in_assign_var590 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ID_in_assign_var593 = new BitSet(new ulong[]{0x25802222A4100UL});
+		public static readonly BitSet _plus_expression_in_assign_var595 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ASGN_in_assign_var611 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _AR_in_assign_var614 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_assign_var618 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ID_in_assign_var623 = new BitSet(new ulong[]{0x25802222A4100UL});
+		public static readonly BitSet _plus_expression_in_assign_var625 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ASGN_in_assign_var644 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_assign_var646 = new BitSet(new ulong[]{0x25802222A4100UL});
+		public static readonly BitSet _plus_expression_in_assign_var648 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ASGN_in_assign_var661 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_assign_var663 = new BitSet(new ulong[]{0x0UL,0x800UL});
+		public static readonly BitSet _75_in_assign_var665 = new BitSet(new ulong[]{0x8UL});
 		public static readonly BitSet _ASGN_in_assign_var678 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_assign_var680 = new BitSet(new ulong[]{0x0UL,0x1000UL});
-		public static readonly BitSet _76_in_assign_var682 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ASGN_in_assign_var700 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_assign_var702 = new BitSet(new ulong[]{0x200000UL});
-		public static readonly BitSet _INT_in_assign_var706 = new BitSet(new ulong[]{0x200000UL});
-		public static readonly BitSet _INT_in_assign_var710 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ASGN_in_assign_var722 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_assign_var724 = new BitSet(new ulong[]{0x40000UL});
-		public static readonly BitSet _ILIST_in_assign_var727 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _INT_in_assign_var731 = new BitSet(new ulong[]{0x200008UL});
-		public static readonly BitSet _RET_in_return_stat754 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _plus_expression_in_return_stat756 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _44_in_plus_expression772 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _plus_expression_in_plus_expression774 = new BitSet(new ulong[]{0x25802222A4100UL});
-		public static readonly BitSet _plus_expression_in_plus_expression776 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _46_in_plus_expression784 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _plus_expression_in_plus_expression786 = new BitSet(new ulong[]{0x25802222A4100UL});
-		public static readonly BitSet _plus_expression_in_plus_expression788 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _43_in_plus_expression796 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _plus_expression_in_plus_expression798 = new BitSet(new ulong[]{0x25802222A4100UL});
-		public static readonly BitSet _plus_expression_in_plus_expression800 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _49_in_plus_expression808 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _plus_expression_in_plus_expression810 = new BitSet(new ulong[]{0x25802222A4100UL});
-		public static readonly BitSet _plus_expression_in_plus_expression812 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _INDEX_in_plus_expression820 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _INT_in_plus_expression822 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ID_in_plus_expression825 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _INDEX_in_plus_expression832 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_plus_expression836 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ID_in_assign_var680 = new BitSet(new ulong[]{0x0UL,0x400UL});
+		public static readonly BitSet _74_in_assign_var682 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ASGN_in_assign_var694 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_assign_var696 = new BitSet(new ulong[]{0x0UL,0x1000UL});
+		public static readonly BitSet _76_in_assign_var698 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ASGN_in_assign_var716 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_assign_var718 = new BitSet(new ulong[]{0x200000UL});
+		public static readonly BitSet _INT_in_assign_var722 = new BitSet(new ulong[]{0x200000UL});
+		public static readonly BitSet _INT_in_assign_var726 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ASGN_in_assign_var738 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_assign_var740 = new BitSet(new ulong[]{0x40000UL});
+		public static readonly BitSet _ILIST_in_assign_var743 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _INT_in_assign_var747 = new BitSet(new ulong[]{0x200008UL});
+		public static readonly BitSet _RET_in_return_stat770 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _plus_expression_in_return_stat772 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _44_in_plus_expression788 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _plus_expression_in_plus_expression790 = new BitSet(new ulong[]{0x25802222A4100UL});
+		public static readonly BitSet _plus_expression_in_plus_expression792 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _46_in_plus_expression800 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _plus_expression_in_plus_expression802 = new BitSet(new ulong[]{0x25802222A4100UL});
+		public static readonly BitSet _plus_expression_in_plus_expression804 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _43_in_plus_expression812 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _plus_expression_in_plus_expression814 = new BitSet(new ulong[]{0x25802222A4100UL});
+		public static readonly BitSet _plus_expression_in_plus_expression816 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _49_in_plus_expression824 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _plus_expression_in_plus_expression826 = new BitSet(new ulong[]{0x25802222A4100UL});
+		public static readonly BitSet _plus_expression_in_plus_expression828 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _INDEX_in_plus_expression836 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _INT_in_plus_expression838 = new BitSet(new ulong[]{0x8UL});
 		public static readonly BitSet _ID_in_plus_expression841 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _function_call_in_plus_expression847 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _method_call_in_plus_expression851 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _property_call_in_plus_expression855 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _atom_in_plus_expression859 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _50_in_logic_expression872 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _plus_expression_in_logic_expression874 = new BitSet(new ulong[]{0x25802222A4100UL});
-		public static readonly BitSet _plus_expression_in_logic_expression876 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _54_in_logic_expression887 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _plus_expression_in_logic_expression889 = new BitSet(new ulong[]{0x25802222A4100UL});
-		public static readonly BitSet _plus_expression_in_logic_expression891 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _51_in_logic_expression902 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _plus_expression_in_logic_expression904 = new BitSet(new ulong[]{0x25802222A4100UL});
-		public static readonly BitSet _plus_expression_in_logic_expression906 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _55_in_logic_expression917 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _plus_expression_in_logic_expression919 = new BitSet(new ulong[]{0x25802222A4100UL});
-		public static readonly BitSet _plus_expression_in_logic_expression921 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _53_in_logic_expression932 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _plus_expression_in_logic_expression934 = new BitSet(new ulong[]{0x25802222A4100UL});
-		public static readonly BitSet _plus_expression_in_logic_expression936 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _38_in_logic_expression947 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _plus_expression_in_logic_expression949 = new BitSet(new ulong[]{0x25802222A4100UL});
-		public static readonly BitSet _plus_expression_in_logic_expression951 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _60_in_logic_expression961 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _plus_expression_in_logic_expression963 = new BitSet(new ulong[]{0x25802222A4100UL});
-		public static readonly BitSet _plus_expression_in_logic_expression965 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _65_in_logic_expression974 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _plus_expression_in_logic_expression976 = new BitSet(new ulong[]{0x25802222A4100UL});
-		public static readonly BitSet _plus_expression_in_logic_expression978 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _plus_expression_in_logic_expression990 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ID_in_atom1018 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _INT_in_atom1030 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _FLOAT_in_atom1042 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _STRING_in_atom1054 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LOOP_in_synpred18_NPortugolWalker282 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _assign_var_in_synpred18_NPortugolWalker286 = new BitSet(new ulong[]{0x200000UL});
-		public static readonly BitSet _INT_in_synpred18_NPortugolWalker290 = new BitSet(new ulong[]{0x100000000UL});
-		public static readonly BitSet _SLIST_in_synpred18_NPortugolWalker293 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _statement_in_synpred18_NPortugolWalker295 = new BitSet(new ulong[]{0x10C14001C8UL});
-		public static readonly BitSet _LOOP_in_synpred20_NPortugolWalker306 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _DEC_in_synpred20_NPortugolWalker308 = new BitSet(new ulong[]{0x40UL});
-		public static readonly BitSet _assign_var_in_synpred20_NPortugolWalker312 = new BitSet(new ulong[]{0x200000UL});
-		public static readonly BitSet _INT_in_synpred20_NPortugolWalker316 = new BitSet(new ulong[]{0x100000000UL});
-		public static readonly BitSet _SLIST_in_synpred20_NPortugolWalker319 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _statement_in_synpred20_NPortugolWalker321 = new BitSet(new ulong[]{0x10C14001C8UL});
-		public static readonly BitSet _LOOP_in_synpred22_NPortugolWalker331 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _assign_var_in_synpred22_NPortugolWalker335 = new BitSet(new ulong[]{0x20000UL});
-		public static readonly BitSet _ID_in_synpred22_NPortugolWalker339 = new BitSet(new ulong[]{0x100000000UL});
-		public static readonly BitSet _SLIST_in_synpred22_NPortugolWalker342 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _statement_in_synpred22_NPortugolWalker344 = new BitSet(new ulong[]{0x10C14001C8UL});
-		public static readonly BitSet _ASGN_in_synpred28_NPortugolWalker551 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_synpred28_NPortugolWalker553 = new BitSet(new ulong[]{0x200224000UL});
-		public static readonly BitSet _atom_in_synpred28_NPortugolWalker557 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ASGN_in_synpred29_NPortugolWalker569 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _AR_in_synpred29_NPortugolWalker572 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _INT_in_synpred29_NPortugolWalker574 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ID_in_synpred29_NPortugolWalker577 = new BitSet(new ulong[]{0x25802222A4100UL});
-		public static readonly BitSet _plus_expression_in_synpred29_NPortugolWalker579 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ASGN_in_synpred30_NPortugolWalker595 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _AR_in_synpred30_NPortugolWalker598 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_synpred30_NPortugolWalker602 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ID_in_synpred30_NPortugolWalker607 = new BitSet(new ulong[]{0x25802222A4100UL});
-		public static readonly BitSet _plus_expression_in_synpred30_NPortugolWalker609 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ASGN_in_synpred31_NPortugolWalker628 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_synpred31_NPortugolWalker630 = new BitSet(new ulong[]{0x25802222A4100UL});
-		public static readonly BitSet _plus_expression_in_synpred31_NPortugolWalker632 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ASGN_in_synpred32_NPortugolWalker645 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_synpred32_NPortugolWalker647 = new BitSet(new ulong[]{0x0UL,0x800UL});
-		public static readonly BitSet _75_in_synpred32_NPortugolWalker649 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ASGN_in_synpred33_NPortugolWalker662 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_synpred33_NPortugolWalker664 = new BitSet(new ulong[]{0x0UL,0x400UL});
-		public static readonly BitSet _74_in_synpred33_NPortugolWalker666 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ASGN_in_synpred34_NPortugolWalker678 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_synpred34_NPortugolWalker680 = new BitSet(new ulong[]{0x0UL,0x1000UL});
-		public static readonly BitSet _76_in_synpred34_NPortugolWalker682 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ASGN_in_synpred35_NPortugolWalker700 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ID_in_synpred35_NPortugolWalker702 = new BitSet(new ulong[]{0x200000UL});
-		public static readonly BitSet _INT_in_synpred35_NPortugolWalker706 = new BitSet(new ulong[]{0x200000UL});
-		public static readonly BitSet _INT_in_synpred35_NPortugolWalker710 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _INDEX_in_plus_expression848 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_plus_expression852 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ID_in_plus_expression857 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _function_call_in_plus_expression863 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _method_call_in_plus_expression867 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _property_call_in_plus_expression871 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _atom_in_plus_expression875 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _50_in_logic_expression888 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _plus_expression_in_logic_expression890 = new BitSet(new ulong[]{0x25802222A4100UL});
+		public static readonly BitSet _plus_expression_in_logic_expression892 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _54_in_logic_expression903 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _plus_expression_in_logic_expression905 = new BitSet(new ulong[]{0x25802222A4100UL});
+		public static readonly BitSet _plus_expression_in_logic_expression907 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _51_in_logic_expression918 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _plus_expression_in_logic_expression920 = new BitSet(new ulong[]{0x25802222A4100UL});
+		public static readonly BitSet _plus_expression_in_logic_expression922 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _55_in_logic_expression933 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _plus_expression_in_logic_expression935 = new BitSet(new ulong[]{0x25802222A4100UL});
+		public static readonly BitSet _plus_expression_in_logic_expression937 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _53_in_logic_expression948 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _plus_expression_in_logic_expression950 = new BitSet(new ulong[]{0x25802222A4100UL});
+		public static readonly BitSet _plus_expression_in_logic_expression952 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _38_in_logic_expression963 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _plus_expression_in_logic_expression965 = new BitSet(new ulong[]{0x25802222A4100UL});
+		public static readonly BitSet _plus_expression_in_logic_expression967 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _60_in_logic_expression977 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _plus_expression_in_logic_expression979 = new BitSet(new ulong[]{0x25802222A4100UL});
+		public static readonly BitSet _plus_expression_in_logic_expression981 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _65_in_logic_expression990 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _plus_expression_in_logic_expression992 = new BitSet(new ulong[]{0x25802222A4100UL});
+		public static readonly BitSet _plus_expression_in_logic_expression994 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _plus_expression_in_logic_expression1006 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ID_in_atom1034 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _INT_in_atom1046 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _FLOAT_in_atom1058 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _STRING_in_atom1070 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LOOP_in_synpred18_NPortugolWalker298 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _assign_var_in_synpred18_NPortugolWalker302 = new BitSet(new ulong[]{0x200000UL});
+		public static readonly BitSet _INT_in_synpred18_NPortugolWalker306 = new BitSet(new ulong[]{0x100000000UL});
+		public static readonly BitSet _SLIST_in_synpred18_NPortugolWalker309 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _statement_in_synpred18_NPortugolWalker311 = new BitSet(new ulong[]{0x10C14001C8UL});
+		public static readonly BitSet _LOOP_in_synpred20_NPortugolWalker322 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _DEC_in_synpred20_NPortugolWalker324 = new BitSet(new ulong[]{0x40UL});
+		public static readonly BitSet _assign_var_in_synpred20_NPortugolWalker328 = new BitSet(new ulong[]{0x200000UL});
+		public static readonly BitSet _INT_in_synpred20_NPortugolWalker332 = new BitSet(new ulong[]{0x100000000UL});
+		public static readonly BitSet _SLIST_in_synpred20_NPortugolWalker335 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _statement_in_synpred20_NPortugolWalker337 = new BitSet(new ulong[]{0x10C14001C8UL});
+		public static readonly BitSet _LOOP_in_synpred22_NPortugolWalker347 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _assign_var_in_synpred22_NPortugolWalker351 = new BitSet(new ulong[]{0x20000UL});
+		public static readonly BitSet _ID_in_synpred22_NPortugolWalker355 = new BitSet(new ulong[]{0x100000000UL});
+		public static readonly BitSet _SLIST_in_synpred22_NPortugolWalker358 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _statement_in_synpred22_NPortugolWalker360 = new BitSet(new ulong[]{0x10C14001C8UL});
+		public static readonly BitSet _ASGN_in_synpred28_NPortugolWalker567 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_synpred28_NPortugolWalker569 = new BitSet(new ulong[]{0x200224000UL});
+		public static readonly BitSet _atom_in_synpred28_NPortugolWalker573 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ASGN_in_synpred29_NPortugolWalker585 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _AR_in_synpred29_NPortugolWalker588 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _INT_in_synpred29_NPortugolWalker590 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ID_in_synpred29_NPortugolWalker593 = new BitSet(new ulong[]{0x25802222A4100UL});
+		public static readonly BitSet _plus_expression_in_synpred29_NPortugolWalker595 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ASGN_in_synpred30_NPortugolWalker611 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _AR_in_synpred30_NPortugolWalker614 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_synpred30_NPortugolWalker618 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ID_in_synpred30_NPortugolWalker623 = new BitSet(new ulong[]{0x25802222A4100UL});
+		public static readonly BitSet _plus_expression_in_synpred30_NPortugolWalker625 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ASGN_in_synpred31_NPortugolWalker644 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_synpred31_NPortugolWalker646 = new BitSet(new ulong[]{0x25802222A4100UL});
+		public static readonly BitSet _plus_expression_in_synpred31_NPortugolWalker648 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ASGN_in_synpred32_NPortugolWalker661 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_synpred32_NPortugolWalker663 = new BitSet(new ulong[]{0x0UL,0x800UL});
+		public static readonly BitSet _75_in_synpred32_NPortugolWalker665 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ASGN_in_synpred33_NPortugolWalker678 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_synpred33_NPortugolWalker680 = new BitSet(new ulong[]{0x0UL,0x400UL});
+		public static readonly BitSet _74_in_synpred33_NPortugolWalker682 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ASGN_in_synpred34_NPortugolWalker694 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_synpred34_NPortugolWalker696 = new BitSet(new ulong[]{0x0UL,0x1000UL});
+		public static readonly BitSet _76_in_synpred34_NPortugolWalker698 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ASGN_in_synpred35_NPortugolWalker716 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ID_in_synpred35_NPortugolWalker718 = new BitSet(new ulong[]{0x200000UL});
+		public static readonly BitSet _INT_in_synpred35_NPortugolWalker722 = new BitSet(new ulong[]{0x200000UL});
+		public static readonly BitSet _INT_in_synpred35_NPortugolWalker726 = new BitSet(new ulong[]{0x8UL});
 	}
 	#endregion Follow sets
 }

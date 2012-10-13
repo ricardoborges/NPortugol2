@@ -1,11 +1,13 @@
-﻿using System.Reflection.Emit;
+﻿using System.Reflection;
+using System.Reflection.Emit;
 using NPortugol2.VirtualMachine;
+using Module = NPortugol2.VirtualMachine.Module;
 
 namespace NPortugol2.Dyn
 {
     public class DynamicMethodBuilder
     {
-        private Module module;
+        private readonly Module module;
         private Function target;
 
         public DynamicMethodBuilder(Module module)

@@ -10,7 +10,7 @@ namespace NPortugol2
 {
     public class NPortugol2
     {
-        public DynamicMethod Compile(string function)
+        public DynamicMethod CompileMethod(string function)
         {
             var module = BuildModule(function);
 

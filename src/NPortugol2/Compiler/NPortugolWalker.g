@@ -44,8 +44,10 @@ statement: declare_local
 	
 	
 function_param_list    
-	:	 ^(PARAM p+=ID*) /*{ foreach(var item in $p) emitter.AddParam(item.Text); }*/
-	;	
+	:	 ^(PARAM param*)
+	;	 
+	
+param	: ^(t=TYPE i=ID) {builder.CreateFunctionParams($t.Token, $i.Token); };
 
 declare_local 
 	:  ^(VAR i+=ID*)  /*{ foreach(var item in $i) emitter.EmitVar(item.Token); }*/
