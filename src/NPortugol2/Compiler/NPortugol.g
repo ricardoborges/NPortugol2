@@ -31,7 +31,7 @@ tokens{
 	ASM;
 }
 
-@namespace{NPortugol}
+@namespace{NPortugol2.Compiler}
 
 @header{using System.Collections;}
 
@@ -73,9 +73,9 @@ tokens{
 public script	: declare_function* ;
 
 declare_function
-	:	'funcao' i=ID '(' function_param_list* ')' statement* 'fim'
+	:	'funcao' t=TYPE? i=ID '(' function_param_list* ')' statement* 'fim'
 		{DefineFunction($i.text);}
-		-> ^(FUNC ID function_param_list* ^(SLIST statement*))
+		-> ^(FUNC TYPE? ID function_param_list* ^(SLIST statement*))
 	;
 	
 statement	@init { paraphrases.Push("na sentença"); } @after { paraphrases.Pop(); }
@@ -221,6 +221,8 @@ number	: INT | FLOAT;
                
 // ##########################################################################################################################    
 // Lexer    
+
+TYPE	: ('int' | 'dec' | 'tex' | 'void');
     
 ID : ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')* ;
 

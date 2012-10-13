@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compiler\ModuleBuilder.cs" />
     <Compile Include="Compiler\NPortugolLexer.cs" />
     <Compile Include="Compiler\NPortugolParser.cs" />
+    <Compile Include="Compiler\NPortugolWalker.cs" />
     <Compile Include="Dyn\DynamicMethodBuilder.cs" />
     <Compile Include="NPortugol2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -59,6 +61,7 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="Compiler\NPortugol.g" />
+    <None Include="Compiler\NPortugolWalker.g" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

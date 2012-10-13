@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g 2012-10-12 23:09:22
+// $ANTLR 3.4 E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g 2012-10-13 15:21:15
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -29,7 +29,6 @@ using Antlr.Runtime.Misc;
 public partial class NPortugolLexer : Antlr.Runtime.Lexer
 {
 	public const int EOF=-1;
-	public const int T__37=37;
 	public const int T__38=38;
 	public const int T__39=39;
 	public const int T__40=40;
@@ -65,6 +64,7 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 	public const int T__70=70;
 	public const int T__71=71;
 	public const int T__72=72;
+	public const int T__73=73;
 	public const int AR=4;
 	public const int ARG=5;
 	public const int ASGN=6;
@@ -95,9 +95,10 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 	public const int SJMP=31;
 	public const int SLIST=32;
 	public const int STRING=33;
-	public const int UNICODE_ESC=34;
-	public const int VAR=35;
-	public const int WS=36;
+	public const int TYPE=34;
+	public const int UNICODE_ESC=35;
+	public const int VAR=36;
+	public const int WS=37;
 
     // delegates
     // delegators
@@ -125,19 +126,19 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 	partial void EnterRule(string ruleName, int ruleIndex);
 	partial void LeaveRule(string ruleName, int ruleIndex);
 
-	partial void EnterRule_T__37();
-	partial void LeaveRule_T__37();
+	partial void EnterRule_T__38();
+	partial void LeaveRule_T__38();
 
-	// $ANTLR start "T__37"
-	[GrammarRule("T__37")]
-	private void mT__37()
+	// $ANTLR start "T__38"
+	[GrammarRule("T__38")]
+	private void mT__38()
 	{
-		EnterRule_T__37();
-		EnterRule("T__37", 1);
-		TraceIn("T__37", 1);
+		EnterRule_T__38();
+		EnterRule("T__38", 1);
+		TraceIn("T__38", 1);
 		try
 		{
-			int _type = T__37;
+			int _type = T__38;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:7:7: ( '!=' )
 			DebugEnterAlt(1);
@@ -154,26 +155,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__37", 1);
-			LeaveRule("T__37", 1);
-			LeaveRule_T__37();
+			TraceOut("T__38", 1);
+			LeaveRule("T__38", 1);
+			LeaveRule_T__38();
 		}
 	}
-	// $ANTLR end "T__37"
+	// $ANTLR end "T__38"
 
-	partial void EnterRule_T__38();
-	partial void LeaveRule_T__38();
+	partial void EnterRule_T__39();
+	partial void LeaveRule_T__39();
 
-	// $ANTLR start "T__38"
-	[GrammarRule("T__38")]
-	private void mT__38()
+	// $ANTLR start "T__39"
+	[GrammarRule("T__39")]
+	private void mT__39()
 	{
-		EnterRule_T__38();
-		EnterRule("T__38", 2);
-		TraceIn("T__38", 2);
+		EnterRule_T__39();
+		EnterRule("T__39", 2);
+		TraceIn("T__39", 2);
 		try
 		{
-			int _type = T__38;
+			int _type = T__39;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:8:7: ( '#' )
 			DebugEnterAlt(1);
@@ -189,26 +190,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__38", 2);
-			LeaveRule("T__38", 2);
-			LeaveRule_T__38();
+			TraceOut("T__39", 2);
+			LeaveRule("T__39", 2);
+			LeaveRule_T__39();
 		}
 	}
-	// $ANTLR end "T__38"
+	// $ANTLR end "T__39"
 
-	partial void EnterRule_T__39();
-	partial void LeaveRule_T__39();
+	partial void EnterRule_T__40();
+	partial void LeaveRule_T__40();
 
-	// $ANTLR start "T__39"
-	[GrammarRule("T__39")]
-	private void mT__39()
+	// $ANTLR start "T__40"
+	[GrammarRule("T__40")]
+	private void mT__40()
 	{
-		EnterRule_T__39();
-		EnterRule("T__39", 3);
-		TraceIn("T__39", 3);
+		EnterRule_T__40();
+		EnterRule("T__40", 3);
+		TraceIn("T__40", 3);
 		try
 		{
-			int _type = T__39;
+			int _type = T__40;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:9:7: ( '%' )
 			DebugEnterAlt(1);
@@ -224,26 +225,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__39", 3);
-			LeaveRule("T__39", 3);
-			LeaveRule_T__39();
+			TraceOut("T__40", 3);
+			LeaveRule("T__40", 3);
+			LeaveRule_T__40();
 		}
 	}
-	// $ANTLR end "T__39"
+	// $ANTLR end "T__40"
 
-	partial void EnterRule_T__40();
-	partial void LeaveRule_T__40();
+	partial void EnterRule_T__41();
+	partial void LeaveRule_T__41();
 
-	// $ANTLR start "T__40"
-	[GrammarRule("T__40")]
-	private void mT__40()
+	// $ANTLR start "T__41"
+	[GrammarRule("T__41")]
+	private void mT__41()
 	{
-		EnterRule_T__40();
-		EnterRule("T__40", 4);
-		TraceIn("T__40", 4);
+		EnterRule_T__41();
+		EnterRule("T__41", 4);
+		TraceIn("T__41", 4);
 		try
 		{
-			int _type = T__40;
+			int _type = T__41;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:10:7: ( '(' )
 			DebugEnterAlt(1);
@@ -259,26 +260,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__40", 4);
-			LeaveRule("T__40", 4);
-			LeaveRule_T__40();
+			TraceOut("T__41", 4);
+			LeaveRule("T__41", 4);
+			LeaveRule_T__41();
 		}
 	}
-	// $ANTLR end "T__40"
+	// $ANTLR end "T__41"
 
-	partial void EnterRule_T__41();
-	partial void LeaveRule_T__41();
+	partial void EnterRule_T__42();
+	partial void LeaveRule_T__42();
 
-	// $ANTLR start "T__41"
-	[GrammarRule("T__41")]
-	private void mT__41()
+	// $ANTLR start "T__42"
+	[GrammarRule("T__42")]
+	private void mT__42()
 	{
-		EnterRule_T__41();
-		EnterRule("T__41", 5);
-		TraceIn("T__41", 5);
+		EnterRule_T__42();
+		EnterRule("T__42", 5);
+		TraceIn("T__42", 5);
 		try
 		{
-			int _type = T__41;
+			int _type = T__42;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:11:7: ( ')' )
 			DebugEnterAlt(1);
@@ -294,26 +295,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__41", 5);
-			LeaveRule("T__41", 5);
-			LeaveRule_T__41();
+			TraceOut("T__42", 5);
+			LeaveRule("T__42", 5);
+			LeaveRule_T__42();
 		}
 	}
-	// $ANTLR end "T__41"
+	// $ANTLR end "T__42"
 
-	partial void EnterRule_T__42();
-	partial void LeaveRule_T__42();
+	partial void EnterRule_T__43();
+	partial void LeaveRule_T__43();
 
-	// $ANTLR start "T__42"
-	[GrammarRule("T__42")]
-	private void mT__42()
+	// $ANTLR start "T__43"
+	[GrammarRule("T__43")]
+	private void mT__43()
 	{
-		EnterRule_T__42();
-		EnterRule("T__42", 6);
-		TraceIn("T__42", 6);
+		EnterRule_T__43();
+		EnterRule("T__43", 6);
+		TraceIn("T__43", 6);
 		try
 		{
-			int _type = T__42;
+			int _type = T__43;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:12:7: ( '*' )
 			DebugEnterAlt(1);
@@ -329,26 +330,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__42", 6);
-			LeaveRule("T__42", 6);
-			LeaveRule_T__42();
+			TraceOut("T__43", 6);
+			LeaveRule("T__43", 6);
+			LeaveRule_T__43();
 		}
 	}
-	// $ANTLR end "T__42"
+	// $ANTLR end "T__43"
 
-	partial void EnterRule_T__43();
-	partial void LeaveRule_T__43();
+	partial void EnterRule_T__44();
+	partial void LeaveRule_T__44();
 
-	// $ANTLR start "T__43"
-	[GrammarRule("T__43")]
-	private void mT__43()
+	// $ANTLR start "T__44"
+	[GrammarRule("T__44")]
+	private void mT__44()
 	{
-		EnterRule_T__43();
-		EnterRule("T__43", 7);
-		TraceIn("T__43", 7);
+		EnterRule_T__44();
+		EnterRule("T__44", 7);
+		TraceIn("T__44", 7);
 		try
 		{
-			int _type = T__43;
+			int _type = T__44;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:13:7: ( '+' )
 			DebugEnterAlt(1);
@@ -364,26 +365,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__43", 7);
-			LeaveRule("T__43", 7);
-			LeaveRule_T__43();
+			TraceOut("T__44", 7);
+			LeaveRule("T__44", 7);
+			LeaveRule_T__44();
 		}
 	}
-	// $ANTLR end "T__43"
+	// $ANTLR end "T__44"
 
-	partial void EnterRule_T__44();
-	partial void LeaveRule_T__44();
+	partial void EnterRule_T__45();
+	partial void LeaveRule_T__45();
 
-	// $ANTLR start "T__44"
-	[GrammarRule("T__44")]
-	private void mT__44()
+	// $ANTLR start "T__45"
+	[GrammarRule("T__45")]
+	private void mT__45()
 	{
-		EnterRule_T__44();
-		EnterRule("T__44", 8);
-		TraceIn("T__44", 8);
+		EnterRule_T__45();
+		EnterRule("T__45", 8);
+		TraceIn("T__45", 8);
 		try
 		{
-			int _type = T__44;
+			int _type = T__45;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:14:7: ( ',' )
 			DebugEnterAlt(1);
@@ -399,26 +400,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__44", 8);
-			LeaveRule("T__44", 8);
-			LeaveRule_T__44();
+			TraceOut("T__45", 8);
+			LeaveRule("T__45", 8);
+			LeaveRule_T__45();
 		}
 	}
-	// $ANTLR end "T__44"
+	// $ANTLR end "T__45"
 
-	partial void EnterRule_T__45();
-	partial void LeaveRule_T__45();
+	partial void EnterRule_T__46();
+	partial void LeaveRule_T__46();
 
-	// $ANTLR start "T__45"
-	[GrammarRule("T__45")]
-	private void mT__45()
+	// $ANTLR start "T__46"
+	[GrammarRule("T__46")]
+	private void mT__46()
 	{
-		EnterRule_T__45();
-		EnterRule("T__45", 9);
-		TraceIn("T__45", 9);
+		EnterRule_T__46();
+		EnterRule("T__46", 9);
+		TraceIn("T__46", 9);
 		try
 		{
-			int _type = T__45;
+			int _type = T__46;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:15:7: ( '-' )
 			DebugEnterAlt(1);
@@ -434,26 +435,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__45", 9);
-			LeaveRule("T__45", 9);
-			LeaveRule_T__45();
+			TraceOut("T__46", 9);
+			LeaveRule("T__46", 9);
+			LeaveRule_T__46();
 		}
 	}
-	// $ANTLR end "T__45"
+	// $ANTLR end "T__46"
 
-	partial void EnterRule_T__46();
-	partial void LeaveRule_T__46();
+	partial void EnterRule_T__47();
+	partial void LeaveRule_T__47();
 
-	// $ANTLR start "T__46"
-	[GrammarRule("T__46")]
-	private void mT__46()
+	// $ANTLR start "T__47"
+	[GrammarRule("T__47")]
+	private void mT__47()
 	{
-		EnterRule_T__46();
-		EnterRule("T__46", 10);
-		TraceIn("T__46", 10);
+		EnterRule_T__47();
+		EnterRule("T__47", 10);
+		TraceIn("T__47", 10);
 		try
 		{
-			int _type = T__46;
+			int _type = T__47;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:16:7: ( '.' )
 			DebugEnterAlt(1);
@@ -469,26 +470,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__46", 10);
-			LeaveRule("T__46", 10);
-			LeaveRule_T__46();
+			TraceOut("T__47", 10);
+			LeaveRule("T__47", 10);
+			LeaveRule_T__47();
 		}
 	}
-	// $ANTLR end "T__46"
+	// $ANTLR end "T__47"
 
-	partial void EnterRule_T__47();
-	partial void LeaveRule_T__47();
+	partial void EnterRule_T__48();
+	partial void LeaveRule_T__48();
 
-	// $ANTLR start "T__47"
-	[GrammarRule("T__47")]
-	private void mT__47()
+	// $ANTLR start "T__48"
+	[GrammarRule("T__48")]
+	private void mT__48()
 	{
-		EnterRule_T__47();
-		EnterRule("T__47", 11);
-		TraceIn("T__47", 11);
+		EnterRule_T__48();
+		EnterRule("T__48", 11);
+		TraceIn("T__48", 11);
 		try
 		{
-			int _type = T__47;
+			int _type = T__48;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:17:7: ( '..' )
 			DebugEnterAlt(1);
@@ -505,26 +506,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__47", 11);
-			LeaveRule("T__47", 11);
-			LeaveRule_T__47();
+			TraceOut("T__48", 11);
+			LeaveRule("T__48", 11);
+			LeaveRule_T__48();
 		}
 	}
-	// $ANTLR end "T__47"
+	// $ANTLR end "T__48"
 
-	partial void EnterRule_T__48();
-	partial void LeaveRule_T__48();
+	partial void EnterRule_T__49();
+	partial void LeaveRule_T__49();
 
-	// $ANTLR start "T__48"
-	[GrammarRule("T__48")]
-	private void mT__48()
+	// $ANTLR start "T__49"
+	[GrammarRule("T__49")]
+	private void mT__49()
 	{
-		EnterRule_T__48();
-		EnterRule("T__48", 12);
-		TraceIn("T__48", 12);
+		EnterRule_T__49();
+		EnterRule("T__49", 12);
+		TraceIn("T__49", 12);
 		try
 		{
-			int _type = T__48;
+			int _type = T__49;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:18:7: ( '/' )
 			DebugEnterAlt(1);
@@ -540,26 +541,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__48", 12);
-			LeaveRule("T__48", 12);
-			LeaveRule_T__48();
+			TraceOut("T__49", 12);
+			LeaveRule("T__49", 12);
+			LeaveRule_T__49();
 		}
 	}
-	// $ANTLR end "T__48"
+	// $ANTLR end "T__49"
 
-	partial void EnterRule_T__49();
-	partial void LeaveRule_T__49();
+	partial void EnterRule_T__50();
+	partial void LeaveRule_T__50();
 
-	// $ANTLR start "T__49"
-	[GrammarRule("T__49")]
-	private void mT__49()
+	// $ANTLR start "T__50"
+	[GrammarRule("T__50")]
+	private void mT__50()
 	{
-		EnterRule_T__49();
-		EnterRule("T__49", 13);
-		TraceIn("T__49", 13);
+		EnterRule_T__50();
+		EnterRule("T__50", 13);
+		TraceIn("T__50", 13);
 		try
 		{
-			int _type = T__49;
+			int _type = T__50;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:19:7: ( '<' )
 			DebugEnterAlt(1);
@@ -575,26 +576,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__49", 13);
-			LeaveRule("T__49", 13);
-			LeaveRule_T__49();
+			TraceOut("T__50", 13);
+			LeaveRule("T__50", 13);
+			LeaveRule_T__50();
 		}
 	}
-	// $ANTLR end "T__49"
+	// $ANTLR end "T__50"
 
-	partial void EnterRule_T__50();
-	partial void LeaveRule_T__50();
+	partial void EnterRule_T__51();
+	partial void LeaveRule_T__51();
 
-	// $ANTLR start "T__50"
-	[GrammarRule("T__50")]
-	private void mT__50()
+	// $ANTLR start "T__51"
+	[GrammarRule("T__51")]
+	private void mT__51()
 	{
-		EnterRule_T__50();
-		EnterRule("T__50", 14);
-		TraceIn("T__50", 14);
+		EnterRule_T__51();
+		EnterRule("T__51", 14);
+		TraceIn("T__51", 14);
 		try
 		{
-			int _type = T__50;
+			int _type = T__51;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:20:7: ( '<=' )
 			DebugEnterAlt(1);
@@ -611,26 +612,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__50", 14);
-			LeaveRule("T__50", 14);
-			LeaveRule_T__50();
+			TraceOut("T__51", 14);
+			LeaveRule("T__51", 14);
+			LeaveRule_T__51();
 		}
 	}
-	// $ANTLR end "T__50"
+	// $ANTLR end "T__51"
 
-	partial void EnterRule_T__51();
-	partial void LeaveRule_T__51();
+	partial void EnterRule_T__52();
+	partial void LeaveRule_T__52();
 
-	// $ANTLR start "T__51"
-	[GrammarRule("T__51")]
-	private void mT__51()
+	// $ANTLR start "T__52"
+	[GrammarRule("T__52")]
+	private void mT__52()
 	{
-		EnterRule_T__51();
-		EnterRule("T__51", 15);
-		TraceIn("T__51", 15);
+		EnterRule_T__52();
+		EnterRule("T__52", 15);
+		TraceIn("T__52", 15);
 		try
 		{
-			int _type = T__51;
+			int _type = T__52;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:21:7: ( '=' )
 			DebugEnterAlt(1);
@@ -646,26 +647,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__51", 15);
-			LeaveRule("T__51", 15);
-			LeaveRule_T__51();
+			TraceOut("T__52", 15);
+			LeaveRule("T__52", 15);
+			LeaveRule_T__52();
 		}
 	}
-	// $ANTLR end "T__51"
+	// $ANTLR end "T__52"
 
-	partial void EnterRule_T__52();
-	partial void LeaveRule_T__52();
+	partial void EnterRule_T__53();
+	partial void LeaveRule_T__53();
 
-	// $ANTLR start "T__52"
-	[GrammarRule("T__52")]
-	private void mT__52()
+	// $ANTLR start "T__53"
+	[GrammarRule("T__53")]
+	private void mT__53()
 	{
-		EnterRule_T__52();
-		EnterRule("T__52", 16);
-		TraceIn("T__52", 16);
+		EnterRule_T__53();
+		EnterRule("T__53", 16);
+		TraceIn("T__53", 16);
 		try
 		{
-			int _type = T__52;
+			int _type = T__53;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:22:7: ( '==' )
 			DebugEnterAlt(1);
@@ -682,26 +683,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__52", 16);
-			LeaveRule("T__52", 16);
-			LeaveRule_T__52();
+			TraceOut("T__53", 16);
+			LeaveRule("T__53", 16);
+			LeaveRule_T__53();
 		}
 	}
-	// $ANTLR end "T__52"
+	// $ANTLR end "T__53"
 
-	partial void EnterRule_T__53();
-	partial void LeaveRule_T__53();
+	partial void EnterRule_T__54();
+	partial void LeaveRule_T__54();
 
-	// $ANTLR start "T__53"
-	[GrammarRule("T__53")]
-	private void mT__53()
+	// $ANTLR start "T__54"
+	[GrammarRule("T__54")]
+	private void mT__54()
 	{
-		EnterRule_T__53();
-		EnterRule("T__53", 17);
-		TraceIn("T__53", 17);
+		EnterRule_T__54();
+		EnterRule("T__54", 17);
+		TraceIn("T__54", 17);
 		try
 		{
-			int _type = T__53;
+			int _type = T__54;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:23:7: ( '>' )
 			DebugEnterAlt(1);
@@ -717,26 +718,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__53", 17);
-			LeaveRule("T__53", 17);
-			LeaveRule_T__53();
+			TraceOut("T__54", 17);
+			LeaveRule("T__54", 17);
+			LeaveRule_T__54();
 		}
 	}
-	// $ANTLR end "T__53"
+	// $ANTLR end "T__54"
 
-	partial void EnterRule_T__54();
-	partial void LeaveRule_T__54();
+	partial void EnterRule_T__55();
+	partial void LeaveRule_T__55();
 
-	// $ANTLR start "T__54"
-	[GrammarRule("T__54")]
-	private void mT__54()
+	// $ANTLR start "T__55"
+	[GrammarRule("T__55")]
+	private void mT__55()
 	{
-		EnterRule_T__54();
-		EnterRule("T__54", 18);
-		TraceIn("T__54", 18);
+		EnterRule_T__55();
+		EnterRule("T__55", 18);
+		TraceIn("T__55", 18);
 		try
 		{
-			int _type = T__54;
+			int _type = T__55;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:24:7: ( '>=' )
 			DebugEnterAlt(1);
@@ -753,26 +754,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__54", 18);
-			LeaveRule("T__54", 18);
-			LeaveRule_T__54();
+			TraceOut("T__55", 18);
+			LeaveRule("T__55", 18);
+			LeaveRule_T__55();
 		}
 	}
-	// $ANTLR end "T__54"
+	// $ANTLR end "T__55"
 
-	partial void EnterRule_T__55();
-	partial void LeaveRule_T__55();
+	partial void EnterRule_T__56();
+	partial void LeaveRule_T__56();
 
-	// $ANTLR start "T__55"
-	[GrammarRule("T__55")]
-	private void mT__55()
+	// $ANTLR start "T__56"
+	[GrammarRule("T__56")]
+	private void mT__56()
 	{
-		EnterRule_T__55();
-		EnterRule("T__55", 19);
-		TraceIn("T__55", 19);
+		EnterRule_T__56();
+		EnterRule("T__56", 19);
+		TraceIn("T__56", 19);
 		try
 		{
-			int _type = T__55;
+			int _type = T__56;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:25:7: ( '[' )
 			DebugEnterAlt(1);
@@ -788,26 +789,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__55", 19);
-			LeaveRule("T__55", 19);
-			LeaveRule_T__55();
+			TraceOut("T__56", 19);
+			LeaveRule("T__56", 19);
+			LeaveRule_T__56();
 		}
 	}
-	// $ANTLR end "T__55"
+	// $ANTLR end "T__56"
 
-	partial void EnterRule_T__56();
-	partial void LeaveRule_T__56();
+	partial void EnterRule_T__57();
+	partial void LeaveRule_T__57();
 
-	// $ANTLR start "T__56"
-	[GrammarRule("T__56")]
-	private void mT__56()
+	// $ANTLR start "T__57"
+	[GrammarRule("T__57")]
+	private void mT__57()
 	{
-		EnterRule_T__56();
-		EnterRule("T__56", 20);
-		TraceIn("T__56", 20);
+		EnterRule_T__57();
+		EnterRule("T__57", 20);
+		TraceIn("T__57", 20);
 		try
 		{
-			int _type = T__56;
+			int _type = T__57;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:26:7: ( ']' )
 			DebugEnterAlt(1);
@@ -823,26 +824,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__56", 20);
-			LeaveRule("T__56", 20);
-			LeaveRule_T__56();
+			TraceOut("T__57", 20);
+			LeaveRule("T__57", 20);
+			LeaveRule_T__57();
 		}
 	}
-	// $ANTLR end "T__56"
+	// $ANTLR end "T__57"
 
-	partial void EnterRule_T__57();
-	partial void LeaveRule_T__57();
+	partial void EnterRule_T__58();
+	partial void LeaveRule_T__58();
 
-	// $ANTLR start "T__57"
-	[GrammarRule("T__57")]
-	private void mT__57()
+	// $ANTLR start "T__58"
+	[GrammarRule("T__58")]
+	private void mT__58()
 	{
-		EnterRule_T__57();
-		EnterRule("T__57", 21);
-		TraceIn("T__57", 21);
+		EnterRule_T__58();
+		EnterRule("T__58", 21);
+		TraceIn("T__58", 21);
 		try
 		{
-			int _type = T__57;
+			int _type = T__58;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:27:7: ( 'ate' )
 			DebugEnterAlt(1);
@@ -859,26 +860,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__57", 21);
-			LeaveRule("T__57", 21);
-			LeaveRule_T__57();
+			TraceOut("T__58", 21);
+			LeaveRule("T__58", 21);
+			LeaveRule_T__58();
 		}
 	}
-	// $ANTLR end "T__57"
+	// $ANTLR end "T__58"
 
-	partial void EnterRule_T__58();
-	partial void LeaveRule_T__58();
+	partial void EnterRule_T__59();
+	partial void LeaveRule_T__59();
 
-	// $ANTLR start "T__58"
-	[GrammarRule("T__58")]
-	private void mT__58()
+	// $ANTLR start "T__59"
+	[GrammarRule("T__59")]
+	private void mT__59()
 	{
-		EnterRule_T__58();
-		EnterRule("T__58", 22);
-		TraceIn("T__58", 22);
+		EnterRule_T__59();
+		EnterRule("T__59", 22);
+		TraceIn("T__59", 22);
 		try
 		{
-			int _type = T__58;
+			int _type = T__59;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:28:7: ( 'dec' )
 			DebugEnterAlt(1);
@@ -895,26 +896,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__58", 22);
-			LeaveRule("T__58", 22);
-			LeaveRule_T__58();
+			TraceOut("T__59", 22);
+			LeaveRule("T__59", 22);
+			LeaveRule_T__59();
 		}
 	}
-	// $ANTLR end "T__58"
+	// $ANTLR end "T__59"
 
-	partial void EnterRule_T__59();
-	partial void LeaveRule_T__59();
+	partial void EnterRule_T__60();
+	partial void LeaveRule_T__60();
 
-	// $ANTLR start "T__59"
-	[GrammarRule("T__59")]
-	private void mT__59()
+	// $ANTLR start "T__60"
+	[GrammarRule("T__60")]
+	private void mT__60()
 	{
-		EnterRule_T__59();
-		EnterRule("T__59", 23);
-		TraceIn("T__59", 23);
+		EnterRule_T__60();
+		EnterRule("T__60", 23);
+		TraceIn("T__60", 23);
 		try
 		{
-			int _type = T__59;
+			int _type = T__60;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:29:7: ( 'e' )
 			DebugEnterAlt(1);
@@ -930,26 +931,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__59", 23);
-			LeaveRule("T__59", 23);
-			LeaveRule_T__59();
+			TraceOut("T__60", 23);
+			LeaveRule("T__60", 23);
+			LeaveRule_T__60();
 		}
 	}
-	// $ANTLR end "T__59"
+	// $ANTLR end "T__60"
 
-	partial void EnterRule_T__60();
-	partial void LeaveRule_T__60();
+	partial void EnterRule_T__61();
+	partial void LeaveRule_T__61();
 
-	// $ANTLR start "T__60"
-	[GrammarRule("T__60")]
-	private void mT__60()
+	// $ANTLR start "T__61"
+	[GrammarRule("T__61")]
+	private void mT__61()
 	{
-		EnterRule_T__60();
-		EnterRule("T__60", 24);
-		TraceIn("T__60", 24);
+		EnterRule_T__61();
+		EnterRule("T__61", 24);
+		TraceIn("T__61", 24);
 		try
 		{
-			int _type = T__60;
+			int _type = T__61;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:30:7: ( 'enquanto' )
 			DebugEnterAlt(1);
@@ -966,26 +967,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__60", 24);
-			LeaveRule("T__60", 24);
-			LeaveRule_T__60();
+			TraceOut("T__61", 24);
+			LeaveRule("T__61", 24);
+			LeaveRule_T__61();
 		}
 	}
-	// $ANTLR end "T__60"
+	// $ANTLR end "T__61"
 
-	partial void EnterRule_T__61();
-	partial void LeaveRule_T__61();
+	partial void EnterRule_T__62();
+	partial void LeaveRule_T__62();
 
-	// $ANTLR start "T__61"
-	[GrammarRule("T__61")]
-	private void mT__61()
+	// $ANTLR start "T__62"
+	[GrammarRule("T__62")]
+	private void mT__62()
 	{
-		EnterRule_T__61();
-		EnterRule("T__61", 25);
-		TraceIn("T__61", 25);
+		EnterRule_T__62();
+		EnterRule("T__62", 25);
+		TraceIn("T__62", 25);
 		try
 		{
-			int _type = T__61;
+			int _type = T__62;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:31:7: ( 'entao' )
 			DebugEnterAlt(1);
@@ -1002,26 +1003,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__61", 25);
-			LeaveRule("T__61", 25);
-			LeaveRule_T__61();
+			TraceOut("T__62", 25);
+			LeaveRule("T__62", 25);
+			LeaveRule_T__62();
 		}
 	}
-	// $ANTLR end "T__61"
+	// $ANTLR end "T__62"
 
-	partial void EnterRule_T__62();
-	partial void LeaveRule_T__62();
+	partial void EnterRule_T__63();
+	partial void LeaveRule_T__63();
 
-	// $ANTLR start "T__62"
-	[GrammarRule("T__62")]
-	private void mT__62()
+	// $ANTLR start "T__63"
+	[GrammarRule("T__63")]
+	private void mT__63()
 	{
-		EnterRule_T__62();
-		EnterRule("T__62", 26);
-		TraceIn("T__62", 26);
+		EnterRule_T__63();
+		EnterRule("T__63", 26);
+		TraceIn("T__63", 26);
 		try
 		{
-			int _type = T__62;
+			int _type = T__63;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:32:7: ( 'fim' )
 			DebugEnterAlt(1);
@@ -1038,26 +1039,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__62", 26);
-			LeaveRule("T__62", 26);
-			LeaveRule_T__62();
+			TraceOut("T__63", 26);
+			LeaveRule("T__63", 26);
+			LeaveRule_T__63();
 		}
 	}
-	// $ANTLR end "T__62"
+	// $ANTLR end "T__63"
 
-	partial void EnterRule_T__63();
-	partial void LeaveRule_T__63();
+	partial void EnterRule_T__64();
+	partial void LeaveRule_T__64();
 
-	// $ANTLR start "T__63"
-	[GrammarRule("T__63")]
-	private void mT__63()
+	// $ANTLR start "T__64"
+	[GrammarRule("T__64")]
+	private void mT__64()
 	{
-		EnterRule_T__63();
-		EnterRule("T__63", 27);
-		TraceIn("T__63", 27);
+		EnterRule_T__64();
+		EnterRule("T__64", 27);
+		TraceIn("T__64", 27);
 		try
 		{
-			int _type = T__63;
+			int _type = T__64;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:33:7: ( 'funcao' )
 			DebugEnterAlt(1);
@@ -1074,26 +1075,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__63", 27);
-			LeaveRule("T__63", 27);
-			LeaveRule_T__63();
+			TraceOut("T__64", 27);
+			LeaveRule("T__64", 27);
+			LeaveRule_T__64();
 		}
 	}
-	// $ANTLR end "T__63"
+	// $ANTLR end "T__64"
 
-	partial void EnterRule_T__64();
-	partial void LeaveRule_T__64();
+	partial void EnterRule_T__65();
+	partial void LeaveRule_T__65();
 
-	// $ANTLR start "T__64"
-	[GrammarRule("T__64")]
-	private void mT__64()
+	// $ANTLR start "T__65"
+	[GrammarRule("T__65")]
+	private void mT__65()
 	{
-		EnterRule_T__64();
-		EnterRule("T__64", 28);
-		TraceIn("T__64", 28);
+		EnterRule_T__65();
+		EnterRule("T__65", 28);
+		TraceIn("T__65", 28);
 		try
 		{
-			int _type = T__64;
+			int _type = T__65;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:34:7: ( 'ou' )
 			DebugEnterAlt(1);
@@ -1110,26 +1111,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__64", 28);
-			LeaveRule("T__64", 28);
-			LeaveRule_T__64();
+			TraceOut("T__65", 28);
+			LeaveRule("T__65", 28);
+			LeaveRule_T__65();
 		}
 	}
-	// $ANTLR end "T__64"
+	// $ANTLR end "T__65"
 
-	partial void EnterRule_T__65();
-	partial void LeaveRule_T__65();
+	partial void EnterRule_T__66();
+	partial void LeaveRule_T__66();
 
-	// $ANTLR start "T__65"
-	[GrammarRule("T__65")]
-	private void mT__65()
+	// $ANTLR start "T__66"
+	[GrammarRule("T__66")]
+	private void mT__66()
 	{
-		EnterRule_T__65();
-		EnterRule("T__65", 29);
-		TraceIn("T__65", 29);
+		EnterRule_T__66();
+		EnterRule("T__66", 29);
+		TraceIn("T__66", 29);
 		try
 		{
-			int _type = T__65;
+			int _type = T__66;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:35:7: ( 'para' )
 			DebugEnterAlt(1);
@@ -1146,26 +1147,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__65", 29);
-			LeaveRule("T__65", 29);
-			LeaveRule_T__65();
+			TraceOut("T__66", 29);
+			LeaveRule("T__66", 29);
+			LeaveRule_T__66();
 		}
 	}
-	// $ANTLR end "T__65"
+	// $ANTLR end "T__66"
 
-	partial void EnterRule_T__66();
-	partial void LeaveRule_T__66();
+	partial void EnterRule_T__67();
+	partial void LeaveRule_T__67();
 
-	// $ANTLR start "T__66"
-	[GrammarRule("T__66")]
-	private void mT__66()
+	// $ANTLR start "T__67"
+	[GrammarRule("T__67")]
+	private void mT__67()
 	{
-		EnterRule_T__66();
-		EnterRule("T__66", 30);
-		TraceIn("T__66", 30);
+		EnterRule_T__67();
+		EnterRule("T__67", 30);
+		TraceIn("T__67", 30);
 		try
 		{
-			int _type = T__66;
+			int _type = T__67;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:36:7: ( 'repita' )
 			DebugEnterAlt(1);
@@ -1182,26 +1183,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__66", 30);
-			LeaveRule("T__66", 30);
-			LeaveRule_T__66();
+			TraceOut("T__67", 30);
+			LeaveRule("T__67", 30);
+			LeaveRule_T__67();
 		}
 	}
-	// $ANTLR end "T__66"
+	// $ANTLR end "T__67"
 
-	partial void EnterRule_T__67();
-	partial void LeaveRule_T__67();
+	partial void EnterRule_T__68();
+	partial void LeaveRule_T__68();
 
-	// $ANTLR start "T__67"
-	[GrammarRule("T__67")]
-	private void mT__67()
+	// $ANTLR start "T__68"
+	[GrammarRule("T__68")]
+	private void mT__68()
 	{
-		EnterRule_T__67();
-		EnterRule("T__67", 31);
-		TraceIn("T__67", 31);
+		EnterRule_T__68();
+		EnterRule("T__68", 31);
+		TraceIn("T__68", 31);
 		try
 		{
-			int _type = T__67;
+			int _type = T__68;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:37:7: ( 'retorne' )
 			DebugEnterAlt(1);
@@ -1218,26 +1219,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__67", 31);
-			LeaveRule("T__67", 31);
-			LeaveRule_T__67();
+			TraceOut("T__68", 31);
+			LeaveRule("T__68", 31);
+			LeaveRule_T__68();
 		}
 	}
-	// $ANTLR end "T__67"
+	// $ANTLR end "T__68"
 
-	partial void EnterRule_T__68();
-	partial void LeaveRule_T__68();
+	partial void EnterRule_T__69();
+	partial void LeaveRule_T__69();
 
-	// $ANTLR start "T__68"
-	[GrammarRule("T__68")]
-	private void mT__68()
+	// $ANTLR start "T__69"
+	[GrammarRule("T__69")]
+	private void mT__69()
 	{
-		EnterRule_T__68();
-		EnterRule("T__68", 32);
-		TraceIn("T__68", 32);
+		EnterRule_T__69();
+		EnterRule("T__69", 32);
+		TraceIn("T__69", 32);
 		try
 		{
-			int _type = T__68;
+			int _type = T__69;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:38:7: ( 'se' )
 			DebugEnterAlt(1);
@@ -1254,26 +1255,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__68", 32);
-			LeaveRule("T__68", 32);
-			LeaveRule_T__68();
+			TraceOut("T__69", 32);
+			LeaveRule("T__69", 32);
+			LeaveRule_T__69();
 		}
 	}
-	// $ANTLR end "T__68"
+	// $ANTLR end "T__69"
 
-	partial void EnterRule_T__69();
-	partial void LeaveRule_T__69();
+	partial void EnterRule_T__70();
+	partial void LeaveRule_T__70();
 
-	// $ANTLR start "T__69"
-	[GrammarRule("T__69")]
-	private void mT__69()
+	// $ANTLR start "T__70"
+	[GrammarRule("T__70")]
+	private void mT__70()
 	{
-		EnterRule_T__69();
-		EnterRule("T__69", 33);
-		TraceIn("T__69", 33);
+		EnterRule_T__70();
+		EnterRule("T__70", 33);
+		TraceIn("T__70", 33);
 		try
 		{
-			int _type = T__69;
+			int _type = T__70;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:39:7: ( 'senao' )
 			DebugEnterAlt(1);
@@ -1290,26 +1291,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__69", 33);
-			LeaveRule("T__69", 33);
-			LeaveRule_T__69();
+			TraceOut("T__70", 33);
+			LeaveRule("T__70", 33);
+			LeaveRule_T__70();
 		}
 	}
-	// $ANTLR end "T__69"
+	// $ANTLR end "T__70"
 
-	partial void EnterRule_T__70();
-	partial void LeaveRule_T__70();
+	partial void EnterRule_T__71();
+	partial void LeaveRule_T__71();
 
-	// $ANTLR start "T__70"
-	[GrammarRule("T__70")]
-	private void mT__70()
+	// $ANTLR start "T__71"
+	[GrammarRule("T__71")]
+	private void mT__71()
 	{
-		EnterRule_T__70();
-		EnterRule("T__70", 34);
-		TraceIn("T__70", 34);
+		EnterRule_T__71();
+		EnterRule("T__71", 34);
+		TraceIn("T__71", 34);
 		try
 		{
-			int _type = T__70;
+			int _type = T__71;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:40:7: ( 'variavel' )
 			DebugEnterAlt(1);
@@ -1326,26 +1327,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__70", 34);
-			LeaveRule("T__70", 34);
-			LeaveRule_T__70();
+			TraceOut("T__71", 34);
+			LeaveRule("T__71", 34);
+			LeaveRule_T__71();
 		}
 	}
-	// $ANTLR end "T__70"
+	// $ANTLR end "T__71"
 
-	partial void EnterRule_T__71();
-	partial void LeaveRule_T__71();
+	partial void EnterRule_T__72();
+	partial void LeaveRule_T__72();
 
-	// $ANTLR start "T__71"
-	[GrammarRule("T__71")]
-	private void mT__71()
+	// $ANTLR start "T__72"
+	[GrammarRule("T__72")]
+	private void mT__72()
 	{
-		EnterRule_T__71();
-		EnterRule("T__71", 35);
-		TraceIn("T__71", 35);
+		EnterRule_T__72();
+		EnterRule("T__72", 35);
+		TraceIn("T__72", 35);
 		try
 		{
-			int _type = T__71;
+			int _type = T__72;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:41:7: ( '{' )
 			DebugEnterAlt(1);
@@ -1361,26 +1362,26 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__71", 35);
-			LeaveRule("T__71", 35);
-			LeaveRule_T__71();
+			TraceOut("T__72", 35);
+			LeaveRule("T__72", 35);
+			LeaveRule_T__72();
 		}
 	}
-	// $ANTLR end "T__71"
+	// $ANTLR end "T__72"
 
-	partial void EnterRule_T__72();
-	partial void LeaveRule_T__72();
+	partial void EnterRule_T__73();
+	partial void LeaveRule_T__73();
 
-	// $ANTLR start "T__72"
-	[GrammarRule("T__72")]
-	private void mT__72()
+	// $ANTLR start "T__73"
+	[GrammarRule("T__73")]
+	private void mT__73()
 	{
-		EnterRule_T__72();
-		EnterRule("T__72", 36);
-		TraceIn("T__72", 36);
+		EnterRule_T__73();
+		EnterRule("T__73", 36);
+		TraceIn("T__73", 36);
 		try
 		{
-			int _type = T__72;
+			int _type = T__73;
 			int _channel = DefaultTokenChannel;
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:42:7: ( '}' )
 			DebugEnterAlt(1);
@@ -1396,12 +1397,127 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__72", 36);
-			LeaveRule("T__72", 36);
-			LeaveRule_T__72();
+			TraceOut("T__73", 36);
+			LeaveRule("T__73", 36);
+			LeaveRule_T__73();
 		}
 	}
-	// $ANTLR end "T__72"
+	// $ANTLR end "T__73"
+
+	partial void EnterRule_TYPE();
+	partial void LeaveRule_TYPE();
+
+	// $ANTLR start "TYPE"
+	[GrammarRule("TYPE")]
+	private void mTYPE()
+	{
+		EnterRule_TYPE();
+		EnterRule("TYPE", 37);
+		TraceIn("TYPE", 37);
+		try
+		{
+			int _type = TYPE;
+			int _channel = DefaultTokenChannel;
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:225:6: ( ( 'int' | 'dec' | 'tex' | 'void' ) )
+			DebugEnterAlt(1);
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:225:8: ( 'int' | 'dec' | 'tex' | 'void' )
+			{
+			DebugLocation(225, 8);
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:225:8: ( 'int' | 'dec' | 'tex' | 'void' )
+			int alt1=4;
+			try { DebugEnterSubRule(1);
+			try { DebugEnterDecision(1, false);
+			switch (input.LA(1))
+			{
+			case 'i':
+				{
+				alt1 = 1;
+				}
+				break;
+			case 'd':
+				{
+				alt1 = 2;
+				}
+				break;
+			case 't':
+				{
+				alt1 = 3;
+				}
+				break;
+			case 'v':
+				{
+				alt1 = 4;
+				}
+				break;
+			default:
+				{
+					NoViableAltException nvae = new NoViableAltException("", 1, 0, input);
+					DebugRecognitionException(nvae);
+					throw nvae;
+				}
+			}
+
+			} finally { DebugExitDecision(1); }
+			switch (alt1)
+			{
+			case 1:
+				DebugEnterAlt(1);
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:225:9: 'int'
+				{
+				DebugLocation(225, 9);
+				Match("int"); 
+
+
+				}
+				break;
+			case 2:
+				DebugEnterAlt(2);
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:225:17: 'dec'
+				{
+				DebugLocation(225, 17);
+				Match("dec"); 
+
+
+				}
+				break;
+			case 3:
+				DebugEnterAlt(3);
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:225:25: 'tex'
+				{
+				DebugLocation(225, 25);
+				Match("tex"); 
+
+
+				}
+				break;
+			case 4:
+				DebugEnterAlt(4);
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:225:33: 'void'
+				{
+				DebugLocation(225, 33);
+				Match("void"); 
+
+
+				}
+				break;
+
+			}
+			} finally { DebugExitSubRule(1); }
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("TYPE", 37);
+			LeaveRule("TYPE", 37);
+			LeaveRule_TYPE();
+		}
+	}
+	// $ANTLR end "TYPE"
 
 	partial void EnterRule_ID();
 	partial void LeaveRule_ID();
@@ -1411,17 +1527,17 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 	private void mID()
 	{
 		EnterRule_ID();
-		EnterRule("ID", 37);
-		TraceIn("ID", 37);
+		EnterRule("ID", 38);
+		TraceIn("ID", 38);
 		try
 		{
 			int _type = ID;
 			int _channel = DefaultTokenChannel;
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:225:4: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:227:4: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:225:6: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:227:6: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
 			{
-			DebugLocation(225, 6);
+			DebugLocation(227, 6);
 			if ((input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z'))
 			{
 				input.Consume();
@@ -1434,81 +1550,8 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 				throw mse;
 			}
 
-			DebugLocation(225, 30);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:225:30: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
-			try { DebugEnterSubRule(1);
-			while (true)
-			{
-				int alt1=2;
-				try { DebugEnterDecision(1, false);
-				int LA1_0 = input.LA(1);
-
-				if (((LA1_0>='0' && LA1_0<='9')||(LA1_0>='A' && LA1_0<='Z')||LA1_0=='_'||(LA1_0>='a' && LA1_0<='z')))
-				{
-					alt1 = 1;
-				}
-
-
-				} finally { DebugExitDecision(1); }
-				switch ( alt1 )
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:
-					{
-					DebugLocation(225, 30);
-					input.Consume();
-
-
-					}
-					break;
-
-				default:
-					goto loop1;
-				}
-			}
-
-			loop1:
-				;
-
-			} finally { DebugExitSubRule(1); }
-
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally
-		{
-			TraceOut("ID", 37);
-			LeaveRule("ID", 37);
-			LeaveRule_ID();
-		}
-	}
-	// $ANTLR end "ID"
-
-	partial void EnterRule_INT();
-	partial void LeaveRule_INT();
-
-	// $ANTLR start "INT"
-	[GrammarRule("INT")]
-	private void mINT()
-	{
-		EnterRule_INT();
-		EnterRule("INT", 38);
-		TraceIn("INT", 38);
-		try
-		{
-			int _type = INT;
-			int _channel = DefaultTokenChannel;
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:227:5: ( ( '0' .. '9' )+ )
-			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:227:7: ( '0' .. '9' )+
-			{
-			DebugLocation(227, 7);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:227:7: ( '0' .. '9' )+
-			int cnt2=0;
+			DebugLocation(227, 30);
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:227:30: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
 			try { DebugEnterSubRule(2);
 			while (true)
 			{
@@ -1516,20 +1559,20 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 				try { DebugEnterDecision(2, false);
 				int LA2_0 = input.LA(1);
 
-				if (((LA2_0>='0' && LA2_0<='9')))
+				if (((LA2_0>='0' && LA2_0<='9')||(LA2_0>='A' && LA2_0<='Z')||LA2_0=='_'||(LA2_0>='a' && LA2_0<='z')))
 				{
 					alt2 = 1;
 				}
 
 
 				} finally { DebugExitDecision(2); }
-				switch (alt2)
+				switch ( alt2 )
 				{
 				case 1:
 					DebugEnterAlt(1);
 					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:
 					{
-					DebugLocation(227, 7);
+					DebugLocation(227, 30);
 					input.Consume();
 
 
@@ -1537,15 +1580,10 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 					break;
 
 				default:
-					if (cnt2 >= 1)
-						goto loop2;
-
-					EarlyExitException eee2 = new EarlyExitException( 2, input );
-					DebugRecognitionException(eee2);
-					throw eee2;
+					goto loop2;
 				}
-				cnt2++;
 			}
+
 			loop2:
 				;
 
@@ -1559,8 +1597,86 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("INT", 38);
-			LeaveRule("INT", 38);
+			TraceOut("ID", 38);
+			LeaveRule("ID", 38);
+			LeaveRule_ID();
+		}
+	}
+	// $ANTLR end "ID"
+
+	partial void EnterRule_INT();
+	partial void LeaveRule_INT();
+
+	// $ANTLR start "INT"
+	[GrammarRule("INT")]
+	private void mINT()
+	{
+		EnterRule_INT();
+		EnterRule("INT", 39);
+		TraceIn("INT", 39);
+		try
+		{
+			int _type = INT;
+			int _channel = DefaultTokenChannel;
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:229:5: ( ( '0' .. '9' )+ )
+			DebugEnterAlt(1);
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:229:7: ( '0' .. '9' )+
+			{
+			DebugLocation(229, 7);
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:229:7: ( '0' .. '9' )+
+			int cnt3=0;
+			try { DebugEnterSubRule(3);
+			while (true)
+			{
+				int alt3=2;
+				try { DebugEnterDecision(3, false);
+				int LA3_0 = input.LA(1);
+
+				if (((LA3_0>='0' && LA3_0<='9')))
+				{
+					alt3 = 1;
+				}
+
+
+				} finally { DebugExitDecision(3); }
+				switch (alt3)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:
+					{
+					DebugLocation(229, 7);
+					input.Consume();
+
+
+					}
+					break;
+
+				default:
+					if (cnt3 >= 1)
+						goto loop3;
+
+					EarlyExitException eee3 = new EarlyExitException( 3, input );
+					DebugRecognitionException(eee3);
+					throw eee3;
+				}
+				cnt3++;
+			}
+			loop3:
+				;
+
+			} finally { DebugExitSubRule(3); }
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("INT", 39);
+			LeaveRule("INT", 39);
 			LeaveRule_INT();
 		}
 	}
@@ -1574,21 +1690,21 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 	private void mFLOAT()
 	{
 		EnterRule_FLOAT();
-		EnterRule("FLOAT", 39);
-		TraceIn("FLOAT", 39);
+		EnterRule("FLOAT", 40);
+		TraceIn("FLOAT", 40);
 		try
 		{
 			int _type = FLOAT;
 			int _channel = DefaultTokenChannel;
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:229:7: ( INT '.' INT )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:231:7: ( INT '.' INT )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:229:8: INT '.' INT
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:231:8: INT '.' INT
 			{
-			DebugLocation(229, 8);
+			DebugLocation(231, 8);
 			mINT(); 
-			DebugLocation(229, 12);
+			DebugLocation(231, 12);
 			Match('.'); 
-			DebugLocation(229, 16);
+			DebugLocation(231, 16);
 			mINT(); 
 
 			}
@@ -1598,8 +1714,8 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("FLOAT", 39);
-			LeaveRule("FLOAT", 39);
+			TraceOut("FLOAT", 40);
+			LeaveRule("FLOAT", 40);
 			LeaveRule_FLOAT();
 		}
 	}
@@ -1613,46 +1729,46 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 	private void mNEWLINE()
 	{
 		EnterRule_NEWLINE();
-		EnterRule("NEWLINE", 40);
-		TraceIn("NEWLINE", 40);
+		EnterRule("NEWLINE", 41);
+		TraceIn("NEWLINE", 41);
 		try
 		{
 			int _type = NEWLINE;
 			int _channel = DefaultTokenChannel;
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:231:9: ( ( '\\r' )? '\\n' )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:233:9: ( ( '\\r' )? '\\n' )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:231:11: ( '\\r' )? '\\n'
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:233:11: ( '\\r' )? '\\n'
 			{
-			DebugLocation(231, 11);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:231:11: ( '\\r' )?
-			int alt3=2;
-			try { DebugEnterSubRule(3);
-			try { DebugEnterDecision(3, false);
-			int LA3_0 = input.LA(1);
+			DebugLocation(233, 11);
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:233:11: ( '\\r' )?
+			int alt4=2;
+			try { DebugEnterSubRule(4);
+			try { DebugEnterDecision(4, false);
+			int LA4_0 = input.LA(1);
 
-			if ((LA3_0=='\r'))
+			if ((LA4_0=='\r'))
 			{
-				alt3 = 1;
+				alt4 = 1;
 			}
-			} finally { DebugExitDecision(3); }
-			switch (alt3)
+			} finally { DebugExitDecision(4); }
+			switch (alt4)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:231:11: '\\r'
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:233:11: '\\r'
 				{
-				DebugLocation(231, 11);
+				DebugLocation(233, 11);
 				Match('\r'); 
 
 				}
 				break;
 
 			}
-			} finally { DebugExitSubRule(3); }
+			} finally { DebugExitSubRule(4); }
 
-			DebugLocation(231, 16);
+			DebugLocation(233, 16);
 			Match('\n'); 
-			DebugLocation(231, 22);
+			DebugLocation(233, 22);
 			 _channel = Hidden; 
 
 			}
@@ -1662,8 +1778,8 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("NEWLINE", 40);
-			LeaveRule("NEWLINE", 40);
+			TraceOut("NEWLINE", 41);
+			LeaveRule("NEWLINE", 41);
 			LeaveRule_NEWLINE();
 		}
 	}
@@ -1677,40 +1793,40 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 	private void mWS()
 	{
 		EnterRule_WS();
-		EnterRule("WS", 41);
-		TraceIn("WS", 41);
+		EnterRule("WS", 42);
+		TraceIn("WS", 42);
 		try
 		{
 			int _type = WS;
 			int _channel = DefaultTokenChannel;
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:233:4: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:235:4: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:233:6: ( ' ' | '\\t' | '\\r' | '\\n' )+
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:235:6: ( ' ' | '\\t' | '\\r' | '\\n' )+
 			{
-			DebugLocation(233, 6);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:233:6: ( ' ' | '\\t' | '\\r' | '\\n' )+
-			int cnt4=0;
-			try { DebugEnterSubRule(4);
+			DebugLocation(235, 6);
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:235:6: ( ' ' | '\\t' | '\\r' | '\\n' )+
+			int cnt5=0;
+			try { DebugEnterSubRule(5);
 			while (true)
 			{
-				int alt4=2;
-				try { DebugEnterDecision(4, false);
-				int LA4_0 = input.LA(1);
+				int alt5=2;
+				try { DebugEnterDecision(5, false);
+				int LA5_0 = input.LA(1);
 
-				if (((LA4_0>='\t' && LA4_0<='\n')||LA4_0=='\r'||LA4_0==' '))
+				if (((LA5_0>='\t' && LA5_0<='\n')||LA5_0=='\r'||LA5_0==' '))
 				{
-					alt4 = 1;
+					alt5 = 1;
 				}
 
 
-				} finally { DebugExitDecision(4); }
-				switch (alt4)
+				} finally { DebugExitDecision(5); }
+				switch (alt5)
 				{
 				case 1:
 					DebugEnterAlt(1);
 					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:
 					{
-					DebugLocation(233, 6);
+					DebugLocation(235, 6);
 					input.Consume();
 
 
@@ -1718,21 +1834,21 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 					break;
 
 				default:
-					if (cnt4 >= 1)
-						goto loop4;
+					if (cnt5 >= 1)
+						goto loop5;
 
-					EarlyExitException eee4 = new EarlyExitException( 4, input );
-					DebugRecognitionException(eee4);
-					throw eee4;
+					EarlyExitException eee5 = new EarlyExitException( 5, input );
+					DebugRecognitionException(eee5);
+					throw eee5;
 				}
-				cnt4++;
+				cnt5++;
 			}
-			loop4:
+			loop5:
 				;
 
-			} finally { DebugExitSubRule(4); }
+			} finally { DebugExitSubRule(5); }
 
-			DebugLocation(233, 36);
+			DebugLocation(235, 36);
 			 _channel = Hidden; 
 
 			}
@@ -1742,8 +1858,8 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("WS", 41);
-			LeaveRule("WS", 41);
+			TraceOut("WS", 42);
+			LeaveRule("WS", 42);
 			LeaveRule_WS();
 		}
 	}
@@ -1757,54 +1873,54 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 	private void mSTRING()
 	{
 		EnterRule_STRING();
-		EnterRule("STRING", 42);
-		TraceIn("STRING", 42);
+		EnterRule("STRING", 43);
+		TraceIn("STRING", 43);
 		try
 		{
 			int _type = STRING;
 			int _channel = DefaultTokenChannel;
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:236:5: ( '\"' ( ESC_SEQ |~ ( '\\\\' | '\"' ) )* '\"' )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:238:5: ( '\"' ( ESC_SEQ |~ ( '\\\\' | '\"' ) )* '\"' )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:236:7: '\"' ( ESC_SEQ |~ ( '\\\\' | '\"' ) )* '\"'
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:238:7: '\"' ( ESC_SEQ |~ ( '\\\\' | '\"' ) )* '\"'
 			{
-			DebugLocation(236, 7);
+			DebugLocation(238, 7);
 			Match('\"'); 
-			DebugLocation(236, 11);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:236:11: ( ESC_SEQ |~ ( '\\\\' | '\"' ) )*
-			try { DebugEnterSubRule(5);
+			DebugLocation(238, 11);
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:238:11: ( ESC_SEQ |~ ( '\\\\' | '\"' ) )*
+			try { DebugEnterSubRule(6);
 			while (true)
 			{
-				int alt5=3;
-				try { DebugEnterDecision(5, false);
-				int LA5_0 = input.LA(1);
+				int alt6=3;
+				try { DebugEnterDecision(6, false);
+				int LA6_0 = input.LA(1);
 
-				if ((LA5_0=='\\'))
+				if ((LA6_0=='\\'))
 				{
-					alt5 = 1;
+					alt6 = 1;
 				}
-				else if (((LA5_0>='\u0000' && LA5_0<='!')||(LA5_0>='#' && LA5_0<='[')||(LA5_0>=']' && LA5_0<='\uFFFF')))
+				else if (((LA6_0>='\u0000' && LA6_0<='!')||(LA6_0>='#' && LA6_0<='[')||(LA6_0>=']' && LA6_0<='\uFFFF')))
 				{
-					alt5 = 2;
+					alt6 = 2;
 				}
 
 
-				} finally { DebugExitDecision(5); }
-				switch ( alt5 )
+				} finally { DebugExitDecision(6); }
+				switch ( alt6 )
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:236:13: ESC_SEQ
+					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:238:13: ESC_SEQ
 					{
-					DebugLocation(236, 13);
+					DebugLocation(238, 13);
 					mESC_SEQ(); 
 
 					}
 					break;
 				case 2:
 					DebugEnterAlt(2);
-					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:236:23: ~ ( '\\\\' | '\"' )
+					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:238:23: ~ ( '\\\\' | '\"' )
 					{
-					DebugLocation(236, 23);
+					DebugLocation(238, 23);
 					input.Consume();
 
 
@@ -1812,16 +1928,16 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 					break;
 
 				default:
-					goto loop5;
+					goto loop6;
 				}
 			}
 
-			loop5:
+			loop6:
 				;
 
-			} finally { DebugExitSubRule(5); }
+			} finally { DebugExitSubRule(6); }
 
-			DebugLocation(236, 38);
+			DebugLocation(238, 38);
 			Match('\"'); 
 
 			}
@@ -1831,8 +1947,8 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("STRING", 42);
-			LeaveRule("STRING", 42);
+			TraceOut("STRING", 43);
+			LeaveRule("STRING", 43);
 			LeaveRule_STRING();
 		}
 	}
@@ -1846,56 +1962,56 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 	private void mCHAR()
 	{
 		EnterRule_CHAR();
-		EnterRule("CHAR", 43);
-		TraceIn("CHAR", 43);
+		EnterRule("CHAR", 44);
+		TraceIn("CHAR", 44);
 		try
 		{
 			int _type = CHAR;
 			int _channel = DefaultTokenChannel;
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:239:5: ( '\\'' ( ESC_SEQ |~ ( '\\'' | '\\\\' ) ) '\\'' )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:241:5: ( '\\'' ( ESC_SEQ |~ ( '\\'' | '\\\\' ) ) '\\'' )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:239:7: '\\'' ( ESC_SEQ |~ ( '\\'' | '\\\\' ) ) '\\''
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:241:7: '\\'' ( ESC_SEQ |~ ( '\\'' | '\\\\' ) ) '\\''
 			{
-			DebugLocation(239, 7);
+			DebugLocation(241, 7);
 			Match('\''); 
-			DebugLocation(239, 12);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:239:12: ( ESC_SEQ |~ ( '\\'' | '\\\\' ) )
-			int alt6=2;
-			try { DebugEnterSubRule(6);
-			try { DebugEnterDecision(6, false);
-			int LA6_0 = input.LA(1);
+			DebugLocation(241, 12);
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:241:12: ( ESC_SEQ |~ ( '\\'' | '\\\\' ) )
+			int alt7=2;
+			try { DebugEnterSubRule(7);
+			try { DebugEnterDecision(7, false);
+			int LA7_0 = input.LA(1);
 
-			if ((LA6_0=='\\'))
+			if ((LA7_0=='\\'))
 			{
-				alt6 = 1;
+				alt7 = 1;
 			}
-			else if (((LA6_0>='\u0000' && LA6_0<='&')||(LA6_0>='(' && LA6_0<='[')||(LA6_0>=']' && LA6_0<='\uFFFF')))
+			else if (((LA7_0>='\u0000' && LA7_0<='&')||(LA7_0>='(' && LA7_0<='[')||(LA7_0>=']' && LA7_0<='\uFFFF')))
 			{
-				alt6 = 2;
+				alt7 = 2;
 			}
 			else
 			{
-				NoViableAltException nvae = new NoViableAltException("", 6, 0, input);
+				NoViableAltException nvae = new NoViableAltException("", 7, 0, input);
 				DebugRecognitionException(nvae);
 				throw nvae;
 			}
-			} finally { DebugExitDecision(6); }
-			switch (alt6)
+			} finally { DebugExitDecision(7); }
+			switch (alt7)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:239:14: ESC_SEQ
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:241:14: ESC_SEQ
 				{
-				DebugLocation(239, 14);
+				DebugLocation(241, 14);
 				mESC_SEQ(); 
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:239:24: ~ ( '\\'' | '\\\\' )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:241:24: ~ ( '\\'' | '\\\\' )
 				{
-				DebugLocation(239, 24);
+				DebugLocation(241, 24);
 				input.Consume();
 
 
@@ -1903,9 +2019,9 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 				break;
 
 			}
-			} finally { DebugExitSubRule(6); }
+			} finally { DebugExitSubRule(7); }
 
-			DebugLocation(239, 39);
+			DebugLocation(241, 39);
 			Match('\''); 
 
 			}
@@ -1915,8 +2031,8 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("CHAR", 43);
-			LeaveRule("CHAR", 43);
+			TraceOut("CHAR", 44);
+			LeaveRule("CHAR", 44);
 			LeaveRule_CHAR();
 		}
 	}
@@ -1930,15 +2046,15 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 	private void mEXPONENT()
 	{
 		EnterRule_EXPONENT();
-		EnterRule("EXPONENT", 44);
-		TraceIn("EXPONENT", 44);
+		EnterRule("EXPONENT", 45);
+		TraceIn("EXPONENT", 45);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:244:10: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:246:10: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:244:12: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:246:12: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
 			{
-			DebugLocation(244, 12);
+			DebugLocation(246, 12);
 			if (input.LA(1)=='E'||input.LA(1)=='e')
 			{
 				input.Consume();
@@ -1951,25 +2067,25 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 				throw mse;
 			}
 
-			DebugLocation(244, 22);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:244:22: ( '+' | '-' )?
-			int alt7=2;
-			try { DebugEnterSubRule(7);
-			try { DebugEnterDecision(7, false);
-			int LA7_0 = input.LA(1);
+			DebugLocation(246, 22);
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:246:22: ( '+' | '-' )?
+			int alt8=2;
+			try { DebugEnterSubRule(8);
+			try { DebugEnterDecision(8, false);
+			int LA8_0 = input.LA(1);
 
-			if ((LA7_0=='+'||LA7_0=='-'))
+			if ((LA8_0=='+'||LA8_0=='-'))
 			{
-				alt7 = 1;
+				alt8 = 1;
 			}
-			} finally { DebugExitDecision(7); }
-			switch (alt7)
+			} finally { DebugExitDecision(8); }
+			switch (alt8)
 			{
 			case 1:
 				DebugEnterAlt(1);
 				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:
 				{
-				DebugLocation(244, 22);
+				DebugLocation(246, 22);
 				input.Consume();
 
 
@@ -1977,32 +2093,32 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 				break;
 
 			}
-			} finally { DebugExitSubRule(7); }
+			} finally { DebugExitSubRule(8); }
 
-			DebugLocation(244, 33);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:244:33: ( '0' .. '9' )+
-			int cnt8=0;
-			try { DebugEnterSubRule(8);
+			DebugLocation(246, 33);
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:246:33: ( '0' .. '9' )+
+			int cnt9=0;
+			try { DebugEnterSubRule(9);
 			while (true)
 			{
-				int alt8=2;
-				try { DebugEnterDecision(8, false);
-				int LA8_0 = input.LA(1);
+				int alt9=2;
+				try { DebugEnterDecision(9, false);
+				int LA9_0 = input.LA(1);
 
-				if (((LA8_0>='0' && LA8_0<='9')))
+				if (((LA9_0>='0' && LA9_0<='9')))
 				{
-					alt8 = 1;
+					alt9 = 1;
 				}
 
 
-				} finally { DebugExitDecision(8); }
-				switch (alt8)
+				} finally { DebugExitDecision(9); }
+				switch (alt9)
 				{
 				case 1:
 					DebugEnterAlt(1);
 					// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:
 					{
-					DebugLocation(244, 33);
+					DebugLocation(246, 33);
 					input.Consume();
 
 
@@ -2010,19 +2126,19 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 					break;
 
 				default:
-					if (cnt8 >= 1)
-						goto loop8;
+					if (cnt9 >= 1)
+						goto loop9;
 
-					EarlyExitException eee8 = new EarlyExitException( 8, input );
-					DebugRecognitionException(eee8);
-					throw eee8;
+					EarlyExitException eee9 = new EarlyExitException( 9, input );
+					DebugRecognitionException(eee9);
+					throw eee9;
 				}
-				cnt8++;
+				cnt9++;
 			}
-			loop8:
+			loop9:
 				;
 
-			} finally { DebugExitSubRule(8); }
+			} finally { DebugExitSubRule(9); }
 
 
 			}
@@ -2030,8 +2146,8 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("EXPONENT", 44);
-			LeaveRule("EXPONENT", 44);
+			TraceOut("EXPONENT", 45);
+			LeaveRule("EXPONENT", 45);
 			LeaveRule_EXPONENT();
 		}
 	}
@@ -2045,15 +2161,15 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 	private void mHEX_DIGIT()
 	{
 		EnterRule_HEX_DIGIT();
-		EnterRule("HEX_DIGIT", 45);
-		TraceIn("HEX_DIGIT", 45);
+		EnterRule("HEX_DIGIT", 46);
+		TraceIn("HEX_DIGIT", 46);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:247:11: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:249:11: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
 			DebugEnterAlt(1);
 			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:
 			{
-			DebugLocation(247, 11);
+			DebugLocation(249, 11);
 			if ((input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f'))
 			{
 				input.Consume();
@@ -2072,8 +2188,8 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("HEX_DIGIT", 45);
-			LeaveRule("HEX_DIGIT", 45);
+			TraceOut("HEX_DIGIT", 46);
+			LeaveRule("HEX_DIGIT", 46);
 			LeaveRule_HEX_DIGIT();
 		}
 	}
@@ -2087,16 +2203,16 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 	private void mESC_SEQ()
 	{
 		EnterRule_ESC_SEQ();
-		EnterRule("ESC_SEQ", 46);
-		TraceIn("ESC_SEQ", 46);
+		EnterRule("ESC_SEQ", 47);
+		TraceIn("ESC_SEQ", 47);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:251:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UNICODE_ESC | OCTAL_ESC )
-			int alt9=3;
-			try { DebugEnterDecision(9, false);
-			int LA9_0 = input.LA(1);
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:253:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UNICODE_ESC | OCTAL_ESC )
+			int alt10=3;
+			try { DebugEnterDecision(10, false);
+			int LA10_0 = input.LA(1);
 
-			if ((LA9_0=='\\'))
+			if ((LA10_0=='\\'))
 			{
 				switch (input.LA(2))
 				{
@@ -2109,12 +2225,12 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 				case 'r':
 				case 't':
 					{
-					alt9 = 1;
+					alt10 = 1;
 					}
 					break;
 				case 'u':
 					{
-					alt9 = 2;
+					alt10 = 2;
 					}
 					break;
 				case '0':
@@ -2126,12 +2242,12 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 				case '6':
 				case '7':
 					{
-					alt9 = 3;
+					alt10 = 3;
 					}
 					break;
 				default:
 					{
-						NoViableAltException nvae = new NoViableAltException("", 9, 1, input);
+						NoViableAltException nvae = new NoViableAltException("", 10, 1, input);
 						DebugRecognitionException(nvae);
 						throw nvae;
 					}
@@ -2140,20 +2256,20 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 			}
 			else
 			{
-				NoViableAltException nvae = new NoViableAltException("", 9, 0, input);
+				NoViableAltException nvae = new NoViableAltException("", 10, 0, input);
 				DebugRecognitionException(nvae);
 				throw nvae;
 			}
-			} finally { DebugExitDecision(9); }
-			switch (alt9)
+			} finally { DebugExitDecision(10); }
+			switch (alt10)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:251:7: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:253:7: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
 				{
-				DebugLocation(251, 7);
+				DebugLocation(253, 7);
 				Match('\\'); 
-				DebugLocation(251, 12);
+				DebugLocation(253, 12);
 				input.Consume();
 
 
@@ -2161,18 +2277,18 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:252:7: UNICODE_ESC
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:254:7: UNICODE_ESC
 				{
-				DebugLocation(252, 7);
+				DebugLocation(254, 7);
 				mUNICODE_ESC(); 
 
 				}
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:253:7: OCTAL_ESC
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:255:7: OCTAL_ESC
 				{
-				DebugLocation(253, 7);
+				DebugLocation(255, 7);
 				mOCTAL_ESC(); 
 
 				}
@@ -2182,8 +2298,8 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("ESC_SEQ", 46);
-			LeaveRule("ESC_SEQ", 46);
+			TraceOut("ESC_SEQ", 47);
+			LeaveRule("ESC_SEQ", 47);
 			LeaveRule_ESC_SEQ();
 		}
 	}
@@ -2197,83 +2313,83 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 	private void mOCTAL_ESC()
 	{
 		EnterRule_OCTAL_ESC();
-		EnterRule("OCTAL_ESC", 47);
-		TraceIn("OCTAL_ESC", 47);
+		EnterRule("OCTAL_ESC", 48);
+		TraceIn("OCTAL_ESC", 48);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:258:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
-			int alt10=3;
-			try { DebugEnterDecision(10, false);
-			int LA10_0 = input.LA(1);
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:260:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
+			int alt11=3;
+			try { DebugEnterDecision(11, false);
+			int LA11_0 = input.LA(1);
 
-			if ((LA10_0=='\\'))
+			if ((LA11_0=='\\'))
 			{
-				int LA10_1 = input.LA(2);
+				int LA11_1 = input.LA(2);
 
-				if (((LA10_1>='0' && LA10_1<='3')))
+				if (((LA11_1>='0' && LA11_1<='3')))
 				{
-					int LA10_2 = input.LA(3);
+					int LA11_2 = input.LA(3);
 
-					if (((LA10_2>='0' && LA10_2<='7')))
+					if (((LA11_2>='0' && LA11_2<='7')))
 					{
-						int LA10_4 = input.LA(4);
+						int LA11_4 = input.LA(4);
 
-						if (((LA10_4>='0' && LA10_4<='7')))
+						if (((LA11_4>='0' && LA11_4<='7')))
 						{
-							alt10 = 1;
+							alt11 = 1;
 						}
 						else
 						{
-							alt10 = 2;
+							alt11 = 2;
 						}
 					}
 					else
 					{
-						alt10 = 3;
+						alt11 = 3;
 					}
 				}
-				else if (((LA10_1>='4' && LA10_1<='7')))
+				else if (((LA11_1>='4' && LA11_1<='7')))
 				{
-					int LA10_3 = input.LA(3);
+					int LA11_3 = input.LA(3);
 
-					if (((LA10_3>='0' && LA10_3<='7')))
+					if (((LA11_3>='0' && LA11_3<='7')))
 					{
-						alt10 = 2;
+						alt11 = 2;
 					}
 					else
 					{
-						alt10 = 3;
+						alt11 = 3;
 					}
 				}
 				else
 				{
-					NoViableAltException nvae = new NoViableAltException("", 10, 1, input);
+					NoViableAltException nvae = new NoViableAltException("", 11, 1, input);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
 			}
 			else
 			{
-				NoViableAltException nvae = new NoViableAltException("", 10, 0, input);
+				NoViableAltException nvae = new NoViableAltException("", 11, 0, input);
 				DebugRecognitionException(nvae);
 				throw nvae;
 			}
-			} finally { DebugExitDecision(10); }
-			switch (alt10)
+			} finally { DebugExitDecision(11); }
+			switch (alt11)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:258:7: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:260:7: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
 				{
-				DebugLocation(258, 7);
+				DebugLocation(260, 7);
 				Match('\\'); 
-				DebugLocation(258, 12);
+				DebugLocation(260, 12);
 				input.Consume();
 
-				DebugLocation(258, 23);
+				DebugLocation(260, 23);
 				input.Consume();
 
-				DebugLocation(258, 34);
+				DebugLocation(260, 34);
 				input.Consume();
 
 
@@ -2281,14 +2397,14 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:259:7: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:261:7: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
 				{
-				DebugLocation(259, 7);
+				DebugLocation(261, 7);
 				Match('\\'); 
-				DebugLocation(259, 12);
+				DebugLocation(261, 12);
 				input.Consume();
 
-				DebugLocation(259, 23);
+				DebugLocation(261, 23);
 				input.Consume();
 
 
@@ -2296,11 +2412,11 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:260:7: '\\\\' ( '0' .. '7' )
+				// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:262:7: '\\\\' ( '0' .. '7' )
 				{
-				DebugLocation(260, 7);
+				DebugLocation(262, 7);
 				Match('\\'); 
-				DebugLocation(260, 12);
+				DebugLocation(262, 12);
 				input.Consume();
 
 
@@ -2311,8 +2427,8 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("OCTAL_ESC", 47);
-			LeaveRule("OCTAL_ESC", 47);
+			TraceOut("OCTAL_ESC", 48);
+			LeaveRule("OCTAL_ESC", 48);
 			LeaveRule_OCTAL_ESC();
 		}
 	}
@@ -2326,25 +2442,25 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 	private void mUNICODE_ESC()
 	{
 		EnterRule_UNICODE_ESC();
-		EnterRule("UNICODE_ESC", 48);
-		TraceIn("UNICODE_ESC", 48);
+		EnterRule("UNICODE_ESC", 49);
+		TraceIn("UNICODE_ESC", 49);
 		try
 		{
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:265:5: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:267:5: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:265:7: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:267:7: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
 			{
-			DebugLocation(265, 7);
+			DebugLocation(267, 7);
 			Match('\\'); 
-			DebugLocation(265, 12);
+			DebugLocation(267, 12);
 			Match('u'); 
-			DebugLocation(265, 16);
+			DebugLocation(267, 16);
 			mHEX_DIGIT(); 
-			DebugLocation(265, 26);
+			DebugLocation(267, 26);
 			mHEX_DIGIT(); 
-			DebugLocation(265, 36);
+			DebugLocation(267, 36);
 			mHEX_DIGIT(); 
-			DebugLocation(265, 46);
+			DebugLocation(267, 46);
 			mHEX_DIGIT(); 
 
 			}
@@ -2352,8 +2468,8 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("UNICODE_ESC", 48);
-			LeaveRule("UNICODE_ESC", 48);
+			TraceOut("UNICODE_ESC", 49);
+			LeaveRule("UNICODE_ESC", 49);
 			LeaveRule_UNICODE_ESC();
 		}
 	}
@@ -2361,404 +2477,413 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 
 	public override void mTokens()
 	{
-		// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:8: ( T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | ID | INT | FLOAT | NEWLINE | WS | STRING | CHAR )
-		int alt11=43;
-		try { DebugEnterDecision(11, false);
+		// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:8: ( T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | TYPE | ID | INT | FLOAT | NEWLINE | WS | STRING | CHAR )
+		int alt12=44;
+		try { DebugEnterDecision(12, false);
 		try
 		{
-			alt11 = dfa11.Predict(input);
+			alt12 = dfa12.Predict(input);
 		}
 		catch (NoViableAltException nvae)
 		{
 			DebugRecognitionException(nvae);
 			throw;
 		}
-		} finally { DebugExitDecision(11); }
-		switch (alt11)
+		} finally { DebugExitDecision(12); }
+		switch (alt12)
 		{
 		case 1:
 			DebugEnterAlt(1);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:10: T__37
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:10: T__38
 			{
 			DebugLocation(1, 10);
-			mT__37(); 
+			mT__38(); 
 
 			}
 			break;
 		case 2:
 			DebugEnterAlt(2);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:16: T__38
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:16: T__39
 			{
 			DebugLocation(1, 16);
-			mT__38(); 
+			mT__39(); 
 
 			}
 			break;
 		case 3:
 			DebugEnterAlt(3);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:22: T__39
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:22: T__40
 			{
 			DebugLocation(1, 22);
-			mT__39(); 
+			mT__40(); 
 
 			}
 			break;
 		case 4:
 			DebugEnterAlt(4);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:28: T__40
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:28: T__41
 			{
 			DebugLocation(1, 28);
-			mT__40(); 
+			mT__41(); 
 
 			}
 			break;
 		case 5:
 			DebugEnterAlt(5);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:34: T__41
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:34: T__42
 			{
 			DebugLocation(1, 34);
-			mT__41(); 
+			mT__42(); 
 
 			}
 			break;
 		case 6:
 			DebugEnterAlt(6);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:40: T__42
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:40: T__43
 			{
 			DebugLocation(1, 40);
-			mT__42(); 
+			mT__43(); 
 
 			}
 			break;
 		case 7:
 			DebugEnterAlt(7);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:46: T__43
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:46: T__44
 			{
 			DebugLocation(1, 46);
-			mT__43(); 
+			mT__44(); 
 
 			}
 			break;
 		case 8:
 			DebugEnterAlt(8);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:52: T__44
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:52: T__45
 			{
 			DebugLocation(1, 52);
-			mT__44(); 
+			mT__45(); 
 
 			}
 			break;
 		case 9:
 			DebugEnterAlt(9);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:58: T__45
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:58: T__46
 			{
 			DebugLocation(1, 58);
-			mT__45(); 
+			mT__46(); 
 
 			}
 			break;
 		case 10:
 			DebugEnterAlt(10);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:64: T__46
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:64: T__47
 			{
 			DebugLocation(1, 64);
-			mT__46(); 
+			mT__47(); 
 
 			}
 			break;
 		case 11:
 			DebugEnterAlt(11);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:70: T__47
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:70: T__48
 			{
 			DebugLocation(1, 70);
-			mT__47(); 
+			mT__48(); 
 
 			}
 			break;
 		case 12:
 			DebugEnterAlt(12);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:76: T__48
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:76: T__49
 			{
 			DebugLocation(1, 76);
-			mT__48(); 
+			mT__49(); 
 
 			}
 			break;
 		case 13:
 			DebugEnterAlt(13);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:82: T__49
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:82: T__50
 			{
 			DebugLocation(1, 82);
-			mT__49(); 
+			mT__50(); 
 
 			}
 			break;
 		case 14:
 			DebugEnterAlt(14);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:88: T__50
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:88: T__51
 			{
 			DebugLocation(1, 88);
-			mT__50(); 
+			mT__51(); 
 
 			}
 			break;
 		case 15:
 			DebugEnterAlt(15);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:94: T__51
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:94: T__52
 			{
 			DebugLocation(1, 94);
-			mT__51(); 
+			mT__52(); 
 
 			}
 			break;
 		case 16:
 			DebugEnterAlt(16);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:100: T__52
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:100: T__53
 			{
 			DebugLocation(1, 100);
-			mT__52(); 
+			mT__53(); 
 
 			}
 			break;
 		case 17:
 			DebugEnterAlt(17);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:106: T__53
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:106: T__54
 			{
 			DebugLocation(1, 106);
-			mT__53(); 
+			mT__54(); 
 
 			}
 			break;
 		case 18:
 			DebugEnterAlt(18);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:112: T__54
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:112: T__55
 			{
 			DebugLocation(1, 112);
-			mT__54(); 
+			mT__55(); 
 
 			}
 			break;
 		case 19:
 			DebugEnterAlt(19);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:118: T__55
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:118: T__56
 			{
 			DebugLocation(1, 118);
-			mT__55(); 
+			mT__56(); 
 
 			}
 			break;
 		case 20:
 			DebugEnterAlt(20);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:124: T__56
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:124: T__57
 			{
 			DebugLocation(1, 124);
-			mT__56(); 
+			mT__57(); 
 
 			}
 			break;
 		case 21:
 			DebugEnterAlt(21);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:130: T__57
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:130: T__58
 			{
 			DebugLocation(1, 130);
-			mT__57(); 
+			mT__58(); 
 
 			}
 			break;
 		case 22:
 			DebugEnterAlt(22);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:136: T__58
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:136: T__59
 			{
 			DebugLocation(1, 136);
-			mT__58(); 
+			mT__59(); 
 
 			}
 			break;
 		case 23:
 			DebugEnterAlt(23);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:142: T__59
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:142: T__60
 			{
 			DebugLocation(1, 142);
-			mT__59(); 
+			mT__60(); 
 
 			}
 			break;
 		case 24:
 			DebugEnterAlt(24);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:148: T__60
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:148: T__61
 			{
 			DebugLocation(1, 148);
-			mT__60(); 
+			mT__61(); 
 
 			}
 			break;
 		case 25:
 			DebugEnterAlt(25);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:154: T__61
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:154: T__62
 			{
 			DebugLocation(1, 154);
-			mT__61(); 
+			mT__62(); 
 
 			}
 			break;
 		case 26:
 			DebugEnterAlt(26);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:160: T__62
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:160: T__63
 			{
 			DebugLocation(1, 160);
-			mT__62(); 
+			mT__63(); 
 
 			}
 			break;
 		case 27:
 			DebugEnterAlt(27);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:166: T__63
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:166: T__64
 			{
 			DebugLocation(1, 166);
-			mT__63(); 
+			mT__64(); 
 
 			}
 			break;
 		case 28:
 			DebugEnterAlt(28);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:172: T__64
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:172: T__65
 			{
 			DebugLocation(1, 172);
-			mT__64(); 
+			mT__65(); 
 
 			}
 			break;
 		case 29:
 			DebugEnterAlt(29);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:178: T__65
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:178: T__66
 			{
 			DebugLocation(1, 178);
-			mT__65(); 
+			mT__66(); 
 
 			}
 			break;
 		case 30:
 			DebugEnterAlt(30);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:184: T__66
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:184: T__67
 			{
 			DebugLocation(1, 184);
-			mT__66(); 
+			mT__67(); 
 
 			}
 			break;
 		case 31:
 			DebugEnterAlt(31);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:190: T__67
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:190: T__68
 			{
 			DebugLocation(1, 190);
-			mT__67(); 
+			mT__68(); 
 
 			}
 			break;
 		case 32:
 			DebugEnterAlt(32);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:196: T__68
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:196: T__69
 			{
 			DebugLocation(1, 196);
-			mT__68(); 
+			mT__69(); 
 
 			}
 			break;
 		case 33:
 			DebugEnterAlt(33);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:202: T__69
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:202: T__70
 			{
 			DebugLocation(1, 202);
-			mT__69(); 
+			mT__70(); 
 
 			}
 			break;
 		case 34:
 			DebugEnterAlt(34);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:208: T__70
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:208: T__71
 			{
 			DebugLocation(1, 208);
-			mT__70(); 
+			mT__71(); 
 
 			}
 			break;
 		case 35:
 			DebugEnterAlt(35);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:214: T__71
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:214: T__72
 			{
 			DebugLocation(1, 214);
-			mT__71(); 
+			mT__72(); 
 
 			}
 			break;
 		case 36:
 			DebugEnterAlt(36);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:220: T__72
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:220: T__73
 			{
 			DebugLocation(1, 220);
-			mT__72(); 
+			mT__73(); 
 
 			}
 			break;
 		case 37:
 			DebugEnterAlt(37);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:226: ID
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:226: TYPE
 			{
 			DebugLocation(1, 226);
-			mID(); 
+			mTYPE(); 
 
 			}
 			break;
 		case 38:
 			DebugEnterAlt(38);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:229: INT
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:231: ID
 			{
-			DebugLocation(1, 229);
-			mINT(); 
+			DebugLocation(1, 231);
+			mID(); 
 
 			}
 			break;
 		case 39:
 			DebugEnterAlt(39);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:233: FLOAT
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:234: INT
 			{
-			DebugLocation(1, 233);
-			mFLOAT(); 
+			DebugLocation(1, 234);
+			mINT(); 
 
 			}
 			break;
 		case 40:
 			DebugEnterAlt(40);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:239: NEWLINE
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:238: FLOAT
 			{
-			DebugLocation(1, 239);
-			mNEWLINE(); 
+			DebugLocation(1, 238);
+			mFLOAT(); 
 
 			}
 			break;
 		case 41:
 			DebugEnterAlt(41);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:247: WS
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:244: NEWLINE
 			{
-			DebugLocation(1, 247);
-			mWS(); 
+			DebugLocation(1, 244);
+			mNEWLINE(); 
 
 			}
 			break;
 		case 42:
 			DebugEnterAlt(42);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:250: STRING
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:252: WS
 			{
-			DebugLocation(1, 250);
-			mSTRING(); 
+			DebugLocation(1, 252);
+			mWS(); 
 
 			}
 			break;
 		case 43:
 			DebugEnterAlt(43);
-			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:257: CHAR
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:255: STRING
 			{
-			DebugLocation(1, 257);
+			DebugLocation(1, 255);
+			mSTRING(); 
+
+			}
+			break;
+		case 44:
+			DebugEnterAlt(44);
+			// E:\\Dev\\Git\\NPortugol2\\src\\NPortugol2\\Compiler\\NPortugol.g:1:262: CHAR
+			{
+			DebugLocation(1, 262);
 			mCHAR(); 
 
 			}
@@ -2770,62 +2895,65 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 
 
 	#region DFA
-	DFA11 dfa11;
+	DFA12 dfa12;
 
 	protected override void InitDFAs()
 	{
 		base.InitDFAs();
-		dfa11 = new DFA11(this);
+		dfa12 = new DFA12(this);
 	}
 
-	private class DFA11 : DFA
+	private class DFA12 : DFA
 	{
-		private const string DFA11_eotS =
-			"\xA\xFFFF\x1\x24\x1\xFFFF\x1\x26\x1\x28\x1\x2A\x2\xFFFF\x2\x1C\x1\x2E"+
-			"\x6\x1C\x3\xFFFF\x1\x36\x1\x20\x1\x38\xB\xFFFF\x3\x1C\x1\xFFFF\x2\x1C"+
-			"\x1\x3F\x2\x1C\x1\x44\x1\x1C\x3\xFFFF\x1\x46\x1\x47\x2\x1C\x1\x4A\x1"+
-			"\x1C\x1\xFFFF\x4\x1C\x1\xFFFF\x1\x1C\x2\xFFFF\x2\x1C\x1\xFFFF\x1\x1C"+
-			"\x1\x54\x5\x1C\x1\x5A\x1\x1C\x1\xFFFF\x2\x1C\x1\x5E\x2\x1C\x1\xFFFF\x1"+
-			"\x61\x1\x62\x1\x1C\x1\xFFFF\x2\x1C\x2\xFFFF\x1\x66\x1\x1C\x1\x68\x1\xFFFF"+
-			"\x1\x69\x2\xFFFF";
-		private const string DFA11_eofS =
-			"\x6A\xFFFF";
-		private const string DFA11_minS =
+		private const string DFA12_eotS =
+			"\xA\xFFFF\x1\x26\x1\xFFFF\x1\x28\x1\x2A\x1\x2C\x2\xFFFF\x2\x1E\x1\x30"+
+			"\x6\x1E\x2\xFFFF\x2\x1E\x1\xFFFF\x1\x3B\x1\x22\x1\x3D\xB\xFFFF\x3\x1E"+
+			"\x1\xFFFF\x2\x1E\x1\x44\x2\x1E\x1\x49\x4\x1E\x3\xFFFF\x1\x4E\x1\x4F\x2"+
+			"\x1E\x1\x52\x1\x1E\x1\xFFFF\x4\x1E\x1\xFFFF\x2\x1E\x2\x5A\x2\xFFFF\x2"+
+			"\x1E\x1\xFFFF\x1\x1E\x1\x5E\x4\x1E\x1\x5A\x1\xFFFF\x1\x1E\x1\x64\x1\x1E"+
+			"\x1\xFFFF\x2\x1E\x1\x68\x2\x1E\x1\xFFFF\x1\x6B\x1\x6C\x1\x1E\x1\xFFFF"+
+			"\x2\x1E\x2\xFFFF\x1\x70\x1\x1E\x1\x72\x1\xFFFF\x1\x73\x2\xFFFF";
+		private const string DFA12_eofS =
+			"\x74\xFFFF";
+		private const string DFA12_minS =
 			"\x1\x9\x9\xFFFF\x1\x2E\x1\xFFFF\x3\x3D\x2\xFFFF\x1\x74\x1\x65\x1\x30"+
-			"\x1\x69\x1\x75\x1\x61\x2\x65\x1\x61\x3\xFFFF\x1\x2E\x1\xA\x1\x9\xB\xFFFF"+
-			"\x1\x65\x1\x63\x1\x71\x1\xFFFF\x1\x6D\x1\x6E\x1\x30\x1\x72\x1\x70\x1"+
-			"\x30\x1\x72\x3\xFFFF\x2\x30\x1\x75\x1\x61\x1\x30\x1\x63\x1\xFFFF\x1\x61"+
-			"\x1\x69\x1\x6F\x1\x61\x1\xFFFF\x1\x69\x2\xFFFF\x1\x61\x1\x6F\x1\xFFFF"+
-			"\x1\x61\x1\x30\x1\x74\x1\x72\x1\x6F\x1\x61\x1\x6E\x1\x30\x1\x6F\x1\xFFFF"+
-			"\x1\x61\x1\x6E\x1\x30\x1\x76\x1\x74\x1\xFFFF\x2\x30\x1\x65\x1\xFFFF\x1"+
-			"\x65\x1\x6F\x2\xFFFF\x1\x30\x1\x6C\x1\x30\x1\xFFFF\x1\x30\x2\xFFFF";
-		private const string DFA11_maxS =
+			"\x1\x69\x1\x75\x1\x61\x2\x65\x1\x61\x2\xFFFF\x1\x6E\x1\x65\x1\xFFFF\x1"+
+			"\x2E\x1\xA\x1\x9\xB\xFFFF\x1\x65\x1\x63\x1\x71\x1\xFFFF\x1\x6D\x1\x6E"+
+			"\x1\x30\x1\x72\x1\x70\x1\x30\x1\x72\x1\x69\x1\x74\x1\x78\x3\xFFFF\x2"+
+			"\x30\x1\x75\x1\x61\x1\x30\x1\x63\x1\xFFFF\x1\x61\x1\x69\x1\x6F\x1\x61"+
+			"\x1\xFFFF\x1\x69\x1\x64\x2\x30\x2\xFFFF\x1\x61\x1\x6F\x1\xFFFF\x1\x61"+
+			"\x1\x30\x1\x74\x1\x72\x1\x6F\x1\x61\x1\x30\x1\xFFFF\x1\x6E\x1\x30\x1"+
+			"\x6F\x1\xFFFF\x1\x61\x1\x6E\x1\x30\x1\x76\x1\x74\x1\xFFFF\x2\x30\x1\x65"+
+			"\x1\xFFFF\x1\x65\x1\x6F\x2\xFFFF\x1\x30\x1\x6C\x1\x30\x1\xFFFF\x1\x30"+
+			"\x2\xFFFF";
+		private const string DFA12_maxS =
 			"\x1\x7D\x9\xFFFF\x1\x2E\x1\xFFFF\x3\x3D\x2\xFFFF\x1\x74\x1\x65\x1\x7A"+
-			"\x2\x75\x1\x61\x2\x65\x1\x61\x3\xFFFF\x1\x39\x1\xA\x1\x20\xB\xFFFF\x1"+
-			"\x65\x1\x63\x1\x74\x1\xFFFF\x1\x6D\x1\x6E\x1\x7A\x1\x72\x1\x74\x1\x7A"+
-			"\x1\x72\x3\xFFFF\x2\x7A\x1\x75\x1\x61\x1\x7A\x1\x63\x1\xFFFF\x1\x61\x1"+
-			"\x69\x1\x6F\x1\x61\x1\xFFFF\x1\x69\x2\xFFFF\x1\x61\x1\x6F\x1\xFFFF\x1"+
-			"\x61\x1\x7A\x1\x74\x1\x72\x1\x6F\x1\x61\x1\x6E\x1\x7A\x1\x6F\x1\xFFFF"+
+			"\x2\x75\x1\x61\x2\x65\x1\x6F\x2\xFFFF\x1\x6E\x1\x65\x1\xFFFF\x1\x39\x1"+
+			"\xA\x1\x20\xB\xFFFF\x1\x65\x1\x63\x1\x74\x1\xFFFF\x1\x6D\x1\x6E\x1\x7A"+
+			"\x1\x72\x1\x74\x1\x7A\x1\x72\x1\x69\x1\x74\x1\x78\x3\xFFFF\x2\x7A\x1"+
+			"\x75\x1\x61\x1\x7A\x1\x63\x1\xFFFF\x1\x61\x1\x69\x1\x6F\x1\x61\x1\xFFFF"+
+			"\x1\x69\x1\x64\x2\x7A\x2\xFFFF\x1\x61\x1\x6F\x1\xFFFF\x1\x61\x1\x7A\x1"+
+			"\x74\x1\x72\x1\x6F\x1\x61\x1\x7A\x1\xFFFF\x1\x6E\x1\x7A\x1\x6F\x1\xFFFF"+
 			"\x1\x61\x1\x6E\x1\x7A\x1\x76\x1\x74\x1\xFFFF\x2\x7A\x1\x65\x1\xFFFF\x1"+
 			"\x65\x1\x6F\x2\xFFFF\x1\x7A\x1\x6C\x1\x7A\x1\xFFFF\x1\x7A\x2\xFFFF";
-		private const string DFA11_acceptS =
+		private const string DFA12_acceptS =
 			"\x1\xFFFF\x1\x1\x1\x2\x1\x3\x1\x4\x1\x5\x1\x6\x1\x7\x1\x8\x1\x9\x1\xFFFF"+
-			"\x1\xC\x3\xFFFF\x1\x13\x1\x14\x9\xFFFF\x1\x23\x1\x24\x1\x25\x3\xFFFF"+
-			"\x1\x29\x1\x2A\x1\x2B\x1\xB\x1\xA\x1\xE\x1\xD\x1\x10\x1\xF\x1\x12\x1"+
-			"\x11\x3\xFFFF\x1\x17\x7\xFFFF\x1\x26\x1\x27\x1\x28\x6\xFFFF\x1\x1C\x4"+
-			"\xFFFF\x1\x20\x1\xFFFF\x1\x15\x1\x16\x2\xFFFF\x1\x1A\x9\xFFFF\x1\x1D"+
-			"\x5\xFFFF\x1\x19\x3\xFFFF\x1\x21\x2\xFFFF\x1\x1B\x1\x1E\x3\xFFFF\x1\x1F"+
-			"\x1\xFFFF\x1\x18\x1\x22";
-		private const string DFA11_specialS =
-			"\x6A\xFFFF}>";
-		private static readonly string[] DFA11_transitionS =
+			"\x1\xC\x3\xFFFF\x1\x13\x1\x14\x9\xFFFF\x1\x23\x1\x24\x2\xFFFF\x1\x26"+
+			"\x3\xFFFF\x1\x2A\x1\x2B\x1\x2C\x1\xB\x1\xA\x1\xE\x1\xD\x1\x10\x1\xF\x1"+
+			"\x12\x1\x11\x3\xFFFF\x1\x17\xA\xFFFF\x1\x27\x1\x28\x1\x29\x6\xFFFF\x1"+
+			"\x1C\x4\xFFFF\x1\x20\x4\xFFFF\x1\x15\x1\x16\x2\xFFFF\x1\x1A\x7\xFFFF"+
+			"\x1\x25\x3\xFFFF\x1\x1D\x5\xFFFF\x1\x19\x3\xFFFF\x1\x21\x2\xFFFF\x1\x1B"+
+			"\x1\x1E\x3\xFFFF\x1\x1F\x1\xFFFF\x1\x18\x1\x22";
+		private const string DFA12_specialS =
+			"\x74\xFFFF}>";
+		private static readonly string[] DFA12_transitionS =
 			{
-				"\x1\x20\x1\x1F\x2\xFFFF\x1\x1E\x12\xFFFF\x1\x20\x1\x1\x1\x21\x1\x2\x1"+
-				"\xFFFF\x1\x3\x1\xFFFF\x1\x22\x1\x4\x1\x5\x1\x6\x1\x7\x1\x8\x1\x9\x1"+
-				"\xA\x1\xB\xA\x1D\x2\xFFFF\x1\xC\x1\xD\x1\xE\x2\xFFFF\x1A\x1C\x1\xF\x1"+
-				"\xFFFF\x1\x10\x1\xFFFF\x1\x1C\x1\xFFFF\x1\x11\x2\x1C\x1\x12\x1\x13\x1"+
-				"\x14\x8\x1C\x1\x15\x1\x16\x1\x1C\x1\x17\x1\x18\x2\x1C\x1\x19\x4\x1C"+
-				"\x1\x1A\x1\xFFFF\x1\x1B",
+				"\x1\x22\x1\x21\x2\xFFFF\x1\x20\x12\xFFFF\x1\x22\x1\x1\x1\x23\x1\x2\x1"+
+				"\xFFFF\x1\x3\x1\xFFFF\x1\x24\x1\x4\x1\x5\x1\x6\x1\x7\x1\x8\x1\x9\x1"+
+				"\xA\x1\xB\xA\x1F\x2\xFFFF\x1\xC\x1\xD\x1\xE\x2\xFFFF\x1A\x1E\x1\xF\x1"+
+				"\xFFFF\x1\x10\x1\xFFFF\x1\x1E\x1\xFFFF\x1\x11\x2\x1E\x1\x12\x1\x13\x1"+
+				"\x14\x2\x1E\x1\x1C\x5\x1E\x1\x15\x1\x16\x1\x1E\x1\x17\x1\x18\x1\x1D"+
+				"\x1\x1E\x1\x19\x4\x1E\x1\x1A\x1\xFFFF\x1\x1B",
 				"",
 				"",
 				"",
@@ -2834,139 +2962,149 @@ public partial class NPortugolLexer : Antlr.Runtime.Lexer
 				"",
 				"",
 				"",
-				"",
-				"\x1\x23",
 				"",
 				"\x1\x25",
+				"",
 				"\x1\x27",
 				"\x1\x29",
-				"",
-				"",
 				"\x1\x2B",
-				"\x1\x2C",
-				"\xA\x1C\x7\xFFFF\x1A\x1C\x4\xFFFF\x1\x1C\x1\xFFFF\xD\x1C\x1\x2D\xC"+
-				"\x1C",
-				"\x1\x2F\xB\xFFFF\x1\x30",
-				"\x1\x31",
-				"\x1\x32",
+				"",
+				"",
+				"\x1\x2D",
+				"\x1\x2E",
+				"\xA\x1E\x7\xFFFF\x1A\x1E\x4\xFFFF\x1\x1E\x1\xFFFF\xD\x1E\x1\x2F\xC"+
+				"\x1E",
+				"\x1\x31\xB\xFFFF\x1\x32",
 				"\x1\x33",
 				"\x1\x34",
 				"\x1\x35",
-				"",
-				"",
-				"",
-				"\x1\x37\x1\xFFFF\xA\x1D",
-				"\x1\x1F",
-				"\x2\x20\x2\xFFFF\x1\x20\x12\xFFFF\x1\x20",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
+				"\x1\x36",
+				"\x1\x37\xD\xFFFF\x1\x38",
 				"",
 				"",
 				"\x1\x39",
 				"\x1\x3A",
-				"\x1\x3B\x2\xFFFF\x1\x3C",
 				"",
-				"\x1\x3D",
+				"\x1\x3C\x1\xFFFF\xA\x1F",
+				"\x1\x21",
+				"\x2\x22\x2\xFFFF\x1\x22\x12\xFFFF\x1\x22",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
 				"\x1\x3E",
-				"\xA\x1C\x7\xFFFF\x1A\x1C\x4\xFFFF\x1\x1C\x1\xFFFF\x1A\x1C",
-				"\x1\x40",
-				"\x1\x41\x3\xFFFF\x1\x42",
-				"\xA\x1C\x7\xFFFF\x1A\x1C\x4\xFFFF\x1\x1C\x1\xFFFF\xD\x1C\x1\x43\xC"+
-				"\x1C",
+				"\x1\x3F",
+				"\x1\x40\x2\xFFFF\x1\x41",
+				"",
+				"\x1\x42",
+				"\x1\x43",
+				"\xA\x1E\x7\xFFFF\x1A\x1E\x4\xFFFF\x1\x1E\x1\xFFFF\x1A\x1E",
 				"\x1\x45",
-				"",
-				"",
-				"",
-				"\xA\x1C\x7\xFFFF\x1A\x1C\x4\xFFFF\x1\x1C\x1\xFFFF\x1A\x1C",
-				"\xA\x1C\x7\xFFFF\x1A\x1C\x4\xFFFF\x1\x1C\x1\xFFFF\x1A\x1C",
-				"\x1\x48",
-				"\x1\x49",
-				"\xA\x1C\x7\xFFFF\x1A\x1C\x4\xFFFF\x1\x1C\x1\xFFFF\x1A\x1C",
+				"\x1\x46\x3\xFFFF\x1\x47",
+				"\xA\x1E\x7\xFFFF\x1A\x1E\x4\xFFFF\x1\x1E\x1\xFFFF\xD\x1E\x1\x48\xC"+
+				"\x1E",
+				"\x1\x4A",
 				"\x1\x4B",
-				"",
 				"\x1\x4C",
 				"\x1\x4D",
-				"\x1\x4E",
-				"\x1\x4F",
 				"",
+				"",
+				"",
+				"\xA\x1E\x7\xFFFF\x1A\x1E\x4\xFFFF\x1\x1E\x1\xFFFF\x1A\x1E",
+				"\xA\x1E\x7\xFFFF\x1A\x1E\x4\xFFFF\x1\x1E\x1\xFFFF\x1A\x1E",
 				"\x1\x50",
-				"",
-				"",
 				"\x1\x51",
-				"\x1\x52",
-				"",
+				"\xA\x1E\x7\xFFFF\x1A\x1E\x4\xFFFF\x1\x1E\x1\xFFFF\x1A\x1E",
 				"\x1\x53",
-				"\xA\x1C\x7\xFFFF\x1A\x1C\x4\xFFFF\x1\x1C\x1\xFFFF\x1A\x1C",
+				"",
+				"\x1\x54",
 				"\x1\x55",
 				"\x1\x56",
 				"\x1\x57",
+				"",
 				"\x1\x58",
 				"\x1\x59",
-				"\xA\x1C\x7\xFFFF\x1A\x1C\x4\xFFFF\x1\x1C\x1\xFFFF\x1A\x1C",
-				"\x1\x5B",
+				"\xA\x1E\x7\xFFFF\x1A\x1E\x4\xFFFF\x1\x1E\x1\xFFFF\x1A\x1E",
+				"\xA\x1E\x7\xFFFF\x1A\x1E\x4\xFFFF\x1\x1E\x1\xFFFF\x1A\x1E",
 				"",
+				"",
+				"\x1\x5B",
 				"\x1\x5C",
+				"",
 				"\x1\x5D",
-				"\xA\x1C\x7\xFFFF\x1A\x1C\x4\xFFFF\x1\x1C\x1\xFFFF\x1A\x1C",
+				"\xA\x1E\x7\xFFFF\x1A\x1E\x4\xFFFF\x1\x1E\x1\xFFFF\x1A\x1E",
 				"\x1\x5F",
 				"\x1\x60",
+				"\x1\x61",
+				"\x1\x62",
+				"\xA\x1E\x7\xFFFF\x1A\x1E\x4\xFFFF\x1\x1E\x1\xFFFF\x1A\x1E",
 				"",
-				"\xA\x1C\x7\xFFFF\x1A\x1C\x4\xFFFF\x1\x1C\x1\xFFFF\x1A\x1C",
-				"\xA\x1C\x7\xFFFF\x1A\x1C\x4\xFFFF\x1\x1C\x1\xFFFF\x1A\x1C",
 				"\x1\x63",
-				"",
-				"\x1\x64",
+				"\xA\x1E\x7\xFFFF\x1A\x1E\x4\xFFFF\x1\x1E\x1\xFFFF\x1A\x1E",
 				"\x1\x65",
 				"",
-				"",
-				"\xA\x1C\x7\xFFFF\x1A\x1C\x4\xFFFF\x1\x1C\x1\xFFFF\x1A\x1C",
+				"\x1\x66",
 				"\x1\x67",
-				"\xA\x1C\x7\xFFFF\x1A\x1C\x4\xFFFF\x1\x1C\x1\xFFFF\x1A\x1C",
+				"\xA\x1E\x7\xFFFF\x1A\x1E\x4\xFFFF\x1\x1E\x1\xFFFF\x1A\x1E",
+				"\x1\x69",
+				"\x1\x6A",
 				"",
-				"\xA\x1C\x7\xFFFF\x1A\x1C\x4\xFFFF\x1\x1C\x1\xFFFF\x1A\x1C",
+				"\xA\x1E\x7\xFFFF\x1A\x1E\x4\xFFFF\x1\x1E\x1\xFFFF\x1A\x1E",
+				"\xA\x1E\x7\xFFFF\x1A\x1E\x4\xFFFF\x1\x1E\x1\xFFFF\x1A\x1E",
+				"\x1\x6D",
+				"",
+				"\x1\x6E",
+				"\x1\x6F",
+				"",
+				"",
+				"\xA\x1E\x7\xFFFF\x1A\x1E\x4\xFFFF\x1\x1E\x1\xFFFF\x1A\x1E",
+				"\x1\x71",
+				"\xA\x1E\x7\xFFFF\x1A\x1E\x4\xFFFF\x1\x1E\x1\xFFFF\x1A\x1E",
+				"",
+				"\xA\x1E\x7\xFFFF\x1A\x1E\x4\xFFFF\x1\x1E\x1\xFFFF\x1A\x1E",
 				"",
 				""
 			};
 
-		private static readonly short[] DFA11_eot = DFA.UnpackEncodedString(DFA11_eotS);
-		private static readonly short[] DFA11_eof = DFA.UnpackEncodedString(DFA11_eofS);
-		private static readonly char[] DFA11_min = DFA.UnpackEncodedStringToUnsignedChars(DFA11_minS);
-		private static readonly char[] DFA11_max = DFA.UnpackEncodedStringToUnsignedChars(DFA11_maxS);
-		private static readonly short[] DFA11_accept = DFA.UnpackEncodedString(DFA11_acceptS);
-		private static readonly short[] DFA11_special = DFA.UnpackEncodedString(DFA11_specialS);
-		private static readonly short[][] DFA11_transition;
+		private static readonly short[] DFA12_eot = DFA.UnpackEncodedString(DFA12_eotS);
+		private static readonly short[] DFA12_eof = DFA.UnpackEncodedString(DFA12_eofS);
+		private static readonly char[] DFA12_min = DFA.UnpackEncodedStringToUnsignedChars(DFA12_minS);
+		private static readonly char[] DFA12_max = DFA.UnpackEncodedStringToUnsignedChars(DFA12_maxS);
+		private static readonly short[] DFA12_accept = DFA.UnpackEncodedString(DFA12_acceptS);
+		private static readonly short[] DFA12_special = DFA.UnpackEncodedString(DFA12_specialS);
+		private static readonly short[][] DFA12_transition;
 
-		static DFA11()
+		static DFA12()
 		{
-			int numStates = DFA11_transitionS.Length;
-			DFA11_transition = new short[numStates][];
+			int numStates = DFA12_transitionS.Length;
+			DFA12_transition = new short[numStates][];
 			for ( int i=0; i < numStates; i++ )
 			{
-				DFA11_transition[i] = DFA.UnpackEncodedString(DFA11_transitionS[i]);
+				DFA12_transition[i] = DFA.UnpackEncodedString(DFA12_transitionS[i]);
 			}
 		}
 
-		public DFA11( BaseRecognizer recognizer )
+		public DFA12( BaseRecognizer recognizer )
 		{
 			this.recognizer = recognizer;
-			this.decisionNumber = 11;
-			this.eot = DFA11_eot;
-			this.eof = DFA11_eof;
-			this.min = DFA11_min;
-			this.max = DFA11_max;
-			this.accept = DFA11_accept;
-			this.special = DFA11_special;
-			this.transition = DFA11_transition;
+			this.decisionNumber = 12;
+			this.eot = DFA12_eot;
+			this.eof = DFA12_eof;
+			this.min = DFA12_min;
+			this.max = DFA12_max;
+			this.accept = DFA12_accept;
+			this.special = DFA12_special;
+			this.transition = DFA12_transition;
 		}
 
-		public override string Description { get { return "1:1: Tokens : ( T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | ID | INT | FLOAT | NEWLINE | WS | STRING | CHAR );"; } }
+		public override string Description { get { return "1:1: Tokens : ( T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | TYPE | ID | INT | FLOAT | NEWLINE | WS | STRING | CHAR );"; } }
 
 		public override void Error(NoViableAltException nvae)
 		{

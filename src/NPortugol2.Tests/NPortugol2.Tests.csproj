@@ -50,7 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Compiler\DevLab.cs" />
+    <Compile Include="Compiler\BaseCompilerTestCase.cs" />
+    <Compile Include="Compiler\FunctionTestCase.cs" />
+    <Compile Include="Dyn\Integration\NPortugol2TestCase.cs" />
     <Compile Include="Factories.cs" />
     <Compile Include="Dyn\DynamicMethodBuilderTestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

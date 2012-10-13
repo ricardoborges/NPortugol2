@@ -26,6 +26,8 @@ namespace NPortugol2.Dyn
 
         private void GenerateILCode(ILGenerator gen)
         {
+            if (target.Instructions == null) return;
+
             foreach (var inst in target.Instructions)
             {
                 switch (inst.OpCode.Name)
