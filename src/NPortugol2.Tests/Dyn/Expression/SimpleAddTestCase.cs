@@ -14,5 +14,15 @@ namespace NPortugol2.Tests.Dyn.Expression
 
             Assert.AreEqual(10, result);
         }         
+
+        [Test]
+        public void Should_Execute_Arithmetic_Function()
+        {
+            var result = new NPortugol2()
+                .CompileMethod("funcao int calc() retorne 2*5+10-9+4/2 fim")
+                .Invoke(null, null);
+
+            Assert.AreEqual(13, result);
+        }
     }
 }

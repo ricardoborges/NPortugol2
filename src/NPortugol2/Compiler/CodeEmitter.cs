@@ -7,7 +7,7 @@ using NPortugol2.VirtualMachine;
 
 namespace NPortugol2.Compiler
 {
-    public class ModuleBuilder
+    public class CodeEmitter
     {
         private readonly Module module;
 
@@ -26,7 +26,7 @@ namespace NPortugol2.Compiler
 
         public bool HasError { get; set; }
 
-        public ModuleBuilder()
+        public CodeEmitter()
         {
             module = new Module();
             currInstructions = new List<Instruction>();
@@ -63,19 +63,14 @@ namespace NPortugol2.Compiler
             currInstructions.Clear();
         }
 
-        public void EmitRet(IToken token)
-        {
-            currInstructions.Add(new Instruction {OpCode = OpCodes.Ret});
-        }
-
         public void EmitLdcI4(int value, IToken token)
         {
             currInstructions.Add(new Instruction {OpCode = OpCodes.Ldc_I4, Value = value});
         }
 
-        public void EmitAdd()
+        public void Emit(OpCode opCode)
         {
-            currInstructions.Add(new Instruction {OpCode = OpCodes.Add});
+            currInstructions.Add(new Instruction {OpCode = opCode});
         }
     }
 }

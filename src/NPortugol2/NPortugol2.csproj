@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Compiler\ModuleBuilder.cs" />
+    <Compile Include="Compiler\CodeEmitter.cs" />
     <Compile Include="Compiler\NPortugolLexer.cs" />
     <Compile Include="Compiler\NPortugolParser.cs" />
     <Compile Include="Compiler\NPortugolWalker.cs" />

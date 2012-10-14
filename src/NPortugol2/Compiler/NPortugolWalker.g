@@ -13,10 +13,11 @@ k=3;
 @header{
 using System.Collections;
 using NPortugol2.VirtualMachine;
+using System.Reflection.Emit;
 }
 
 @members{
-	ModuleBuilder builder = new ModuleBuilder();
+	CodeEmitter emitter = new CodeEmitter();
 	
 	bool inExpression;
 	
@@ -26,11 +27,11 @@ using NPortugol2.VirtualMachine;
 }
 
 public compile returns[Module module] : declare_function*
-	{ return builder.Module;}
+	{ return emitter.Module;}
 ;
 
 declare_function : ^(FUNC TYPE? ID function_param_list* ^(SLIST statement*))
-	{builder.CreateFunction($TYPE, $ID.Token);}
+	{emitter.CreateFunction($TYPE, $ID.Token);}
 ;
 		
 statement: declare_local
@@ -47,7 +48,7 @@ function_param_list
 	:	 ^(PARAM param*)
 	;	 
 	
-param	: ^(t=TYPE i=ID) {builder.CreateFunctionParams($t.Token, $i.Token); };
+param	: ^(t=TYPE i=ID) {emitter.CreateFunctionParams($t.Token, $i.Token); };
 
 declare_local 
 	:  ^(VAR i+=ID*)  /*{ foreach(var item in $i) emitter.EmitVar(item.Token); }*/
@@ -111,7 +112,7 @@ assign_var returns[string id]
     ;		
 
 return_stat
-	:  ^(RET plus_expression) {builder.EmitRet($RET.Token);}
+	:  ^(RET plus_expression) {emitter.Emit(OpCodes.Ret);}
 	;
 
 // ##########################################################################################################################
@@ -120,10 +121,10 @@ return_stat
 plus_expression
 @init { inExpression = true; }
 @after { inExpression = false; }
-: ^('+' plus_expression plus_expression) {builder.EmitAdd();}
-| ^('-' plus_expression plus_expression) /*{emitter.EmitStackSub();}*/
-| ^('*' plus_expression plus_expression) /*{emitter.EmitStackPlus();}*/
-| ^('/' plus_expression plus_expression) /*{emitter.EmitStackDiv();}*/
+: ^('+' plus_expression plus_expression) {emitter.Emit(OpCodes.Add);}
+| ^('-' plus_expression plus_expression) {emitter.Emit(OpCodes.Sub);}
+| ^('*' plus_expression plus_expression) {emitter.Emit(OpCodes.Mul);}
+| ^('/' plus_expression plus_expression) {emitter.Emit(OpCodes.Div);}
 | ^(INDEX INT) ID /*{emitter.EmitPush($ID.text, int.Parse($INT.text));}*/
 | ^(INDEX i2=ID) i1=ID /*{emitter.EmitPush($i1.text, $i2.text);}*/
 | function_call
@@ -148,7 +149,7 @@ logic_expression
     
 atom returns[object value]: 
       a=ID /*{$value = $a.text; if (inExpression) emitter.EmitPush($value, $a.Token);}*/
-    | a=INT {$value = int.Parse($a.text); if (inExpression) builder.EmitLdcI4((int)$value, $a.Token);}
+    | a=INT {$value = int.Parse($a.text); if (inExpression) emitter.EmitLdcI4((int)$value, $a.Token);}
     | a=FLOAT /*{$value = float.Parse($a.text); if (inExpression) emitter.EmitPush($value, $a.Token);}*/
     | a=STRING /*{$value = $a.text; if (inExpression) emitter.EmitPush($value, $a.Token);}*/
     ;  

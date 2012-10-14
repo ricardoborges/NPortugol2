@@ -42,6 +42,9 @@ namespace NPortugol2.Dyn
                         gen.Emit(inst.OpCode, (inst).FloatValue);
                         break;
                     case "add":
+                    case "mul":
+                    case "div":
+                    case "sub":
                     case "ret":
                         gen.Emit(inst.OpCode);
                         break;
