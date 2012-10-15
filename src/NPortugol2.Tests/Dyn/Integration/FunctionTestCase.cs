@@ -1,6 +1,4 @@
-﻿using System;
-using System.Reflection.Emit;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace NPortugol2.Tests.Dyn.Integration
 {

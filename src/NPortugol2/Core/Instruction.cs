@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection.Emit;
 
-namespace NPortugol2.VirtualMachine
+namespace NPortugol2.Core
 {
     public class Instruction
     {

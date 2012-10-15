@@ -22,6 +22,7 @@
 
 using System;
 using System.Collections;
+using NPortugol2.Core;
 using NPortugol2.VirtualMachine;
 using System.Reflection.Emit;
 

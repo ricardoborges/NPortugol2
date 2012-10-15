@@ -1,7 +1,7 @@
 ﻿using Antlr.Runtime;
 using Antlr.Runtime.Tree;
 using NPortugol2.Compiler;
-using NPortugol2.VirtualMachine;
+using NPortugol2.Core;
 
 namespace NPortugol2.Tests.Compiler
 {

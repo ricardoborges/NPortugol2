@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using NPortugol2.Core;
 
 namespace NPortugol2.VirtualMachine
 {
@@ -22,14 +22,4 @@ namespace NPortugol2.VirtualMachine
 
         public Dictionary<string, Symbol> Symbols { get; set; }
     }
-
-    public class Symbol
-    {
-        public string Name { get; set; }
-
-        public Type Type { get; set; }
-
-        public object Value { get; set; }
-    }
-
 }

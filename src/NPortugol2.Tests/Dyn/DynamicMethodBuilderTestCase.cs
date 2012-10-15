@@ -1,5 +1,4 @@
 ﻿using NPortugol2.Dyn;
-using NPortugol2.VirtualMachine;
 using NUnit.Framework;
 
 namespace NPortugol2.Tests.Dyn

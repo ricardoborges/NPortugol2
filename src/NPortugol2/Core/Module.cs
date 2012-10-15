@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Reflection.Emit;
 
-namespace NPortugol2.VirtualMachine
+namespace NPortugol2.Core
 {
     public class Module
     {
@@ -15,5 +16,7 @@ namespace NPortugol2.VirtualMachine
         public Function Main { get; set; }
 
         public Dictionary<string, Function> Functions { get; set; }
+
+        public Dictionary<string, DynamicMethod> Methods { get; set; }
     }
 }

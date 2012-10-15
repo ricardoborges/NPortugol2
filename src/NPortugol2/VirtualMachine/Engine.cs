@@ -1,4 +1,6 @@
-﻿namespace NPortugol2.VirtualMachine
+﻿using NPortugol2.Core;
+
+namespace NPortugol2.VirtualMachine
 {
     public partial class Engine
     {

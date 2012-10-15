@@ -3,13 +3,25 @@ using System.Reflection.Emit;
 using Antlr.Runtime;
 using Antlr.Runtime.Tree;
 using NPortugol2.Compiler;
+using NPortugol2.Core;
 using NPortugol2.Dyn;
-using NPortugol2.VirtualMachine;
 
 namespace NPortugol2
 {
+
     public class NPortugol2
     {
+        /// <summary>
+        /// Compila um script de funções NPortugol em DynamicMethods
+        /// </summary>
+        public Module CompileScript(string script)
+        {
+            return BuildModule(script);
+        }
+
+        /// <summary>
+        /// Compila uma função NPortugol em DynamicMethod.
+        /// </summary>
         public DynamicMethod CompileMethod(string function)
         {
             var module = BuildModule(function);

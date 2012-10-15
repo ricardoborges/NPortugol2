@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Reflection.Emit;
+using NPortugol2.Core;
 using NPortugol2.VirtualMachine;
 
 namespace NPortugol2.Tests

@@ -6,7 +6,6 @@ namespace NPortugol2.Tests.Dyn
     [TestFixture]
     public class Lab
     {
-
         [Test]
         public void Do()
         {

@@ -1,7 +1,5 @@
-﻿using System.Reflection;
-using System.Reflection.Emit;
-using NPortugol2.VirtualMachine;
-using Module = NPortugol2.VirtualMachine.Module;
+﻿using System.Reflection.Emit;
+using NPortugol2.Core;
 
 namespace NPortugol2.Dyn
 {
