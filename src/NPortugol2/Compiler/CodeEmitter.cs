@@ -67,31 +67,29 @@ namespace NPortugol2.Compiler
             currentSymbols.Clear();
         }
 
-        public Type DeclareLocal(IToken ttype, IToken name)
+        public Type DeclareLocal(Type type, IToken name, object value)
         {
-            var type = TypeMap[ttype.Text];
-
-            DeclareLocal(type, name.Text);
+            DeclareLocal(type, name.Text, value);
 
             return type;
         }
 
-        public void DeclareLocal(Type type, List<CommonTree> nodes)
+        public Type DeclareLocal(IToken ttype, IToken name, object value)
         {
-            if (nodes == null) return;
+            var type = TypeMap[ttype.Text];
 
-            foreach (var node in nodes)
-            {
-                DeclareLocal(type, node.Text);
-            }
+            DeclareLocal(type, name.Text, value);
+
+            return type;
         }
-
-        public void DeclareLocal(Type type, string name)
+        
+        public void DeclareLocal(Type type, string name, object value = null)
         {
             currentSymbols.Add(new Symbol
                                     {
                                         Name = name,
-                                        Type = type
+                                        Type = type,
+                                        Value = value
                                     });
         }
 

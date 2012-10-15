@@ -17,10 +17,13 @@ namespace NPortugol2.Tests.Compiler
         [Test]
         public void Should_Declare_Multiple_Local_Var()
         {
-            var module = Compile(
-@"funcao soma() 
-       variavel int x, y, f, m, a 
-fim");
+            var module = Compile(@"funcao soma() 
+                                       variavel int x=342, y=1, f, m, a=2012
+                                   fim");
+
+            Assert.AreEqual(342, module.Functions["soma"].Symbols[0].Value);
+            Assert.AreEqual(1, module.Functions["soma"].Symbols[1].Value);
+            Assert.AreEqual(2012, module.Functions["soma"].Symbols[4].Value);
 
             Assert.AreEqual("y", module.Functions["soma"].Symbols[1].Name);
             Assert.AreEqual("a", module.Functions["soma"].Symbols[4].Name);

@@ -98,11 +98,18 @@ function_param_list     @init { paraphrases.Push("na lista de parâmetros"); }   
 param	:	TYPE ID -> ^(TYPE ID);
 
 declare_local            @init { paraphrases.Push("na definição de variável"); }   @after { paraphrases.Pop(); }
-	:	'variavel' local_var (',' ID)* /*{DefineID($i);}*/
-	-> ^(VAR local_var ID*)
+	:	'variavel' local_var (',' more_var )* /*{DefineID($i);}*/
+	-> ^(VAR local_var more_var*)
 	;
 	
-local_var: TYPE ID -> ^(TYPE ID);	
+local_var: 
+	TYPE ID ('=' atom)? -> ^(TYPE ID atom?) 
+	;	
+	
+more_var 
+	:	
+	ID ('=' atom)? -> ^(ID atom?) 
+	;
 	
 if_stat @init { paraphrases.Push("se"); }   @after { paraphrases.Pop(); }
 

@@ -51,18 +51,20 @@ function_param_list
 	
 param	: ^(t=TYPE i=ID) {emitter.CreateFunctionParams($t.Token, $i.Token); };
 
-
-declare_local 
-	: ^(VAR t=local_var i+=ID*) {emitter.DeclareLocal(t, $i); }
-	;
 	
+declare_local 
+	: ^(VAR t=local_var more_var[t]*) /*{emitter.DeclareLocal(t, $i); }*/
+	;
+
 local_var returns[Type value]
 	: 
-	^(t=TYPE i=ID) 
-	{
-		$value = emitter.DeclareLocal($t.Token, $i.Token); 
-	}
+	  ^(t=TYPE i=ID a=atom?) {$value = emitter.DeclareLocal($t.Token, $i.Token, a);}
 	;
+	
+more_var [Type value]
+	:	
+	^(i=ID a=atom?) { emitter.DeclareLocal(value, $i.Token, a); }
+	;	
 
 if_stat
 	:  ^(SJMP ^(LEXP logic_expression) ^(SLIST statement* /*{emitter.EmitIf(true);}*/ senao_stat))
