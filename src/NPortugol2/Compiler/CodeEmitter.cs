@@ -13,6 +13,7 @@ namespace NPortugol2.Compiler
 
         private List<FunctionParam> currentParams;
         private List<Instruction> currInstructions;
+        private List<Symbol> currentSymbols;
 
         private readonly Dictionary<string, Type> TypeMap = new Dictionary<string, Type>
                                                        {
@@ -30,6 +31,7 @@ namespace NPortugol2.Compiler
         {
             module = new Module();
             currInstructions = new List<Instruction>();
+            currentSymbols = new List<Symbol>();
         }
 
         public Module Module
@@ -54,13 +56,43 @@ namespace NPortugol2.Compiler
                                    Name = name.Text,
                                    ReturningType = TypeMap[type != null? type.Token.Text: ""],
                                    Params = currentParams != null? currentParams.ToArray(): new FunctionParam[]{},
-                                   Instructions = currInstructions.ToArray()
+                                   Instructions = currInstructions.ToArray(),
+                                   Symbols = currentSymbols !=null? currentSymbols.ToArray(): new Symbol[]{}
                                };
 
             module.Functions.Add(function.Name, function);
 
             currentParams = null;
             currInstructions.Clear();
+            currentSymbols.Clear();
+        }
+
+        public Type DeclareLocal(IToken ttype, IToken name)
+        {
+            var type = TypeMap[ttype.Text];
+
+            DeclareLocal(type, name.Text);
+
+            return type;
+        }
+
+        public void DeclareLocal(Type type, List<CommonTree> nodes)
+        {
+            if (nodes == null) return;
+
+            foreach (var node in nodes)
+            {
+                DeclareLocal(type, node.Text);
+            }
+        }
+
+        public void DeclareLocal(Type type, string name)
+        {
+            currentSymbols.Add(new Symbol
+                                    {
+                                        Name = name,
+                                        Type = type
+                                    });
         }
 
         public void EmitLdcI4(int value, IToken token)

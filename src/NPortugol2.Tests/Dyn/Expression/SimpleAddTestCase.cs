@@ -23,6 +23,12 @@ namespace NPortugol2.Tests.Dyn.Expression
                 .Invoke(null, null);
 
             Assert.AreEqual(13, result);
+
+            var result2 = new NPortugol2()
+                .CompileMethod("funcao int calc() retorne 2*(5+10)-9+4/2 fim")
+                .Invoke(null, null);
+
+            Assert.AreEqual(23, result2);
         }
     }
 }

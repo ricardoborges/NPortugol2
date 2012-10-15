@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace NPortugol2.VirtualMachine
@@ -45,8 +46,11 @@ namespace NPortugol2.VirtualMachine
             Function = function;
             
             ID = Guid.NewGuid();
-
-            Locals = new SymbolTable(function.Symbols);
+            
+            Locals = new SymbolTable();
+            
+            if (function.Symbols !=null)
+                Locals.Setup(function.Symbols);
         }
 
         public bool HasNext()

@@ -11,6 +11,7 @@ k=3;
 @namespace{NPortugol2.Compiler}
 
 @header{
+using System;
 using System.Collections;
 using NPortugol2.VirtualMachine;
 using System.Reflection.Emit;
@@ -50,8 +51,17 @@ function_param_list
 	
 param	: ^(t=TYPE i=ID) {emitter.CreateFunctionParams($t.Token, $i.Token); };
 
+
 declare_local 
-	:  ^(VAR i+=ID*)  /*{ foreach(var item in $i) emitter.EmitVar(item.Token); }*/
+	: ^(VAR t=local_var i+=ID*) {emitter.DeclareLocal(t, $i); }
+	;
+	
+local_var returns[Type value]
+	: 
+	^(t=TYPE i=ID) 
+	{
+		$value = emitter.DeclareLocal($t.Token, $i.Token); 
+	}
 	;
 
 if_stat

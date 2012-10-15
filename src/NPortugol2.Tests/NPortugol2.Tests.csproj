@@ -55,6 +55,7 @@
     <Compile Include="Dyn\Expression\SimpleAddTestCase.cs" />
     <Compile Include="Dyn\Integration\FunctionTestCase.cs" />
     <Compile Include="Dyn\Lab.cs" />
+    <Compile Include="Compiler\DeclareLocalTestCase.cs" />
     <Compile Include="Factories.cs" />
     <Compile Include="Dyn\DynamicMethodBuilderTestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
