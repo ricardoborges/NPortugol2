@@ -20,8 +20,15 @@ namespace NPortugol2.Dyn
             target = module.Functions[functionName];
 
             var dm = new DynamicMethod(functionName, target.ReturningType, target.ParametersType);
-            
-            GenerateILCode(dm.GetILGenerator());
+
+            var gen = dm.GetILGenerator();
+
+            foreach (var symbol in target.Symbols)
+            {
+                gen.DeclareLocal(symbol.Type);
+            }
+
+            GenerateILCode(gen);
             
             return dm;            
         }
