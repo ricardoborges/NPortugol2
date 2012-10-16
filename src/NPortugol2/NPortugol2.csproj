@@ -48,17 +48,12 @@
     <Compile Include="Compiler\NPortugolParser.cs" />
     <Compile Include="Compiler\NPortugolWalker.cs" />
     <Compile Include="Dyn\DynamicMethodBuilder.cs" />
-    <Compile Include="VirtualMachine\Call.cs" />
     <Compile Include="NPortugol2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Core\Function.cs" />
     <Compile Include="Core\Instruction.cs" />
     <Compile Include="Core\Module.cs" />
-    <Compile Include="VirtualMachine\Engine.cs" />
-    <Compile Include="VirtualMachine\Engine.Proc.cs" />
-    <Compile Include="VirtualMachine\Process.cs" />
     <Compile Include="Core\Symbol.cs" />
-    <Compile Include="VirtualMachine\SymbolTable.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -59,10 +59,7 @@
     <Compile Include="Dyn\Lab.cs" />
     <Compile Include="Compiler\DeclareLocalTestCase.cs" />
     <Compile Include="Factories.cs" />
-    <Compile Include="Dyn\DynamicMethodBuilderTestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VirtualMachine\ArithmeticTestCase.cs" />
-    <Compile Include="VirtualMachine\MemoryManagementTestCase.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

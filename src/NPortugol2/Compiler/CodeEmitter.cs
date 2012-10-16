@@ -4,7 +4,6 @@ using System.Reflection.Emit;
 using Antlr.Runtime;
 using Antlr.Runtime.Tree;
 using NPortugol2.Core;
-using NPortugol2.VirtualMachine;
 
 namespace NPortugol2.Compiler
 {
