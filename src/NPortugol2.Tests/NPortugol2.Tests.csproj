@@ -59,9 +59,10 @@
     <Compile Include="Dyn\Lab.cs" />
     <Compile Include="Compiler\DeclareLocalTestCase.cs" />
     <Compile Include="Factories.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NPortugol2\NPortugol2.csproj">
       <Project>{E84DFCBF-34E0-4C1D-86E9-6E710369ED03}</Project>
