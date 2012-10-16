@@ -99,9 +99,33 @@ namespace NPortugol2.Compiler
             currInstructions.Add(new Instruction {OpCode = OpCodes.Ldc_I4, Value = value});
         }
 
+        public void EmitLdcR4(float value, IToken token)
+        {
+            currInstructions.Add(new Instruction { OpCode = OpCodes.Ldc_R4, Value = value });
+        }
+
+        public void EmitLdstr(string value, IToken token)
+        {
+            currInstructions.Add(new Instruction {OpCode = OpCodes.Ldstr,Value = value});
+        }
+
+        public void Stloc(string name, object value, IToken token)
+        {
+            currInstructions.Add(new Instruction { OpCode = OpCodes.Ldstr, Value = value });
+        }
+
         public void Emit(OpCode opCode)
         {
-            currInstructions.Add(new Instruction {OpCode = opCode});
+            currInstructions.Add(new Instruction { OpCode = opCode });
+        }
+        
+        public void EmitLoadVar(string name, IToken token)
+        {
+            if (currentSymbols.Find(x => x.Name == name) == null)
+            if (currentParams.Find(x  => x.Name == name) == null)
+                throw new Exception(string.Format("Variável {0} não declarada.", name));
+
+            currInstructions.Add(new Instruction{OpCode = OpCodes.Ldloc, Value = name});
         }
     }
 }

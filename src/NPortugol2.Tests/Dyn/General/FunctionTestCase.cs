@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace NPortugol2.Tests.Dyn.Integration
+namespace NPortugol2.Tests.Dyn.General
 {
     [TestFixture]
     public class FunctionTestCase

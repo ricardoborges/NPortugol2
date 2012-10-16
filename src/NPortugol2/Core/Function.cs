@@ -19,6 +19,11 @@ namespace NPortugol2.Core
         {
             get { return Params != null ? Params.Select(param => param.Type).ToArray() : null; }
         }
+
+        public int IndexOf(string symbol)
+        {
+            return Array.FindIndex(Symbols, x => x.Name == symbol);
+        }
     }
 
     public class FunctionParam

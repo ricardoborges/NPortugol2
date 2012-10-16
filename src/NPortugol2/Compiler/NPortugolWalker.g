@@ -12,8 +12,7 @@ k=3;
 
 @header{
 using System;
-using System.Collections;
-using NPortugol2.VirtualMachine;
+using NPortugol2.Core;
 using System.Reflection.Emit;
 }
 
@@ -160,8 +159,8 @@ logic_expression
 //###########################################################################################################################
     
 atom returns[object value]: 
-      a=ID /*{$value = $a.text; if (inExpression) emitter.EmitPush($value, $a.Token);}*/
+      a=ID {$value = $a.text; if (inExpression) emitter.EmitLoadVar((string)$value, $a.Token);}
     | a=INT {$value = int.Parse($a.text); if (inExpression) emitter.EmitLdcI4((int)$value, $a.Token);}
-    | a=FLOAT /*{$value = float.Parse($a.text); if (inExpression) emitter.EmitPush($value, $a.Token);}*/
-    | a=STRING /*{$value = $a.text; if (inExpression) emitter.EmitPush($value, $a.Token);}*/
+    | a=FLOAT {$value = float.Parse($a.text); if (inExpression) emitter.EmitLdcR4((float)$value, $a.Token);}
+    | a=STRING {$value = $a.text; if (inExpression) emitter.EmitLdstr((string)$value, $a.Token);}
     ;  

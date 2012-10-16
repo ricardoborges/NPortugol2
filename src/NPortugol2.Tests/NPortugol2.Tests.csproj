@@ -52,8 +52,10 @@
   <ItemGroup>
     <Compile Include="Compiler\BaseCompilerTestCase.cs" />
     <Compile Include="Compiler\FunctionTestCase.cs" />
+    <Compile Include="Dyn\Args\LoadArgsTestCase.cs" />
+    <Compile Include="Dyn\Expression\LocalsExpTestCase.cs" />
     <Compile Include="Dyn\Expression\SimpleAddTestCase.cs" />
-    <Compile Include="Dyn\Integration\FunctionTestCase.cs" />
+    <Compile Include="Dyn\General\FunctionTestCase.cs" />
     <Compile Include="Dyn\Lab.cs" />
     <Compile Include="Compiler\DeclareLocalTestCase.cs" />
     <Compile Include="Factories.cs" />
