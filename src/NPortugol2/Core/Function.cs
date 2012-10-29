@@ -9,15 +9,15 @@ namespace NPortugol2.Core
 
         public Type ReturningType { get; set; }
 
-        public Arg[] Params { get; set; }
+        public Arg[] Args { get; set; }
 
         public Instruction[] Instructions { get; set; }
 
         public Symbol[] Symbols { get; set; }
 
-        public Type[] ParametersType
+        public Type[] ArgsType
         {
-            get { return Params != null ? Params.Select(param => param.Type).ToArray() : null; }
+            get { return Args != null ? Args.Select(param => param.Type).ToArray() : null; }
         }
 
         public int IndexOf(string symbol)

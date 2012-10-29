@@ -22,7 +22,7 @@ namespace NPortugol2.Dyn
         {
             target = module.Functions[functionName];
 
-            var dm = new DynamicMethod(functionName, target.ReturningType, target.ParametersType);
+            var dm = new DynamicMethod(functionName, target.ReturningType, target.ArgsType);
 
             var gen = dm.GetILGenerator();
 
@@ -35,10 +35,10 @@ namespace NPortugol2.Dyn
 
             var prev = target.Symbols.Length;
 
-            for (int i = 0; i < target.Params.Length; i++)
+            for (int i = 0; i < target.Args.Length; i++)
             {
-                gen.DeclareLocal(target.Params[i].Type);
-                localsMap.Add(target.Params[i].Name, i + prev);
+                gen.DeclareLocal(target.Args[i].Type);
+                localsMap.Add(target.Args[i].Name, i + prev);
             }
 
             SetArgsValues(gen);
@@ -52,11 +52,11 @@ namespace NPortugol2.Dyn
 
         private void SetArgsValues(ILGenerator gen)
         {
-            for (var i = 0; i < target.Params.Length; i++)
+            for (var i = 0; i < target.Args.Length; i++)
             {
-                LoadArgValue(gen, target.Params[i], i);
+                LoadArgValue(gen, target.Args[i], i);
 
-                gen.Emit(OpCodes.Stloc, localsMap[target.Params[i].Name]);
+                gen.Emit(OpCodes.Stloc, localsMap[target.Args[i].Name]);
             }
         }
 

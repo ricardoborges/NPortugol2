@@ -55,7 +55,7 @@ namespace NPortugol2.Compiler
                                {
                                    Name = name.Text,
                                    ReturningType = typeMap[type != null? type.Token.Text: ""],
-                                   Params = args != null? args.ToArray(): new Arg[]{},
+                                   Args = args != null? args.ToArray(): new Arg[]{},
                                    Instructions = instructions.ToArray(),
                                    Symbols = symbols !=null? symbols.ToArray(): new Symbol[]{}
                                };

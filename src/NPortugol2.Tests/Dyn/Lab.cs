@@ -1,4 +1,5 @@
-﻿using System.Reflection.Emit;
+﻿using System.Diagnostics;
+using System.Reflection.Emit;
 using NUnit.Framework;
 
 namespace NPortugol2.Tests.Dyn
@@ -16,21 +17,25 @@ namespace NPortugol2.Tests.Dyn
             var gen = dm.GetILGenerator();
 
             gen.Emit(OpCodes.Ldc_I4, 1);
+            gen.Emit(OpCodes.Ldc_I4, 1);
+            gen.Emit(OpCodes.Add);
             gen.Emit(OpCodes.Ret);
 
             var result = dm.Invoke(null, new object[] { 1, 1 });
 
-            Assert.AreEqual(1, result);
+            Assert.AreEqual(2, result);
         }         
 
         [Test]
         public void Hello()
         {
-            var method = @"funcao texto do() retorne ""Olá Mundo"" fim";
+            var method = @"funcao inteiro soma() retorne 1 + 1 fim";
 
-            var result = new NPortugol2().CompileMethod(method).Invoke(null, null);
+            var dm = new NPortugol2().CompileMethod(method);
 
-            Assert.AreEqual("Olá Mundo", result);
+            var result = dm.Invoke(null, null);
+
+            Assert.AreEqual(2, (int) result);
         }
     }
 }

@@ -34,13 +34,13 @@ namespace NPortugol2.Tests.Compiler
         {
             var module = Compile("funcao inteiro soma(inteiro a, inteiro b) fim");
 
-            Assert.AreEqual(2, module.Functions["soma"].Params.Length);
+            Assert.AreEqual(2, module.Functions["soma"].Args.Length);
 
-            Assert.AreEqual("a", module.Functions["soma"].Params[0].Name);
-            Assert.AreEqual("b", module.Functions["soma"].Params[1].Name);
+            Assert.AreEqual("a", module.Functions["soma"].Args[0].Name);
+            Assert.AreEqual("b", module.Functions["soma"].Args[1].Name);
 
-            Assert.AreEqual(typeof(int), module.Functions["soma"].Params[0].Type);
-            Assert.AreEqual(typeof(int), module.Functions["soma"].Params[1].Type);
+            Assert.AreEqual(typeof(int), module.Functions["soma"].Args[0].Type);
+            Assert.AreEqual(typeof(int), module.Functions["soma"].Args[1].Type);
         }
     }
 }
