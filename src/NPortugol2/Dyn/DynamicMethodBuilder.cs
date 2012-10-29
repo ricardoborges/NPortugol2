@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Reflection.Emit;
 using NPortugol2.Core;
 
@@ -61,7 +60,7 @@ namespace NPortugol2.Dyn
             }
         }
 
-        private void LoadArgValue(ILGenerator gen, FunctionParam parameter, int index)
+        private void LoadArgValue(ILGenerator gen, Arg parameter, int index)
         {
             switch (parameter.Type.Name)
             {

@@ -47,6 +47,7 @@
     <Compile Include="Compiler\NPortugolLexer.cs" />
     <Compile Include="Compiler\NPortugolParser.cs" />
     <Compile Include="Compiler\NPortugolWalker.cs" />
+    <Compile Include="Compiler\StringExtensions.cs" />
     <Compile Include="Dyn\DynamicMethodBuilder.cs" />
     <Compile Include="NPortugol2.cs" />
     <Compile Include="Core\Function.cs" />

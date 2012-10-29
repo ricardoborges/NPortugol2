@@ -8,7 +8,7 @@ namespace NPortugol2.Tests.Compiler
         [Test]
         public void Should_Parse_Typed_Function()
         {
-            var module = Compile("funcao int principal() fim");
+            var module = Compile("funcao inteiro principal() fim");
 
             Assert.AreEqual(1, module.Functions.Count);
 
@@ -32,7 +32,7 @@ namespace NPortugol2.Tests.Compiler
         [Test]
         public void Should_Parse_Parameters_Function()
         {
-            var module = Compile("funcao int soma(int a, int b) fim");
+            var module = Compile("funcao inteiro soma(inteiro a, inteiro b) fim");
 
             Assert.AreEqual(2, module.Functions["soma"].Params.Length);
 

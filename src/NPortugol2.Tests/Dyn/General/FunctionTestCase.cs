@@ -8,7 +8,7 @@ namespace NPortugol2.Tests.Dyn.General
         [Test]
         public void ShouldCreateIntFunction()
         {
-            var dm = new NPortugol2().CompileMethod("funcao int principal() fim");
+            var dm = new NPortugol2().CompileMethod("funcao inteiro principal() fim");
 
             Assert.AreEqual(typeof(int), dm.ReturnType);
             Assert.AreEqual("principal", dm.Name);
@@ -17,7 +17,7 @@ namespace NPortugol2.Tests.Dyn.General
         [Test]
         public void ShouldCreateIntFunctionParams()
         {
-            var dm = new NPortugol2().CompileMethod("funcao int soma(int a, int b) fim");            
+            var dm = new NPortugol2().CompileMethod("funcao inteiro soma(inteiro a, inteiro b) fim");            
 
             Assert.AreEqual(typeof(int), dm.ReturnType);
             Assert.AreEqual("soma", dm.Name);
@@ -33,7 +33,7 @@ namespace NPortugol2.Tests.Dyn.General
         [Test]
         public void Should_Create_Function_Returning_Value()
         {
-            var dm = new NPortugol2().CompileMethod("funcao int soma(int a, int b) retorne 1 fim");
+            var dm = new NPortugol2().CompileMethod("funcao inteiro soma(inteiro a, inteiro b) retorne 1 fim");
 
             var result = dm.Invoke(null, new object[] {1, 1});
 

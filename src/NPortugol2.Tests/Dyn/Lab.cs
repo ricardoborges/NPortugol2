@@ -22,5 +22,15 @@ namespace NPortugol2.Tests.Dyn
 
             Assert.AreEqual(1, result);
         }         
+
+        [Test]
+        public void Hello()
+        {
+            var method = @"funcao texto do() retorne ""Olá Mundo"" fim";
+
+            var result = new NPortugol2().CompileMethod(method).Invoke(null, null);
+
+            Assert.AreEqual("Olá Mundo", result);
+        }
     }
 }

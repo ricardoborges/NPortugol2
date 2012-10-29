@@ -9,7 +9,7 @@ namespace NPortugol2.Core
 
         public Type ReturningType { get; set; }
 
-        public FunctionParam[] Params { get; set; }
+        public Arg[] Params { get; set; }
 
         public Instruction[] Instructions { get; set; }
 
@@ -26,7 +26,7 @@ namespace NPortugol2.Core
         }
     }
 
-    public class FunctionParam
+    public class Arg
     {
         public string Name { get; set; }
 

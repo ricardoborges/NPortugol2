@@ -8,7 +8,7 @@ namespace NPortugol2.Tests.Compiler
         [Test]
         public void Should_Declare_Local_Var()
         {
-            var module = Compile("funcao soma() variavel int x fim");
+            var module = Compile("funcao soma() variavel inteiro x fim");
             
             Assert.AreEqual("x", module.Functions["soma"].Symbols[0].Name);
             Assert.AreEqual(typeof(int), module.Functions["soma"].Symbols[0].Type);
@@ -18,7 +18,7 @@ namespace NPortugol2.Tests.Compiler
         public void Should_Declare_Multiple_Local_Var()
         {
             var module = Compile(@"funcao soma() 
-                                       variavel int x=342, y=1, f, m, a=2012
+                                       variavel inteiro x=342, y=1, f, m, a=2012
                                    fim");
 
             Assert.AreEqual(342, module.Functions["soma"].Symbols[0].Value);

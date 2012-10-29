@@ -48,7 +48,7 @@ function_param_list
 	:	 ^(PARAM param*)
 	;	 
 	
-param	: ^(t=TYPE i=ID) {emitter.CreateFunctionParams($t.Token, $i.Token); };
+param	: ^(t=TYPE i=ID) {emitter.CreateFunctionArg($t.Token, $i.Token); };
 
 	
 declare_local 

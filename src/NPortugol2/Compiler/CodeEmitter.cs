@@ -11,15 +11,15 @@ namespace NPortugol2.Compiler
     {
         private readonly Module module;
 
-        private List<FunctionParam> currentParams;
-        private List<Instruction> currInstructions;
-        private List<Symbol> currentSymbols;
+        private List<Arg> args;
+        private List<Instruction> instructions;
+        private List<Symbol> symbols;
 
-        private readonly Dictionary<string, Type> TypeMap = new Dictionary<string, Type>
+        private readonly Dictionary<string, Type> typeMap = new Dictionary<string, Type>
                                                        {
-                                                           {"int", typeof (int)},
-                                                           {"dec", typeof (float)},
-                                                           {"tex", typeof (string)},
+                                                           {"inteiro", typeof (int)},
+                                                           {"decimal", typeof (float)},
+                                                           {"texto", typeof (string)},
                                                            {"", typeof(void)}
                                                        };
 
@@ -30,8 +30,9 @@ namespace NPortugol2.Compiler
         public CodeEmitter()
         {
             module = new Module();
-            currInstructions = new List<Instruction>();
-            currentSymbols = new List<Symbol>();
+            instructions = new List<Instruction>();
+            symbols = new List<Symbol>();
+            args = new List<Arg>();
         }
 
         public Module Module
@@ -39,14 +40,13 @@ namespace NPortugol2.Compiler
             get { return module; }
         }
 
-        public void CreateFunctionParams(IToken type, IToken name)
+        #region function
+
+        public void CreateFunctionArg(IToken type, IToken name)
         {
-            var parameter = new FunctionParam {Name = name.Text, Type = TypeMap[type.Text]};
+            var parameter = new Arg {Name = name.Text, Type = typeMap[type.Text]};
 
-            if (currentParams == null)
-                currentParams = new List<FunctionParam>();
-
-            currentParams.Add(parameter);
+            args.Add(parameter);
         }
 
         public void CreateFunction(CommonTree type, IToken name)
@@ -54,18 +54,27 @@ namespace NPortugol2.Compiler
             var function = new Function
                                {
                                    Name = name.Text,
-                                   ReturningType = TypeMap[type != null? type.Token.Text: ""],
-                                   Params = currentParams != null? currentParams.ToArray(): new FunctionParam[]{},
-                                   Instructions = currInstructions.ToArray(),
-                                   Symbols = currentSymbols !=null? currentSymbols.ToArray(): new Symbol[]{}
+                                   ReturningType = typeMap[type != null? type.Token.Text: ""],
+                                   Params = args != null? args.ToArray(): new Arg[]{},
+                                   Instructions = instructions.ToArray(),
+                                   Symbols = symbols !=null? symbols.ToArray(): new Symbol[]{}
                                };
 
             module.Functions.Add(function.Name, function);
 
-            currentParams = null;
-            currInstructions.Clear();
-            currentSymbols.Clear();
+            Reset();
         }
+
+        private void Reset()
+        {
+            args.Clear();
+            instructions.Clear();
+            symbols.Clear();
+        }
+
+        #endregion
+
+        #region Locals
 
         public Type DeclareLocal(Type type, IToken name, object value)
         {
@@ -76,7 +85,7 @@ namespace NPortugol2.Compiler
 
         public Type DeclareLocal(IToken ttype, IToken name, object value)
         {
-            var type = TypeMap[ttype.Text];
+            var type = typeMap[ttype.Text];
 
             DeclareLocal(type, name.Text, value);
 
@@ -85,7 +94,7 @@ namespace NPortugol2.Compiler
         
         public void DeclareLocal(Type type, string name, object value = null)
         {
-            currentSymbols.Add(new Symbol
+            symbols.Add(new Symbol
                                     {
                                         Name = name,
                                         Type = type,
@@ -93,38 +102,44 @@ namespace NPortugol2.Compiler
                                     });
         }
 
+        #endregion
+
+        #region Instructions
+
         public void EmitLdcI4(int value, IToken token)
         {
-            currInstructions.Add(new Instruction {OpCode = OpCodes.Ldc_I4, Value = value});
+            instructions.Add(new Instruction {OpCode = OpCodes.Ldc_I4, Value = value});
         }
 
         public void EmitLdcR4(float value, IToken token)
         {
-            currInstructions.Add(new Instruction { OpCode = OpCodes.Ldc_R4, Value = value });
+            instructions.Add(new Instruction { OpCode = OpCodes.Ldc_R4, Value = value });
         }
 
         public void EmitLdstr(string value, IToken token)
         {
-            currInstructions.Add(new Instruction {OpCode = OpCodes.Ldstr,Value = value});
+            instructions.Add(new Instruction {OpCode = OpCodes.Ldstr,Value = value.Content()});
         }
 
         public void Stloc(string name, object value, IToken token)
         {
-            currInstructions.Add(new Instruction { OpCode = OpCodes.Ldstr, Value = value });
+            instructions.Add(new Instruction { OpCode = OpCodes.Ldstr, Value = value });
         }
 
         public void Emit(OpCode opCode)
         {
-            currInstructions.Add(new Instruction { OpCode = opCode });
+            instructions.Add(new Instruction { OpCode = opCode });
         }
         
         public void EmitLoadVar(string name, IToken token)
         {
-            if (currentSymbols.Find(x => x.Name == name) == null)
-            if (currentParams.Find(x  => x.Name == name) == null)
+            if (symbols.Find(x => x.Name == name) == null)
+            if (args.Find(x  => x.Name == name) == null)
                 throw new Exception(string.Format("Variável {0} não declarada.", name));
 
-            currInstructions.Add(new Instruction{OpCode = OpCodes.Ldloc, Value = name});
+            instructions.Add(new Instruction{OpCode = OpCodes.Ldloc, Value = name});
         }
+
+        #endregion
     }
 }
