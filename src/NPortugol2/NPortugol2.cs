@@ -14,6 +14,7 @@ namespace NPortugol2
         /// <summary>
         /// Compila um script de funções NPortugol em DynamicMethods
         /// </summary>
+		/// 
         public Module CompileScript(string script)
         {
             return BuildModule(script);
