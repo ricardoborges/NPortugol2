@@ -11,7 +11,7 @@ namespace NPortugol2.Compiler
     {
         private readonly Module module;
 
-        private List<Arg> args;
+		private List<Symbol> args;
         private List<Instruction> instructions;
         private List<Symbol> symbols;
 
@@ -32,7 +32,7 @@ namespace NPortugol2.Compiler
             module = new Module();
             instructions = new List<Instruction>();
             symbols = new List<Symbol>();
-            args = new List<Arg>();
+			args = new List<Symbol>();
         }
 
         public Module Module
@@ -44,7 +44,7 @@ namespace NPortugol2.Compiler
 
         public void CreateFunctionArg(IToken type, IToken name)
         {
-            var parameter = new Arg {Name = name.Text, Type = typeMap[type.Text]};
+			var parameter = new Symbol {Name = name.Text, Type = typeMap[type.Text]};
 
             args.Add(parameter);
         }
@@ -55,7 +55,7 @@ namespace NPortugol2.Compiler
                                {
                                    Name = name.Text,
                                    ReturningType = typeMap[type != null? type.Token.Text: ""],
-                                   Args = args != null? args.ToArray(): new Arg[]{},
+								   Args = args != null? args.ToArray(): new Symbol[]{},
                                    Instructions = instructions.ToArray(),
                                    Symbols = symbols !=null? symbols.ToArray(): new Symbol[]{}
                                };
@@ -94,17 +94,52 @@ namespace NPortugol2.Compiler
         
         public void DeclareLocal(Type type, string name, object value = null)
         {
-            symbols.Add(new Symbol
-                                    {
-                                        Name = name,
-                                        Type = type,
-                                        Value = value
-                                    });
+			var index = symbols.Count;
+
+			var newSymbol = new Symbol
+									{
+										Name = name,
+										Type = type,
+										Value = value,
+										Index = index
+									};
+            symbols.Add(newSymbol);
+
+			if (value != null)
+				InitLocal(newSymbol);
         }
+
+		public void InitLocal(Symbol symbol)
+		{
+			LoadValue(symbol, null);
+
+			EmitStloc(symbol.Index);
+		}
+
+		public void LoadValue(Symbol symbol, IToken token)
+		{
+			if (symbol == null)
+				throw new Exception (string.Format ("Variável {0} não declarada.", symbol.Name));
+			
+			switch (symbol.Type.Name.ToString()) 
+			{
+				case "Int32":
+					EmitLdcI4(symbol.IntValue, token);
+					break;
+				case "float":
+					EmitLdcR4(symbol.FloatValue, token);
+					break;
+			}
+		}
 
         #endregion
 
         #region Instructions
+
+		void EmitLdLoc(int index)
+		{
+			instructions.Add(new Instruction{OpCode = OpCodes.Ldloc, Value = index});
+		}
 
         public void EmitLdcI4(int value, IToken token)
         {
@@ -121,7 +156,12 @@ namespace NPortugol2.Compiler
             instructions.Add(new Instruction {OpCode = OpCodes.Ldstr,Value = value.Content()});
         }
 
-        public void Stloc(string name, object value, IToken token)
+		public void EmitStloc(int index)
+		{
+			instructions.Add(new Instruction { OpCode = OpCodes.Stloc, Value = index });
+		}
+
+        public void EmitStloc(string name, object value, IToken token)
         {
             instructions.Add(new Instruction { OpCode = OpCodes.Ldstr, Value = value });
         }
@@ -133,11 +173,12 @@ namespace NPortugol2.Compiler
         
         public void EmitLoadVar(string name, IToken token)
         {
-            if (symbols.Find(x => x.Name == name) == null)
-            if (args.Find(x  => x.Name == name) == null)
-                throw new Exception(string.Format("Variável {0} não declarada.", name));
+			var symbol = symbols.Find( x => x.Name == name) ?? args.Find( x => x.Name == name);
 
-            instructions.Add(new Instruction{OpCode = OpCodes.Ldloc, Value = name});
+			if (symbol == null)
+				throw new Exception (string.Format ("Variável {0} não declarada.", symbol.Name));
+
+			EmitLdLoc(symbol.Index);
         }
 
         #endregion

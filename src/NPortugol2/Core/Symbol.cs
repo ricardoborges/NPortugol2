@@ -6,8 +6,20 @@ namespace NPortugol2.Core
     {
         public string Name { get; set; }
 
+		public int Index { get; set; }
+
         public Type Type { get; set; }
 
         public object Value { get; set; }
+
+		public int IntValue
+		{
+			get { return int.Parse(Value.ToString()); }
+		}
+		
+		public float FloatValue
+		{
+			get { return float.Parse(Value.ToString()); }
+		}
     }
 }

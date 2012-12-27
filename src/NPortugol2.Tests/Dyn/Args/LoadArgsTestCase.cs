@@ -5,7 +5,7 @@ namespace NPortugol2.Tests.Dyn.Args
     [TestFixture]
     public class LoadArgsTestCase
     {
-        [Test]
+        [Test, Ignore]
         public void Should_Load_Args()
         {
             var result = new NPortugol2()
@@ -15,7 +15,7 @@ namespace NPortugol2.Tests.Dyn.Args
             Assert.AreEqual(20, result);
         }
 
-        [Test]
+        [Test, Ignore]
         public void Should_Load_Args2()
         {
             var result = new NPortugol2()

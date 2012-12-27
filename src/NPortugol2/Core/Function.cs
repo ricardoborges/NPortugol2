@@ -9,7 +9,7 @@ namespace NPortugol2.Core
 
         public Type ReturningType { get; set; }
 
-        public Arg[] Args { get; set; }
+		public Symbol[] Args { get; set; }
 
         public Instruction[] Instructions { get; set; }
 
@@ -24,14 +24,5 @@ namespace NPortugol2.Core
         {
             return Array.FindIndex(Symbols, x => x.Name == symbol);
         }
-    }
-
-    public class Arg
-    {
-        public string Name { get; set; }
-
-        public object Value { get; set; }
-
-        public Type Type { get; set; }
     }
 }

@@ -5,6 +5,7 @@ using Antlr.Runtime.Tree;
 using NPortugol2.Compiler;
 using NPortugol2.Core;
 using NPortugol2.Dyn;
+using System.Collections.Generic;
 
 namespace NPortugol2
 {
@@ -29,6 +30,20 @@ namespace NPortugol2
 
             return new DynamicMethodBuilder(module).BuildFor(module.Functions.First().Value.Name);
         }
+
+		public List<string> CompileIL (string function)
+		{
+			var module = BuildModule(function);
+
+			var list = new List<string>();
+
+			foreach(var inst in module.Functions.First().Value.Instructions)
+			{
+				list.Add(inst.OpCode.ToString() + " " + inst.Value);
+			}
+
+			return list;
+		}
 
         private Module BuildModule(string function)
         {
