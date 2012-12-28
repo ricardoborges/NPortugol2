@@ -12,18 +12,11 @@ namespace NPortugol2
 
     public class NPortugol2
     {
-        /// <summary>
-        /// Compila um script de funções NPortugol em DynamicMethods
-        /// </summary>
-		/// 
         public Module CompileScript(string script)
         {
             return BuildModule(script);
         }
 
-        /// <summary>
-        /// Compila uma função NPortugol em DynamicMethod.
-        /// </summary>
         public DynamicMethod CompileMethod(string function)
         {
             var module = BuildModule(function);
@@ -31,7 +24,7 @@ namespace NPortugol2
             return new DynamicMethodBuilder(module).BuildFor(module.Functions.First().Value.Name);
         }
 
-		public List<string> CompileIL (string function)
+		public List<string> CompileIL(string function)
 		{
 			var module = BuildModule(function);
 

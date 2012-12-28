@@ -14,13 +14,18 @@ namespace NPortugol2.Dyn
             this.module = module;
         }
 
-        public DynamicMethod BuildFor(string functionName)
-        {
-            target = module.Functions[functionName];
+        public DynamicMethod BuildFor (string functionName)
+		{
+			target = module.Functions [functionName];
 
-            var dm = new DynamicMethod(functionName, target.ReturningType, target.ArgsType);
+			var dm = new DynamicMethod (functionName, target.ReturningType, target.ArgsType);
 
             var gen = dm.GetILGenerator();
+
+			foreach (var symbol in target.Symbols) 
+			{
+				gen.DeclareLocal(symbol.Type);	
+			}
 
             GenerateILCode(gen);
             
@@ -35,6 +40,7 @@ namespace NPortugol2.Dyn
             {
                 switch (inst.OpCode.Name)
                 {
+					case "ldarg":
 					case "ldloc":
 					case "stloc":
                     case "ldc.i4":

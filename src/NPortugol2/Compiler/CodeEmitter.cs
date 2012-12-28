@@ -44,7 +44,9 @@ namespace NPortugol2.Compiler
 
         public void CreateFunctionArg(IToken type, IToken name)
         {
-			var parameter = new Symbol {Name = name.Text, Type = typeMap[type.Text]};
+			var index = args.Count;
+
+			var parameter = new Symbol {Name = name.Text, Type = typeMap[type.Text], IsArg = true, Index = index};
 
             args.Add(parameter);
         }
@@ -136,9 +138,14 @@ namespace NPortugol2.Compiler
 
         #region Instructions
 
-		void EmitLdLoc(int index)
+		public void EmitLdLoc(int index)
 		{
 			instructions.Add(new Instruction{OpCode = OpCodes.Ldloc, Value = index});
+		}
+
+		public void EmitLdArg(int index)
+		{
+			instructions.Add(new Instruction{OpCode = OpCodes.Ldarg, Value = index});
 		}
 
         public void EmitLdcI4(int value, IToken token)
@@ -178,7 +185,10 @@ namespace NPortugol2.Compiler
 			if (symbol == null)
 				throw new Exception (string.Format ("Variável {0} não declarada.", symbol.Name));
 
-			EmitLdLoc(symbol.Index);
+			if (!symbol.IsArg)
+				EmitLdLoc(symbol.Index);
+			else
+				EmitLdArg(symbol.Index);
         }
 
         #endregion

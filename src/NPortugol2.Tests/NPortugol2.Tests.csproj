@@ -6,12 +6,11 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CD2BA7E2-426D-4E12-A514-68AB08100866}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NPortugol2.Tests</RootNamespace>
     <AssemblyName>NPortugol2.Tests</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <StartupObject>NPortugol2.Tests.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>

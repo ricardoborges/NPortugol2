@@ -12,6 +12,8 @@ namespace NPortugol2.Core
 
         public object Value { get; set; }
 
+		public bool IsArg { get; set; }
+
 		public int IntValue
 		{
 			get { return int.Parse(Value.ToString()); }
