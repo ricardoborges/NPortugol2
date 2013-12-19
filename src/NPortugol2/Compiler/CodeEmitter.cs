@@ -59,7 +59,7 @@ namespace NPortugol2.Compiler
                                    ReturningType = typeMap[type != null? type.Token.Text: ""],
 								   Args = args != null? args.ToArray(): new Symbol[]{},
                                    Instructions = instructions.ToArray(),
-                                   Symbols = symbols !=null? symbols.ToArray(): new Symbol[]{}
+                                   Locals = symbols !=null? symbols.ToArray(): new Symbol[]{}
                                };
 
             module.Functions.Add(function.Name, function);

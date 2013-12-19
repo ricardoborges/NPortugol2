@@ -9,7 +9,7 @@ namespace NPortugol2.Core
 
         public Type DeclaringType { get; set; }
 
-        public bool IsLocal { get; set; }
+        //public bool IsLocal { get; set; }
 
         public string[] Operands { get; set; }
 

@@ -13,7 +13,7 @@ namespace NPortugol2.Core
 
         public Instruction[] Instructions { get; set; }
 
-        public Symbol[] Symbols { get; set; }
+        public Symbol[] Locals { get; set; }
 
         public Type[] ArgsType
         {
@@ -22,7 +22,7 @@ namespace NPortugol2.Core
 
         public int IndexOf(string symbol)
         {
-            return Array.FindIndex(Symbols, x => x.Name == symbol);
+            return Array.FindIndex(Locals, x => x.Name == symbol);
         }
     }
 }

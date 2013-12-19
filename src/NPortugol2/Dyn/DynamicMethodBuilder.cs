@@ -22,7 +22,7 @@ namespace NPortugol2.Dyn
 
             var gen = dm.GetILGenerator();
 
-			foreach (var symbol in target.Symbols) 
+			foreach (var symbol in target.Locals) 
 			{
 				gen.DeclareLocal(symbol.Type);	
 			}
