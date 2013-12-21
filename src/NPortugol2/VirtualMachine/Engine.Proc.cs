@@ -3,6 +3,14 @@ using NPortugol2.Core;
 
 namespace NPortugol2.VirtualMachine
 {
+    public enum Operation
+    {
+        Add,
+        Sub,
+        Div,
+        Mul
+    }
+
     public partial class Engine
     {
         private void ExecuteInstruction()
@@ -20,33 +28,48 @@ namespace NPortugol2.VirtualMachine
             {
                 case "ldc.i4": ProcessLdcI4(instruction); break;
                 case "ldc.r4": ProcessLdcR4(instruction); break;
-                case "add": ProcessAdd(); break;
+                case "add": ProcessArithmetic(Operation.Add); break;
+                case "sub": ProcessArithmetic(Operation.Sub); break;
+                case "mul": ProcessArithmetic(Operation.Mul); break;
+                case "div": ProcessArithmetic(Operation.Div); break;
+                case "ret": ProcessRet(); break;
             }
         }
 
-        private void ProcessAdd()
+        private void ProcessRet()
         {
-            bool isInt;
+            if (Process.EvalStack.Count != 1)
+                throw new Exception("A pilha de operandos possui mais de um elemento. Não foi possível determinar o retorno da função.");
 
+            Process.CallStack.Peek().Result = Process.EvalStack.Pop();
+        }
+
+        private void ProcessArithmetic(Operation op)
+        {
             var first = Process.EvalStack.Pop();
             var second = Process.EvalStack.Pop();
 
-            isInt = first.Type == typeof(int) || second.Type == typeof(int);
+            var type = first.Type == second.Type ? first.Type : typeof(float);
 
-            if (isInt)
+            var result = new Symbol { Name = Guid.NewGuid().ToString(), Type = type};
+
+            switch (op)
             {
-                var vfirst = (int)first.Value;
-                var vsecond = (int)second.Value;
-
-                Process.EvalStack.Push(new Symbol { Name = Guid.NewGuid().ToString(), Type = typeof(int), Value = vfirst + vsecond });
+                case Operation.Add:
+                    result.Value = first.Value + second.Value;
+                    break;
+                case Operation.Sub:
+                    result.Value = first.Value - second.Value;
+                    break;
+                case Operation.Mul:
+                    result.Value = first.Value * second.Value;
+                    break;
+                case Operation.Div:
+                    result.Value = first.Value / second.Value;
+                    break;
             }
-            else
-            {
-                var vfirst = (float)first.Value;
-                var vsecond = (float)second.Value;
 
-                Process.EvalStack.Push(new Symbol { Name = Guid.NewGuid().ToString(), Type = typeof(float), Value = vfirst + vsecond });
-            }
+            Process.EvalStack.Push(result);
         }
 
         private void ProcessLdcR4(Instruction inst)

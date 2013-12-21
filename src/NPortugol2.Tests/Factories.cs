@@ -7,7 +7,6 @@ namespace NPortugol2.Tests
 {
     public class ModuleFactory
     {
-        /// <typeparam name="T">Function returning type</typeparam>
         public static Module CreateFor<T>(Instruction[] instructions, string functionName)
         {
             var function = new Function
@@ -57,11 +56,15 @@ namespace NPortugol2.Tests
         {
             return new Instruction { OpCode = OpCodes.Initblk, DeclaringType = typeof(T), IsLocal = isLocal, Operands = values };
         }
+
+        public static Instruction Mul()
+        {
+            return new Instruction { OpCode = OpCodes.Mul };
+        }
     }
 
     public class EngineFactory
     {
-        /// <typeparam name="T">Function returning type</typeparam>
         public static Engine CreateFor<T>(Instruction[] instructions, string functionName)
         {
             var function = new Function

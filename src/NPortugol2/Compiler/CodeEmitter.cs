@@ -12,7 +12,7 @@ namespace NPortugol2.Compiler
     {
         private readonly Module module;
 
-        private List<FunctionParam> currentParams;
+        private List<FunctionArg> currentParams;
         private List<Instruction> currInstructions;
         private List<Symbol> currentSymbols;
 
@@ -42,10 +42,10 @@ namespace NPortugol2.Compiler
 
         public void CreateFunctionParams(IToken type, IToken name)
         {
-            var parameter = new FunctionParam {Name = name.Text, Type = TypeMap[type.Text]};
+            var parameter = new FunctionArg {Name = name.Text, Type = TypeMap[type.Text]};
 
             if (currentParams == null)
-                currentParams = new List<FunctionParam>();
+                currentParams = new List<FunctionArg>();
 
             currentParams.Add(parameter);
         }
@@ -56,7 +56,7 @@ namespace NPortugol2.Compiler
                                {
                                    Name = name.Text,
                                    ReturningType = TypeMap[type != null? type.Token.Text: ""],
-                                   Params = currentParams != null? currentParams.ToArray(): new FunctionParam[]{},
+                                   Args = currentParams != null? currentParams.ToArray(): new FunctionArg[]{},
                                    Instructions = currInstructions.ToArray(),
                                    Symbols = currentSymbols !=null? currentSymbols.ToArray(): new Symbol[]{}
                                };

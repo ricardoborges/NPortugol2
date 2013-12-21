@@ -9,7 +9,7 @@ namespace NPortugol2.Core
 
         public Type ReturningType { get; set; }
 
-        public FunctionParam[] Params { get; set; }
+        public FunctionArg[] Args { get; set; }
 
         public Instruction[] Instructions { get; set; }
 
@@ -17,7 +17,7 @@ namespace NPortugol2.Core
 
         public Type[] ParametersType
         {
-            get { return Params != null ? Params.Select(param => param.Type).ToArray() : null; }
+            get { return Args != null ? Args.Select(param => param.Type).ToArray() : null; }
         }
 
         public int IndexOf(string symbol)
@@ -26,7 +26,7 @@ namespace NPortugol2.Core
         }
     }
 
-    public class FunctionParam
+    public class FunctionArg
     {
         public string Name { get; set; }
 

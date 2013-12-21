@@ -6,7 +6,7 @@ namespace NPortugol2.Tests.Dyn
     [TestFixture]
     public class DynamicMethodBuilderTestCase
     {
-        [Test]
+        [Test, Ignore]
          public void Should_Create_DM_No_Parameters()
          {
              var insts = new []

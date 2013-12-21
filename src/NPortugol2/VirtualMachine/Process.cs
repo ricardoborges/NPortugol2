@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using NPortugol2.Core;
 
 namespace NPortugol2.VirtualMachine
@@ -14,7 +15,7 @@ namespace NPortugol2.VirtualMachine
 
         public Stack<Call> CallStack { get; set; }
 
-        public Stack<FunctionParam> ParamStack { get; set; }
+        public Stack<FunctionArg> ParamStack { get; set; }
 
         public Stack<Symbol> EvalStack { get; set; }
 
@@ -22,12 +23,12 @@ namespace NPortugol2.VirtualMachine
 
         public bool IsRunning { get; set; }
 
-        public object Value { get; set; }
+        public Symbol Result { get; set; }
 
         public void Setup()
         {
             CallStack = new Stack<Call>();
-            ParamStack = new Stack<FunctionParam>();
+            ParamStack = new Stack<FunctionArg>();
             Globals = new SymbolTable();
             EvalStack = new Stack<Symbol>();
         }
@@ -35,6 +36,9 @@ namespace NPortugol2.VirtualMachine
         public void Init(string functionName)
         {
             Setup();
+
+            if (!module.Functions.ContainsKey(functionName))
+                throw new FunctionNotFound(functionName);
 
             var function = module.Functions[functionName];
             
@@ -52,13 +56,13 @@ namespace NPortugol2.VirtualMachine
         {
             if (CallStack.Peek().HasNext()) return;
                 
-            CallStack.Pop();
+            var lastCall = CallStack.Pop();
 
             if (CallStack.Count > 0) return;
             
             IsRunning = false;
 
-            Value = EvalStack.Count > 0 ? EvalStack.Peek().Value : null;
+            Result = lastCall.Result;
         }
     }
 }

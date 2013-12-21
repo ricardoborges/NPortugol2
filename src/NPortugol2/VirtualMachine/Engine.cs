@@ -23,7 +23,7 @@ namespace NPortugol2.VirtualMachine
                 ExecuteInstruction();
             }
 
-            return Process.Value;
+            return Process.Result;
         }
     }
 }

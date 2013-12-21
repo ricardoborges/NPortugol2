@@ -13,6 +13,8 @@ namespace NPortugol2.VirtualMachine
 
         public int IP { get; set; }
 
+        public Symbol Result { get; set; }
+
         public Call(Function function)
         {
             Function = function;
