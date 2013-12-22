@@ -24,5 +24,10 @@ namespace NPortugol2.Core
         {
             get { return float.Parse(Value.ToString()); }
         }
+
+        public override string ToString()
+        {
+            return OpCode.ToString() + " " + Value;
+        }
     }
 }

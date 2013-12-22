@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using NPortugol2.Compiler;
+using NUnit.Framework;
 using System.Reflection.Emit;
 
 namespace NPortugol2.Tests.Dyn.Expression
@@ -9,7 +10,7 @@ namespace NPortugol2.Tests.Dyn.Expression
         [Test]
         public void Should_Add_Int_Locals()
         {
-            var result = new NPortugol2()
+            var result = new NPCompiler()
 				.CompileMethod("funcao inteiro soma() variavel inteiro x = 20, y = 20 retorne x + y fim")
                 .Invoke(null, null);
 

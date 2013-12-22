@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Reflection.Emit;
+﻿using System.Reflection.Emit;
 using NPortugol2.Core;
 
 namespace NPortugol2.Dyn
@@ -14,7 +13,7 @@ namespace NPortugol2.Dyn
             this.module = module;
         }
 
-        public DynamicMethod BuildFor (string functionName)
+        public DynamicMethod BuildFor(string functionName)
 		{
 			target = module.Functions [functionName];
 

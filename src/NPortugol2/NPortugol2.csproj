@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Compiler\CodeEmitter.cs" />
+    <Compile Include="Compiler\NPCompiler.cs" />
     <Compile Include="Compiler\NPortugolLexer.cs" />
     <Compile Include="Compiler\NPortugolParser.cs" />
     <Compile Include="Compiler\NPortugolWalker.cs" />
@@ -53,6 +54,12 @@
     <Compile Include="Core\Instruction.cs" />
     <Compile Include="Core\Module.cs" />
     <Compile Include="Core\Symbol.cs" />
+    <Compile Include="VirtualMachine\Call.cs" />
+    <Compile Include="VirtualMachine\Engine.cs" />
+    <Compile Include="VirtualMachine\Engine.Proc.cs" />
+    <Compile Include="VirtualMachine\Exceptions.cs" />
+    <Compile Include="VirtualMachine\Process.cs" />
+    <Compile Include="VirtualMachine\SymbolTable.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

@@ -1,20 +1,29 @@
-using System;
+using NUnit.Framework;
 
 namespace NPortugol2.Tests
 {
-	public static class Program
+    [TestFixture]
+	public class Program
 	{
-		public static void Main ()
-		{
-			var dm = new NPortugol2 ().CompileMethod(
-				@"funcao inteiro soma() 
+        [Test]
+		public void Main ()
+        {
+            var script =
+                @"funcao inteiro soma() 
                          variavel inteiro x = 20, y = 20 
 						 retorne x + y 
-                  fim"
-				);
+                  fim";
 
-			System.Console.WriteLine(dm.Invoke(null, null));
-		}
+            // Executa função como DynamicMethod
+            var result = new NPortugol2(script).Invoke(null, null);
+
+            Assert.AreEqual(40, result);
+
+            // Executa função dentro da maquina virtual
+            var resultFromVM = new NPortugol2(script).Exec("soma", null);
+
+            Assert.AreEqual(result, resultFromVM);
+        }
 	}
 }
 

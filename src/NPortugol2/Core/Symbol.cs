@@ -10,7 +10,7 @@ namespace NPortugol2.Core
 
         public Type Type { get; set; }
 
-        public object Value { get; set; }
+        public dynamic Value { get; set; }
 
 		public bool IsArg { get; set; }
 

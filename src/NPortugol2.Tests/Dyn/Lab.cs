@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Reflection.Emit;
+using NPortugol2.Compiler;
 using NUnit.Framework;
 using System;
 
@@ -35,7 +36,7 @@ namespace NPortugol2.Tests.Dyn
 			}
 		}
 
-		[Test]
+		[Test, Ignore]
 		public void TestCall2()
 		{
 			var parameters = new[] { typeof(int), typeof(int) };
@@ -101,7 +102,7 @@ namespace NPortugol2.Tests.Dyn
         {
             var method = @"funcao inteiro soma() retorne 1 + 1 fim";
 
-            var dm = new NPortugol2().CompileMethod(method);
+            var dm = new NPCompiler().CompileMethod(method);
 
             var result = dm.Invoke(null, null);
 

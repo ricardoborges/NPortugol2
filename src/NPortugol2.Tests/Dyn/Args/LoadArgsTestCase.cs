@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using NPortugol2.Compiler;
+using NUnit.Framework;
 
 namespace NPortugol2.Tests.Dyn.Args
 {
@@ -8,7 +9,7 @@ namespace NPortugol2.Tests.Dyn.Args
         [Test]
         public void Should_Load_Args()
         {
-            var result = new NPortugol2()
+            var result = new NPCompiler()
                 .CompileMethod("funcao inteiro soma(inteiro x) retorne x fim")
                 .Invoke(null, new object[]{20});
 
@@ -18,7 +19,7 @@ namespace NPortugol2.Tests.Dyn.Args
         [Test]
         public void Should_Load_Args2()
         {
-            var result = new NPortugol2()
+            var result = new NPCompiler()
                 .CompileMethod("funcao inteiro soma(inteiro x, inteiro y) retorne x + y fim")
                 .Invoke(null, new object[] { 20, 30 });
 

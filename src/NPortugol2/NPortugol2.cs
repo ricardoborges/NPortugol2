@@ -1,56 +1,72 @@
-﻿using System.Linq;
+﻿using System;
 using System.Reflection.Emit;
-using Antlr.Runtime;
-using Antlr.Runtime.Tree;
 using NPortugol2.Compiler;
-using NPortugol2.Core;
-using NPortugol2.Dyn;
-using System.Collections.Generic;
+using NPortugol2.VirtualMachine;
 
 namespace NPortugol2
 {
-
     public class NPortugol2
     {
-        public Module CompileScript(string script)
+        private string _script;
+        private NPCompiler _compiler;
+
+        public NPortugol2(string script)
         {
-            return BuildModule(script);
+            _script = script;
+            _compiler = new NPCompiler();
         }
 
-        public DynamicMethod CompileMethod(string function)
+        public NPortugol2()
         {
-            var module = BuildModule(function);
-
-            return new DynamicMethodBuilder(module).BuildFor(module.Functions.First().Value.Name);
+            _compiler = new NPCompiler();
         }
 
-		public List<string> CompileIL(string function)
-		{
-			var module = BuildModule(function);
-
-			var list = new List<string>();
-
-			foreach(var inst in module.Functions.First().Value.Instructions)
-			{
-				list.Add(inst.OpCode.ToString() + " " + inst.Value);
-			}
-
-			return list;
-		}
-
-        private Module BuildModule(string function)
+        public NPortugol2 LoadScript(string script)
         {
-            var input = new ANTLRStringStream(function);
-            var lexer = new NPortugolLexer(input);
-            var tokens = new CommonTokenStream(lexer);
-            var parser = new NPortugolParser(tokens);
+            _script = script;
 
-            var ast = parser.script();
-            var tree = (CommonTree)ast.Tree;
-            var nodes = new CommonTreeNodeStream(tree) { TokenStream = tokens };
-            var walker = new NPortugolWalker(nodes);
+            return this;
+        }
 
-            return walker.compile();
+        /// <summary>
+        /// Execute NPortugol function as Dynamic Method
+        /// </summary>
+        public object Invoke(object target, object[] parameters)
+        {
+            return CompileDynamicMethod().Invoke(target, parameters);
+        }
+
+        /// <summary>
+        /// Execute NPortugol function in the Virtual Machine
+        /// </summary>
+        public object Exec(string functionName, object[] parameters)
+        {
+            return CreateVM().Execute(functionName);
+        }
+
+        public DynamicMethod CompileDynamicMethod()
+        {
+            return IsScriptLoaded
+                       ? _compiler.CompileMethod(_script)
+                       : ScriptNotFound();
+        }
+
+        public Engine CreateVM()
+        {
+            var engine = new Engine();
+                engine.LoadModule(_compiler.CompileScript(_script));
+
+            return engine;
+        }
+
+        private DynamicMethod ScriptNotFound()
+        {
+            throw new Exception("You must load a script before.");
+        }
+
+        public bool IsScriptLoaded
+        {
+            get { return !string.IsNullOrEmpty(_script); }
         }
     }
 }

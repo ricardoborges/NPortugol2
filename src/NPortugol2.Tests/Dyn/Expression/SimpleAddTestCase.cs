@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using NPortugol2.Compiler;
+using NUnit.Framework;
 
 namespace NPortugol2.Tests.Dyn.Expression
 {
@@ -8,7 +9,7 @@ namespace NPortugol2.Tests.Dyn.Expression
         [Test]
         public void Should_Create_Function_Returning_Value()
         {
-            var dm = new NPortugol2().CompileMethod("funcao inteiro soma() retorne 8 + 2 fim");
+            var dm = new NPCompiler().CompileMethod("funcao inteiro soma() retorne 8 + 2 fim");
 
             var result = dm.Invoke(null, null);
 
@@ -18,13 +19,13 @@ namespace NPortugol2.Tests.Dyn.Expression
         [Test]
         public void Should_Execute_Arithmetic_Function()
         {
-            var result = new NPortugol2()
+            var result = new NPCompiler()
                 .CompileMethod("funcao inteiro calc() retorne 2*5+10-9+4/2 fim")
                 .Invoke(null, null);
 
             Assert.AreEqual(13, result);
 
-            var result2 = new NPortugol2()
+            var result2 = new NPCompiler()
                 .CompileMethod("funcao inteiro calc() retorne 2*(5+10)-9+4/2 fim")
                 .Invoke(null, null);
 
